@@ -31,7 +31,7 @@ const Hero = () => {
                     transition={{ duration: 0.8 }}
                 >
                     <span className="inline-block py-1 px-3 rounded-full bg-arq-glass border border-arq-glassBorder text-xs tracking-widest uppercase mb-6 text-arq-accent">
-                        Sito Istituzionale Associazione
+                        Associazione ARQtype
                     </span>
                     <h1 className="text-5xl md:text-7xl lg:text-8xl font-black tracking-tighter mb-6 leading-tight">
                         ARQ<span className="text-gradient">type</span>

@@ -37,7 +37,7 @@ const Navbar = () => {
 
     return (
         <>
-            <nav className={`fixed w-full z-50 transition-all duration-300 ${scrolled ? 'glass py-4' : 'bg-transparent py-6'}`}>
+            <nav className={`fixed w-full z-50 transition-all duration-300 ${scrolled ? 'bg-arq-glass backdrop-blur-md py-4' : 'bg-transparent py-6'}`}>
                 <div className="container mx-auto px-6 flex justify-between items-center">
                     <Link to="/" className="flex items-center gap-2">
                         <img src="/assets/arqtype_logo.png" alt="ARQtype Logo" className="h-10 w-auto" />
