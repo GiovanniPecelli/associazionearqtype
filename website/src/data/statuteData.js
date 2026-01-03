@@ -27,7 +27,7 @@ export const statuteData = [
   "progetti di ricerca e sperimentazione metodologica;",
   "attività di networking e collaborazione interdisciplinare.",
   "Le attività possono essere gratuite o svolte a fronte di contributi associativi.",
-  "Sono ammessi proventi da attività commercialie prestazioni a pagamento verso enti terzi,svolte in modo occasionale e non prevalente, esclusivamente strumentali agli scopi associativi e reinvestiti nelle attività istituzionali.",
+  "Sono ammessi proventi da attività commerciali e prestazioni a pagamento verso enti terzi, svolte in modo occasionale e non prevalente, esclusivamente strumentali agli scopi associativi e reinvestiti nelle attività istituzionali.",
   "Art. 5-bis– Tutela dei dati personali e sicurezza digitale",
   "L’Associazione riconosce la protezione dei dati personali e la sicurezza digitale come elementi essenziali della propria attività, in particolare nei contesti educativi e formativi e nell’utilizzo di strumenti tecnologici e digitali.",
   "L’Associazione si impegna a trattare i dati personali di soci, aderenti, partecipanti alle attività, collaboratori e terzi nel rispetto della normativa vigente in materia di protezione dei dati personali, con particolare riferimento al Regolamento (UE) 2016/679 (GDPR).",

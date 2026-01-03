@@ -1,0 +1,1617 @@
+# MANUALE OPERATIVO LEGALE
+## GESTIONE SEPARAZIONE TRA ASSOCIAZIONE ARQTYPE E ARQTYPE S.R.L.
+
+**Documento redatto secondo normativa italiana vigente al 3 gennaio 2026**
+
+---
+
+## INDICE
+
+1. [Quadro Normativo di Riferimento](#1-quadro-normativo)
+2. [Principi Giuridici Fondamentali](#2-principi-giuridici)
+3. [Best Practices Operative](#3-best-practices)
+4. [Gestione Siti Web e Comunicazione Digitale](#4-siti-web)
+5. [Relazioni Esterne e Comunicazione](#5-relazioni-esterne)
+6. [Checklist di Conformità](#6-checklist)
+7. [Prompt per Sviluppatore Web](#7-prompt-sviluppatore)
+
+---
+
+## 1. QUADRO NORMATIVO DI RIFERIMENTO {#1-quadro-normativo}
+
+### 1.1 Normativa Associazioni
+
+**Codice Civile:**
+- **Artt. 36-38 c.c.** - Disciplina associazioni non riconosciute
+  - Art. 36: "Nell'associazione non riconosciuta l'ordinamento interno e l'amministrazione sono regolati dagli accordi degli associati"
+  - Art. 38: "Per le obbligazioni assunte dalle persone che rappresentano l'associazione, i terzi possono far valere i loro diritti sul fondo comune"
+
+**D.Lgs. 117/2017 (Codice del Terzo Settore):**
+- **Art. 4** - Definizione di enti del Terzo Settore
+  - Comma 1: "Sono enti del Terzo settore le organizzazioni di volontariato, le associazioni di promozione sociale [...] che esercitano in via esclusiva o principale una o più attività di interesse generale"
+- **Art. 5** - Attività di interesse generale (finalità non lucrative)
+- **Art. 6** - Assenza scopo di lucro
+  - "È vietata la distribuzione, anche indiretta, di utili ed avanzi di gestione"
+- **Art. 79** - Attività diverse (commerciali accessorie)
+  - Limite: attività commerciali secondarie max 30% delle entrate complessive o 130.000€/anno
+
+**Art. 148 TUIR (Testo Unico Imposte sui Redditi):**
+- Esenzione IRES per enti non commerciali che rispettano requisiti
+
+### 1.2 Normativa Società
+
+**D.L. 179/2012 (convertito in L. 221/2012) - Start-up e PMI innovative:**
+- **Art. 4, comma 1** - Requisiti SRL Innovativa:
+  - Spese R&S ≥ 15% del maggiore tra costo e valore della produzione, O
+  - 1/3 forza lavoro con dottorato/laurea magistrale in settori innovativi, O
+  - Titolarità brevetto/software registrato
+
+**Codice Civile - Società:**
+- **Art. 2462 c.c.** - Atto costitutivo SRL
+- **Artt. 2475-2476 c.c.** - Amministrazione e conflitto di interessi
+
+### 1.3 Normativa Fiscale Critica
+
+**DPR 600/1973:**
+- **Art. 37** - Disposizioni anti-elusione
+  - Comma 3: "Sono inopponibili all'amministrazione finanziaria [...] gli atti privi di valide ragioni economiche diretti ad aggirare obblighi o divieti"
+
+**Agenzia delle Entrate - Circolare 3/E/2018:**
+- Chiarimenti su separazione soggetti non profit/profit
+- Principio di effettività: conta la sostanza, non la forma
+
+### 1.4 Privacy (GDPR)
+
+**Reg. UE 2016/679:**
+- **Art. 4** - Definizione Titolare del trattamento
+  - Ogni entità è titolare autonomo
+- **Art. 26** - Contitolari del trattamento
+  - Solo se trattano dati congiuntamente (da EVITARE nel vostro caso)
+
+---
+
+## 2. PRINCIPI GIURIDICI FONDAMENTALI {#2-principi-giuridici}
+
+### 2.1 Principio di Autonomia Soggettiva
+
+**Base normativa:** Art. 36 c.c. + Art. 2463 c.c.
+
+**Significato operativo:**
+- Associazione e SRL sono **due soggetti giuridici distinti**
+- Patrimonio separato (art. 2740 c.c. - responsabilità patrimoniale)
+- Obbligazioni separate
+- Rappresentanza legale separata
+
+**Conseguenze pratiche:**
+- ✅ Mai firmare contratti a nome di entrambe
+- ✅ Mai confondere patrimoni
+- ✅ Mai utilizzare fondi di una per l'altra
+
+### 2.2 Principio di Effettività (Sostanza su Forma)
+
+**Base normativa:** Art. 37 DPR 600/73 + Giurisprudenza consolidata Cassazione
+
+**Test di effettività dell'Agenzia delle Entrate:**
+
+1. **Autonomia decisionale:** Organi e delibere separate?
+2. **Autonomia operativa:** Attività effettivamente diverse?
+3. **Autonomia patrimoniale:** Nessun flusso economico tra entità?
+4. **Autonomia finalistica:** Scopi realmente distinti?
+
+**Se anche UNO è negativo → Rischio riqualificazione fiscale**
+
+### 2.3 Principio del Divieto di Distribuzione Utili
+
+**Base normativa:** Art. 6 D.Lgs. 117/2017
+
+**Per l'Associazione significa:**
+- ❌ Vietato distribuire utili ai soci
+- ❌ Vietato remunerare soci per attività (salvo rimborsi documentati)
+- ❌ Vietato favorire economicamente la SRL
+
+**Violazione = Perdita qualifica no-profit + Sanzioni tributarie**
+
+### 2.4 Principio di Trasparenza
+
+**Base normativa:** Art. 48 D.Lgs. 117/2017
+
+**Obblighi:**
+- Pubblicazione bilanci (se iscritti RUNTS)
+- Dichiarazioni annuali
+- Tracciabilità decisioni e transazioni
+
+---
+
+## 3. BEST PRACTICES OPERATIVE {#3-best-practices}
+
+### 3.1 Separazione Amministrativa
+
+#### A) CONTI CORRENTI
+
+**Obbligo normativo:** Art. 36 c.c. + Art. 2740 c.c.
+
+**REGOLA ASSOLUTA:**
+- ✅ Due conti correnti SEPARATI presso banche diverse (consigliato)
+- ❌ MAI bonifici tra i due conti
+- ❌ MAI pagamenti incrociati
+
+**Esempi corretti:**
+```
+CASO 1: Acquisto materiale evento associazione
+✅ Paga: Associazione Arqtype con proprio IBAN
+❌ NON può pagare: Arqtype SRL
+
+CASO 2: Abbonamento software SRL
+✅ Paga: Arqtype SRL con proprio IBAN
+❌ NON può pagare: Associazione
+```
+
+**Eccezione ammessa:**
+- Socio anticipa spese personali → associazione rimborsa socio → OK
+- Ma: mai tramite SRL
+
+#### B) FATTURAZIONE E DOCUMENTI FISCALI
+
+**Per ASSOCIAZIONE:**
+```
+Intestazione fatture/ricevute:
+ASSOCIAZIONE ARQTYPE
+Codice Fiscale: XXXXXXXX
+[Indirizzo sede legale]
+```
+
+**Per SRL:**
+```
+Intestazione fatture:
+ARQTYPE S.R.L.
+Partita IVA: XXXXXXXXXXX
+Codice Fiscale: XXXXXXXXXXX
+[Indirizzo sede legale]
+Capitale Sociale: € XXX
+```
+
+**VIETATO:**
+- Fatture intestate a una entità per conto dell'altra
+- Note di credito incrociate
+
+#### C) CONTRATTI E IMPEGNI LEGALI
+
+**REGOLA:** Ogni entità firma SOLO per sé stessa
+
+**Firma corretta ASSOCIAZIONE:**
+```
+Luogo, data
+Per Associazione Arqtype
+Il Presidente/Legale Rappresentante
+[Nome Cognome]
+[Firma]
+```
+
+**Firma corretta SRL:**
+```
+Luogo, data
+Per Arqtype S.r.l.
+L'Amministratore Unico
+[Nome Cognome]
+[Firma]
+```
+
+**❌ MAI:**
+```
+"Mario Rossi, in qualità di Presidente di Associazione Arqtype 
+e Amministratore di Arqtype SRL"
+```
+
+### 3.2 Separazione Comunicativa
+
+#### A) INDIRIZZI EMAIL
+
+**OBBLIGATORIO:** Domini email distinti
+
+**Struttura consigliata:**
+
+**ASSOCIAZIONE:**
+```
+- info@arqtype-aps.it (o .org)
+- presidente@arqtype-aps.it
+- eventi@arqtype-aps.it
+```
+
+**SRL:**
+```
+- info@arqtype.com (o .it)
+- admin@arqtype.com
+- progetti@arqtype.com
+```
+
+**Regola operativa:**
+- ✅ Se rispondi per associazione → usa email associazione
+- ✅ Se rispondi per SRL → usa email SRL
+- ❌ MAI rispondere con email associazione per questioni commerciali
+
+**Esempio CORRETTO:**
+```
+Oggetto: Richiesta collaborazione educativa
+
+Da: mario.rossi@arqtype-aps.it
+A: scuola@example.com
+
+Gentile Prof. Bianchi,
+
+in qualità di Presidente dell'Associazione Arqtype, 
+sono lieto di confermare la nostra disponibilità...
+
+Cordiali saluti,
+Mario Rossi
+Presidente Associazione Arqtype
+```
+
+**Esempio SBAGLIATO:**
+```
+Da: mario.rossi@arqtype.com
+A: cliente@example.com
+
+Salve, possiamo offrirvi sia attività formative 
+attraverso l'associazione che servizi di consulenza...
+❌ CONFONDE LE DUE ENTITÀ
+```
+
+#### B) SOCIAL MEDIA
+
+**OBBLIGATORIO:** Account separati
+
+**ASSOCIAZIONE:**
+```
+Instagram: @arqtype.associazione o @arqtype_lab
+LinkedIn: Associazione Arqtype
+Facebook: Associazione Arqtype - Cultura e Innovazione
+```
+
+**SRL:**
+```
+Instagram: @arqtype.studio o @arqtype
+LinkedIn: Arqtype S.r.l.
+Facebook: Arqtype - Design & Innovation
+```
+
+**Cosa pubblicare:**
+
+**ASSOCIAZIONE:**
+- ✅ Eventi educativi
+- ✅ Workshop gratuiti
+- ✅ Ricerche e studi
+- ✅ Collaborazioni con università/scuole
+- ❌ Case study commerciali
+- ❌ Offerte servizi
+- ❌ Presentazioni portfolio clienti
+
+**SRL:**
+- ✅ Progetti commerciali
+- ✅ Case study clienti
+- ✅ Servizi offerti
+- ✅ News aziendali
+- ❌ Eventi gratuiti associazione
+- ❌ Collaborazioni educative (salvo sponsorizzazione esplicita)
+
+**Cross-posting VIETATO:**
+- ❌ Condividere post SRL su profilo associazione
+- ❌ Taggare associazione in post commerciali SRL
+- ❌ Invitare follower associazione a seguire SRL
+
+**Eccezione ammessa:**
+```
+Post SRL (raro, max 1-2 volte/anno):
+"Alcuni membri del team sono anche attivi 
+nell'Associazione Arqtype, realtà indipendente 
+che promuove cultura dell'innovazione nelle scuole"
+[NO link diretto, NO call to action]
+```
+
+#### C) MATERIALI CARTACEI
+
+**BIGLIETTI DA VISITA:**
+
+**Versione ASSOCIAZIONE:**
+```
+┌────────────────────────────┐
+│ ASSOCIAZIONE ARQTYPE       │
+│                            │
+│ Mario Rossi                │
+│ Presidente                 │
+│                            │
+│ info@arqtype-aps.it        │
+│ +39 333 1234567            │
+│                            │
+│ [Logo] ARQTYPE             │
+│ Cultura e Innovazione      │
+└────────────────────────────┘
+```
+
+**Versione SRL:**
+```
+┌────────────────────────────┐
+│ ARQTYPE S.R.L.             │
+│                            │
+│ Mario Rossi                │
+│ CEO                        │
+│                            │
+│ info@arqtype.com           │
+│ +39 334 7654321            │
+│                            │
+│ [Logo] ARQTYPE             │
+│ Design & Innovation        │
+└────────────────────────────┘
+```
+
+**IMPORTANTE:** Portare biglietti diversi a seconda del contesto
+
+### 3.3 Gestione Situazioni Ambigue
+
+#### SCENARIO A: Evento Associazione + Richiesta Servizi
+
+**SITUAZIONE:**
+Durante workshop gratuito dell'associazione, un partecipante chiede: 
+*"Fate anche consulenze a pagamento?"*
+
+**RISPOSTA CORRETTA (a voce):**
+```
+"L'associazione Arqtype svolge solo attività educative no-profit. 
+Alcuni di noi lavorano anche professionalmente in questo settore 
+tramite altre realtà. Se vuoi, ti lascio il mio contatto personale 
+e ne parliamo separatamente."
+```
+
+**RISPOSTA SBAGLIATA:**
+```
+❌ "Sì, abbiamo anche la SRL che offre consulenze"
+❌ "Ti mando il link del nostro sito commerciale"
+❌ "Contatta info@arqtype.com"
+```
+
+**FOLLOWUP CORRETTO (email personale o SRL):**
+```
+Da: mario.rossi@arqtype.com (NON email associazione)
+A: potenziale.cliente@example.com
+
+Oggetto: Seguito conversazione - Servizi professionali
+
+Gentile [Nome],
+
+a seguito della nostra conversazione durante l'evento 
+dell'Associazione Arqtype, ti scrivo per quanto riguarda 
+i servizi professionali.
+
+Io e il mio team operiamo commercialmente attraverso 
+Arqtype S.r.l., realtà distinta dall'associazione...
+
+[prosegue con offerta commerciale]
+```
+
+#### SCENARIO B: Cliente Chiede Fattura Associazione
+
+**SITUAZIONE:**
+Cliente vuole fattura per servizio, ma chiede intestazione associazione
+
+**RISPOSTA:**
+```
+"Ci dispiace, ma l'Associazione Arqtype svolge esclusivamente 
+attività no-profit e non può emettere fatture per servizi commerciali. 
+
+La fattura sarà emessa da Arqtype S.r.l., società che opera 
+professionalmente in questo settore.
+
+Dati fatturazione:
+ARQTYPE S.R.L.
+P.IVA: XXXXXXXXXXX
+[...]"
+```
+
+#### SCENARIO C: Scuola Chiede sia Formazione che Servizio a Pagamento
+
+**SITUAZIONE:**
+Scuola vuole workshop gratuito + sviluppo progetto a pagamento
+
+**GESTIONE CORRETTA:**
+
+**1. Fase educativa → Associazione**
+```
+Convenzione/Accordo:
+ASSOCIAZIONE ARQTYPE
+Oggetto: Workshop gratuito "Innovazione e Design"
+Corrispettivo: € 0,00 (attività no-profit)
+Eventuali rimborsi: Solo spese vive documentate
+```
+
+**2. Fase commerciale → SRL (contratto separato, dopo almeno 30 giorni)**
+```
+Contratto di consulenza:
+ARQTYPE S.R.L.
+Oggetto: Sviluppo progetto XYZ
+Corrispettivo: € X.XXX + IVA
+```
+
+**VIETATO:**
+- Unico contratto misto
+- Pagamento associazione + "servizio extra" SRL
+- Sconto SRL "perché abbiamo fatto workshop gratuito"
+
+---
+
+## 4. GESTIONE SITI WEB E COMUNICAZIONE DIGITALE {#4-siti-web}
+
+### 4.1 Architettura Domini
+
+**Base normativa:** Art. 37 DPR 600/73 (principio sostanza su forma)
+
+**CONFIGURAZIONE OBBLIGATORIA:**
+
+```
+SITO ASSOCIAZIONE:
+Dominio: arqtype-aps.it (o .org / .eu)
+Titolare dominio: Associazione Arqtype
+Server: Possibilmente provider diverso da SRL
+
+SITO SRL:
+Dominio: arqtype.com (o .it principale)
+Titolare dominio: Arqtype S.r.l.
+Server: Autonomo
+```
+
+**VIETATO:**
+- ❌ Sottodomini incrociati (es: aps.arqtype.com)
+- ❌ Redirect automatici tra siti
+- ❌ Stesso CMS/backend condiviso
+- ❌ Stesso account hosting
+
+### 4.2 Contenuti Sito ASSOCIAZIONE
+
+#### HOMEPAGE - Elementi OBBLIGATORI
+
+```html
+<!-- HEADER -->
+<header>
+  <h1>ASSOCIAZIONE ARQTYPE</h1>
+  <p>Promozione culturale dell'innovazione</p>
+</header>
+
+<!-- DISCLAIMER LEGALE (obbligatorio in footer) -->
+<footer>
+  <p>ASSOCIAZIONE ARQTYPE - Associazione non profit</p>
+  <p>Codice Fiscale: XXXXXXXX</p>
+  <p>Sede: [Indirizzo]</p>
+  <p>Email: info@arqtype-aps.it</p>
+  
+  <p><strong>Informativa:</strong> 
+  Questa è un'associazione senza scopo di lucro ai sensi 
+  degli artt. 36-38 Codice Civile. L'associazione NON svolge 
+  attività commerciale e non ha rapporti economici con 
+  soggetti profit.</p>
+</footer>
+```
+
+#### PAGINE AMMESSE
+
+**✅ CHI SIAMO**
+```
+Contenuto ammesso:
+- Mission culturale/educativa
+- Valori dell'associazione
+- Storia (senza riferimenti a SRL)
+- Team (con ruoli associativi)
+
+ESEMPIO TESTO:
+"Associazione Arqtype nasce nel [anno] con l'obiettivo 
+di promuovere la cultura dell'innovazione attraverso 
+attività educative, ricerca applicata e networking 
+tra professionisti, studenti e istituzioni educative."
+
+❌ VIETATO scrivere:
+"Siamo anche operativi commercialmente attraverso..."
+"Alcuni membri hanno fondato anche una società..."
+```
+
+**✅ ATTIVITÀ**
+```
+- Workshop e corsi gratuiti
+- Collaborazioni con scuole/università
+- Eventi di networking
+- Ricerche e pubblicazioni
+
+❌ VIETATO:
+- "Offriamo anche servizi di consulenza..."
+- Portfolio progetti commerciali
+- Prezzi/Preventivi
+```
+
+**✅ PROGETTI**
+```
+Solo progetti educativi/culturali:
+- Titolo progetto
+- Obiettivo formativo
+- Impatto sociale
+- Partner educativi
+
+❌ VIETATO:
+- Progetti per clienti paganti
+- Case study commerciali
+- ROI o risultati business
+```
+
+**✅ EVENTI**
+```
+Calendario eventi gratuiti:
+- Data e luogo
+- Tema
+- Modalità partecipazione (sempre gratuita)
+
+Form iscrizione: OK
+Pagamenti: ❌ NO (nemmeno rimborsi anticipati)
+```
+
+**✅ CONTATTI**
+```
+Form contatto: OK solo per:
+- Richieste collaborazioni educative
+- Partecipazione eventi
+- Informazioni associazione
+
+❌ VIETATO:
+- "Richiedi preventivo"
+- "Contattaci per servizi"
+- Qualsiasi riferimento commerciale
+```
+
+#### PAGINE VIETATE
+
+❌ **SERVIZI**
+❌ **PORTFOLIO COMMERCIALE**
+❌ **CLIENTI**
+❌ **PREVENTIVI**
+❌ **SHOP/E-COMMERCE**
+❌ **PREZZI/TARIFFARI**
+
+### 4.3 Contenuti Sito SRL
+
+#### HOMEPAGE - Elementi OBBLIGATORI
+
+```html
+<!-- HEADER -->
+<header>
+  <h1>ARQTYPE S.R.L.</h1>
+  <p>Design & Innovation Studio</p>
+</header>
+
+<!-- FOOTER LEGALE -->
+<footer>
+  <p>ARQTYPE S.R.L.</p>
+  <p>Partita IVA: XXXXXXXXXXX</p>
+  <p>Codice Fiscale: XXXXXXXXXXX</p>
+  <p>Capitale Sociale: € XXX</p>
+  <p>Sede Legale: [Indirizzo completo]</p>
+  <p>REA: [Numero] | PEC: arqtype@pec.it</p>
+  
+  <p><small>Società soggetta a direzione e coordinamento 
+  ai sensi dell'art. 2497-bis c.c.: nessuno</small></p>
+</footer>
+```
+
+#### PAGINE AMMESSE
+
+**✅ SERVIZI**
+```
+Descrizione completa servizi commerciali:
+- Tipologie servizi
+- Metodologie
+- Processi
+- Pricing (se applicabile)
+```
+
+**✅ PORTFOLIO**
+```
+Case study progetti commerciali:
+- Cliente (se autorizzato)
+- Challenge
+- Soluzione
+- Risultati
+```
+
+**✅ CHI SIAMO**
+```
+ESEMPIO AMMESSO:
+"Arqtype S.r.l. è uno studio di design e innovazione 
+fondato nel [anno] da [nomi]. Il nostro team condivide 
+una visione dell'innovazione maturata attraverso anni 
+di ricerca e sperimentazione."
+
+RIFERIMENTO ASSOCIAZIONE (se proprio necessario, max 1 volta):
+"Alcuni membri del team sono coinvolti anche in 
+Associazione Arqtype, realtà culturale indipendente 
+che promuove l'innovazione in ambito educativo."
+
+[NO link cliccabile, NO inviti a visitare]
+```
+
+**✅ CONTATTI**
+```
+Form: "Richiedi preventivo / consulenza"
+CTA commerciali: ✅ OK
+```
+
+### 4.4 Link e Navigazione tra Siti
+
+**REGOLA ASSOLUTA:**
+
+```
+SITO ASSOCIAZIONE → SITO SRL: ❌ VIETATO
+SITO SRL → SITO ASSOCIAZIONE: ❌ VIETATO
+
+Eccezione: Footer disclaimer testuale (NO link cliccabile)
+```
+
+**VIETATO:**
+```html
+<!-- ❌ Nel sito associazione -->
+<a href="https://arqtype.com">
+  Scopri i nostri servizi professionali
+</a>
+
+<!-- ❌ Nel sito SRL -->
+<a href="https://arqtype-aps.it">
+  Visita anche la nostra associazione
+</a>
+
+<!-- ❌ Nel sito associazione -->
+<button onclick="window.location='https://arqtype.com/preventivo'">
+  Richiedi consulenza
+</button>
+```
+
+**AMMESSO (solo SRL, testuale, NO link):**
+```html
+<!-- ✅ Footer sito SRL (solo testo, no hyperlink) -->
+<footer>
+  <p><small>
+    Nota: Esiste un'entità giuridicamente separata 
+    denominata "Associazione Arqtype" che svolge 
+    attività culturali no-profit. Arqtype S.r.l. 
+    non ha rapporti economici o organizzativi con tale entità.
+  </small></p>
+</footer>
+```
+
+### 4.5 SEO e Meta Tags
+
+**ASSOCIAZIONE:**
+```html
+<title>Associazione Arqtype - Cultura e Innovazione</title>
+<meta name="description" content="Associazione no-profit 
+che promuove l'innovazione attraverso attività educative, 
+workshop gratuiti e ricerca applicata.">
+<meta name="keywords" content="associazione, no-profit, 
+innovazione, educazione, workshop gratuiti">
+```
+
+**SRL:**
+```html
+<title>Arqtype S.r.l. - Design & Innovation Studio</title>
+<meta name="description" content="Studio professionale 
+specializzato in design, innovazione e consulenza strategica. 
+Servizi per aziende e istituzioni.">
+<meta name="keywords" content="design studio, consulenza, 
+innovazione, servizi professionali">
+```
+
+**VIETATO condividere:**
+- Google Analytics ID
+- Facebook Pixel
+- Tag Manager comuni
+- Database email
+
+### 4.6 Cookie e Privacy
+
+**OBBLIGATORIO:** Due Privacy Policy separate
+
+**ASSOCIAZIONE - Privacy Policy:**
+```
+Titolare del trattamento:
+ASSOCIAZIONE ARQTYPE
+Codice Fiscale: XXXXXXXX
+Email: privacy@arqtype-aps.it
+
+Finalità trattamento:
+- Gestione iscrizioni eventi
+- Newsletter informativa attività associative
+- Amministrazione soci
+
+Base giuridica: Art. 6.1.a GDPR (consenso)
+```
+
+**SRL - Privacy Policy:**
+```
+Titolare del trattamento:
+ARQTYPE S.R.L.
+Partita IVA: XXXXXXXXXXX
+Email: privacy@arqtype.com
+
+Finalità trattamento:
+- Gestione rapporti commerciali
+- Marketing servizi
+- Fatturazione
+
+Base giuridica: Art. 6.1.b GDPR (esecuzione contratto)
+```
+
+**VIETATO:**
+- Condividere database contatti
+- Stesso DPO (se applicabile)
+- Invio newsletter incrociate
+
+---
+
+## 5. RELAZIONI ESTERNE E COMUNICAZIONE {#5-relazioni-esterne}
+
+### 5.1 Presentazioni Pubbliche
+
+#### A) EVENTI/CONFERENZE
+
+**Se partecipi come ASSOCIAZIONE:**
+
+**Slide titolo:**
+```
+┌─────────────────────────────────────┐
+│  [LOGO ASSOCIAZIONE]                │
+│                                     │
+│  Titolo presentazione               │
+│                                     │
+│  Mario Rossi                        │
+│  Presidente Associazione Arqtype    │
+│                                     │
+│  evento@example.com                 │
+│  [Data]                             │
+└─────────────────────────────────────┘
+```
+
+**Contenuti slide:**
+- ✅ Ricerche educative
+- ✅ Metodologie didattiche
+- ✅ Impatto sociale progetti
+- ❌ Case study commerciali
+- ❌ Offerte servizi
+
+**Intervento orale:**
+```
+"Buongiorno, sono Mario Rossi e rappresento 
+l'Associazione Arqtype, realtà no-profit che..."
+
+❌ VIETATO:
+"...e siamo anche operativi come società per..."
+```
+
+**Se partecipi come SRL:**
+
+**Slide titolo:**
+```
+┌─────────────────────────────────────┐
+│  [LOGO SRL]                         │
+│                                     │
+│  Titolo presentazione               │
+│                                     │
+│  Mario Rossi                        │
+│  CEO Arqtype S.r.l.                 │
+│                                     │
+│  info@arqtype.com                   │
+│  [Data]                             │
+└─────────────────────────────────────┘
+```
+
+**Contenuti:** Portfolio commerciale, case study, servizi OK
+
+#### B) FIRMA EMAIL PROFESSIONALE
+
+**ASSOCIAZIONE:**
+```
+──────────────────────────────
+Mario Rossi
+Presidente | Associazione Arqtype
+
+T: +39 333 1234567
+E: mario.rossi@arqtype-aps.it
+W: www.arqtype-aps.it
+
+[Logo Associazione]
+──────────────────────────────
+```
+
+**SRL:**
+```
+──────────────────────────────
+Mario Rossi
+CEO | Arqtype S.r.l.
+
+T: +39 334 7654321
+E: mario.rossi@arqtype.com
+W: www.arqtype.com
+
+[Logo SRL]
+──────────────────────────────
+```
+
+**VIETATO:**
+```
+❌ Firma mista con entrambi i ruoli
+❌ Link a entrambi i siti
+❌ "Seguici su" con social di entrambe
+```
+
+### 5.2 Contratti e Convenzioni
+
+#### CONVENZIONE TIPO - ASSOCIAZIONE (con scuola)
+
+```
+CONVENZIONE DI COLLABORAZIONE
+
+TRA
+
+ISTITUTO SCOLASTICO [Nome]
+C.F. XXXXXXXX
+in persona del Dirigente Scolastico [Nome]
+
+E
+
+ASSOCIAZIONE ARQTYPE
+C.F. XXXXXXXX
+in persona del Presidente [Nome]
+
+PREMESSO CHE
+
+- L'Associazione Arqtype è ente senza scopo di lucro 
+  che persegue finalità di promozione culturale ai sensi 
+  degli artt. 36-38 Codice Civile;
+- L'Istituto intende realizzare attività educative...
+
+SI CONVIENE QUANTO SEGUE
+
+Art. 1 - Oggetto
+L'Associazione si impegna a realizzare n. X workshop 
+gratuiti sul tema [...]
+
+Art. 2 - Durata
+Dal [data] al [data]
+
+Art. 3 - Corrispettivo
+La presente convenzione non prevede corrispettivi economici. 
+L'Istituto potrà rimborsare esclusivamente spese vive 
+documentate per materiali, entro il limite di € XXX.
+
+Art. 4 - Natura giuridica
+La presente convenzione ha natura di collaborazione 
+volontaria gratuita ex art. 2 D.Lgs. 117/2017.
+
+[Firma Presidente Associazione]
+[Firma Dirigente Scolastico]
+```
+
+**VIETATO inserire:**
+```
+❌ "L'Associazione e/o Arqtype S.r.l."
+❌ Qualsiasi riferimento alla SRL
+❌ "Possibilità di servizi a pagamento successivi"
+```
+
+#### CONTRATTO TIPO - SRL (con cliente)
+
+```
+CONTRATTO DI CONSULENZA
+
+TRA
+
+[CLIENTE]
+P.IVA/C.F. XXXXXXXX
+in persona del Legale Rappresentante [Nome]
+
+E
+
+ARQTYPE S.R.L.
+Sede legale: [indirizzo]
+P.IVA XXXXXXXXXXX
+Codice Fiscale XXXXXXXXXXX
+in persona dell'Amministratore Unico [Nome]
+
+PREMESSO CHE
+
+- Arqtype S.r.l. è società che opera professionalmente 
+  nel settore [...]
+- Il Cliente intende avvalersi di servizi professionali...
+
+SI CONVIENE QUANTO SEGUE
+
+Art. 1 - Oggetto
+La Società si impegna a fornire i seguenti servizi:
+[descrizione dettagliata]
+
+Art. 2 - Corrispettivo
+Il Cliente corrisponderà € X.XXX + IVA secondo 
+le seguenti modalità: [...]
+
+Art. 3 - Durata
+Dal [data] al [data]
+
+[Firma Amministratore SRL]
+[Firma Cliente]
+```
+
+### 5.3 Comunicati Stampa
+
+**ASSOCIAZIONE:**
+```
+COMUNICATO STAMPA
+
+Associazione Arqtype lancia workshop gratuiti 
+per studenti universitari
+
+Milano, [data] - L'Associazione Arqtype, ente 
+no-profit impegnato nella promozione della cultura 
+dell'innovazione, annuncia...
+
+[corpo comunicato]
+
+Per informazioni:
+Associazione Arqtype
+Email: stampa@arqtype-aps.it
+Tel: +39 XXX
+
+Note:
+Associazione Arqtype è un'associazione senza scopo 
+di lucro ai sensi degli artt. 36-38 Codice Civile.
+```
+
+**SRL:**
+```
+COMUNICATO STAMPA
+
+Arqtype S.r.l. annuncia partnership con [Cliente]
+
+Milano, [data] - Arqtype S.r.l., studio specializzato 
+in design e innovazione, ha siglato un accordo...
+
+[corpo comunicato]
+
+Per informazioni:
+Arqtype S.r.l.
+Email: press@arqtype.com
+Tel: +39 XXX
+
+Note:
+Arqtype S.r.l. - Partita IVA XXXXXXXXXXX
+```
+
+---
+
+## 6. CHECKLIST DI CONFORMITÀ {#6-checklist}
+
+### 6.1 Checklist Costituzione (FASE 0)
+
+**Prima di iniziare operatività:**
+
+- [ ] **Statuto Associazione** redatto con:
+  - [ ] Finalità esclusivamente culturali/educative
+  - [ ] Divieto attività commerciale
+  - [ ] Assenza scopo di lucro (art. 6 D.Lgs. 117/2017)
+  - [ ] Clausola: "nessun rapporto economico con profit"
+  
+- [ ] **Atto costitutivo SRL** registrato
+
+- [ ] **Delibera interna** firmata da tutti i soci su:
+  - [ ] Separazione entità
+  - [ ] Uso autonomo marchio
+  - [ ] Impegno a non creare rapporti economici
+
+- [ ] **Conti correnti** aperti separatamente
+
+- [ ] **Domini** registrati a nome corretto:
+  - [ ] Associazione: [dominio]
+  - [ ] SRL: [dominio]
+
+### 6.2 Checklist Operativa Mensile
+
+**Ogni mese verificare:**
+
+- [ ] Zero bonifici tra conti associazione/SRL
+- [ ] Email separate utilizzate correttamente
+- [ ] Nessun post social incrociato
+- [ ] Fatture emesse con intestazione corretta
+- [ ] Contratti firmati con ruolo appropriato
+- [ ] Comunicazioni pubbliche separate
+
+### 6.3 Checklist Annuale
+
+**Ogni anno (entro 31 marzo):**
+
+- [ ] **Bilancio Associazione** approvato in assemblea
+- [ ] **Bilancio SRL** approvato e depositato
+- [ ] **Dichiarazione dei redditi** separate
+- [ ] **Verifica utilizzo marchio** conforme
+- [ ] **Audit contabilità** per confermare zero rapporti economici
+- [ ] **Review comunicazione** web/social per conformità
+- [ ] **Aggiornamento privacy policy** se necessario
+
+### 6.4 Red Flags da Monitorare
+
+**SEGNALI DI ALLARME (da correggere immediatamente):**
+
+🚨 **ROSSO CRITICO:**
+- Bonifico da conto associazione a SRL o viceversa
+- Fattura associazione per servizio commerciale
+- Cliente che paga associazione per lavoro SRL
+- Post social che promuove SRL da account associazione
+
+🟡 **GIALLO ATTENZIONE:**
+- Stessa persona firma contratto per entrambe entità
+- Email associazione usata per risposta commerciale
+- Confusione ruoli in presentazione pubblica
+- Link tra siti web
+
+---
+
+## 7. PROMPT PER SVILUPPATORE WEB {#7-prompt-sviluppatore}
+
+### 7.1 Brief Completo per Antigravity Google
+
+```markdown
+# BRIEF SVILUPPO SITI WEB - ARQTYPE
+## Conformità legale separazione Associazione/SRL
+
+### CONTESTO GIURIDICO
+
+Stiamo gestendo due entità giuridiche completamente separate:
+
+1. **ASSOCIAZIONE ARQTYPE** - Ente no-profit (art. 36-38 c.c.)
+2. **ARQTYPE S.R.L.** - Società commerciale
+
+**Base normativa:**
+- Codice Civile artt. 36-38 (associazioni)
+- D.Lgs. 117/2017 (Codice Terzo Settore)
+- DPR 600/73 art. 37 (anti-elusione fiscale)
+
+**Principio fondamentale:**
+Le due entità devono essere TOTALMENTE separate in termini di:
+- Comunicazione
+- Branding web
+- Dati utenti
+- Tracking
+- Flussi di navigazione
+
+**Conseguenze legali violazione:**
+- Contestazioni fiscali Agenzia delle Entrate
+- Sanzioni 120-240% su utili non dichiarati
+- Riqualificazione associazione come soggetto commerciale
+- Perdita agevolazioni fiscali
+
+---
+
+### REQUISITI TECNICI OBBLIGATORI
+
+#### 1. DOMINI E HOSTING
+
+**ASSOCIAZIONE:**
+```
+Dominio primario: arqtype-aps.it (o .org)
+Domini secondari: nessuno
+Hosting: [Provider A] - Account separato
+Titolare dominio: ASSOCIAZIONE ARQTYPE - CF XXXXXXXX
+```
+
+**SRL:**
+```
+Dominio primario: arqtype.com (o .it)
+Domini secondari: nessuno
+Hosting: [Provider B diverso] - Account separato
+Titolare dominio: ARQTYPE S.R.L. - P.IVA XXXXXXXXXXX
+```
+
+**VIETATO ASSOLUTAMENTE:**
+- ❌ Sottodomini incrociati (es: aps.arqtype.com)
+- ❌ Redirect automatici tra domini
+- ❌ DNS condivisi
+- ❌ Stesso pannello di controllo hosting
+
+#### 2. CODICE E TECNOLOGIE
+
+**OBBLIGATORIO:**
+```
+SITO ASSOCIAZIONE:
+- CMS: [specificare] installazione separata
+- Database: MySQL separato
+- Admin panel: credenziali diverse
+- Theme/Template: customizzato per associazione
+- NO plugin commerciali (WooCommerce, ecc.)
+
+SITO SRL:
+- CMS: [specificare] installazione separata
+- Database: MySQL separato  
+- Admin panel: credenziali diverse
+- Theme/Template: customizzato per SRL
+- Plugin commerciali: OK
+```
+
+**VIETATO:**
+- ❌ WordPress Multisite condiviso
+- ❌ Stesso database con tabelle prefissate
+- ❌ Plugin che sincronizzano contenuti tra siti
+
+#### 3. TRACKING E ANALYTICS
+
+**CRITICO PER GDPR E COMPLIANCE:**
+
+```javascript
+// SITO ASSOCIAZIONE
+// Google Analytics 4
+gtag('config', 'G-XXXXXXXXX', {
+  'cookie_domain': 'arqtype-aps.it',
+  'groups': 'associazione'
+});
+
+// NO Facebook Pixel
+// NO Google Ads
+// NO LinkedIn Insight Tag
+```
+
+```javascript
+// SITO SRL
+// Google Analytics 4 (ID DIVERSO)
+gtag('config', 'G-YYYYYYYYY', {
+  'cookie_domain': 'arqtype.com',
+  'groups': 'srl'
+});
+
+// Facebook Pixel: OK
+// Google Ads: OK
+// Altri tracking commerciali: OK
+```
+
+**VIETATO ASSOLUTAMENTE:**
+- ❌ Stesso ID Google Analytics
+- ❌ Stesso Facebook Pixel
+- ❌ Google Tag Manager condiviso
+- ❌ Cookie di tracciamento incrociati
+
+#### 4. LINK E NAVIGAZIONE
+
+**REGOLA ASSOLUTA:**
+
+```html
+<!-- ❌ VIETATO nel sito ASSOCIAZIONE -->
+<a href="https://arqtype.com">Scopri i servizi</a>
+<a href="https://arqtype.com/portfolio">Portfolio</a>
+<button onclick="location.href='https://arqtype.com'">Contattaci</button>
+
+<!-- ❌ VIETATO nel sito SRL -->
+<a href="https://arqtype-aps.it">Associazione</a>
+<iframe src="https://arqtype-aps.it/eventi"></iframe>
+```
+
+**UNICA ECCEZIONE AMMESSA (solo sito SRL):**
+
+```html
+<!-- Footer SRL - Solo testo, NO link cliccabile -->
+<footer>
+  <p class="legal-note">
+    Nota informativa: Esiste un'entità separata denominata 
+    "Associazione Arqtype" che svolge attività culturali no-profit. 
+    Arqtype S.r.l. non ha rapporti economici con tale entità.
+    <!-- NO <a href> qui -->
+  </p>
+</footer>
+```
+
+**Implementazione tecnica:**
+```javascript
+// Script da inserire in entrambi i siti per bloccare link accidentali
+
+document.addEventListener('DOMContentLoaded', function() {
+  // Blocca link verso altro dominio
+  const forbiddenDomains = [
+    'arqtype.com', // se sei su sito associazione
+    'arqtype-aps.it' // se sei su sito SRL
+  ];
+  
+  document.querySelectorAll('a').forEach(link => {
+    const href = link.getAttribute('href');
+    if (href && forbiddenDomains.some(domain => href.includes(domain))) {
+      console.error('ATTENZIONE: Link non conforme rilevato:', href);
+      link.style.border = '3px solid red'; // evidenzia in fase di test
+    }
+  });
+});
+```
+
+#### 5. FORM E ACQUISIZIONE DATI
+
+**SITO ASSOCIAZIONE - Form ammessi:**
+
+```html
+<!-- Form iscrizione evento -->
+<form action="/events/register" method="POST">
+  <input type="text" name="name" placeholder="Nome" required>
+  <input type="email" name="email" placeholder="Email" required>
+  <select name="event" required>
+    <option>Workshop Gratuito 15 Marzo</option>
+  </select>
+  
+  <label>
+    <input type="checkbox" name="privacy" required>
+    Accetto Privacy Policy Associazione Arqtype
+    <a href="/privacy-associazione">Leggi</a>
+  </label>
+  
+  <button type="submit">Iscriviti (Gratuito)</button>
+</form>
+
+<!-- ❌ VIETATO -->
+<input type="text" placeholder="Budget progetto">
+<select name="service">Tipo consulenza</select>
+<button>Richiedi preventivo</button>
+```
+
+**SITO SRL - Form ammessi:**
+
+```html
+<!-- Form contatto commerciale -->
+<form action="/contact" method="POST">
+  <input type="text" name="company" placeholder="Azienda">
+  <input type="email" name="email" placeholder="Email" required>
+  <select name="service">
+    <option>Consulenza Design</option>
+    <option>Sviluppo Prodotto</option>
+  </select>
+  <textarea name="message" placeholder="Descrivi il progetto"></textarea>
+  
+  <label>
+    <input type="checkbox" name="privacy" required>
+    Accetto Privacy Policy Arqtype S.r.l.
+    <a href="/privacy-srl">Leggi</a>
+  </label>
+  
+  <button type="submit">Richiedi Preventivo</button>
+</form>
+```
+
+**IMPORTANTE - Database separati:**
+```sql
+-- Database associazione: db_arqtype_aps
+-- Tabelle: aps_users, aps_events, aps_registrations
+
+-- Database SRL: db_arqtype_srl  
+-- Tabelle: srl_leads, srl_clients, srl_projects
+
+-- ❌ MAI query che uniscono i due database
+```
+
+#### 6. SEO E META TAGS
+
+**SITO ASSOCIAZIONE:**
+
+```html
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <!-- TITOLI E DESCRIZIONI -->
+  <title>Associazione Arqtype - Cultura dell'Innovazione</title>
+  <meta name="description" content="Associazione no-profit che promuove 
+  l'innovazione attraverso workshop gratuiti, ricerca e collaborazioni 
+  con scuole e università.">
+  
+  <!-- KEYWORDS -->
+  <meta name="keywords" content="associazione, no-profit, innovazione, 
+  educazione, workshop gratuiti, ricerca, cultura">
+  
+  <!-- SOCIAL META TAGS -->
+  <meta property="og:title" content="Associazione Arqtype">
+  <meta property="og:description" content="Promuoviamo la cultura 
+  dell'innovazione attraverso attività educative gratuite">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://arqtype-aps.it">
+  <meta property="og:image" content="https://arqtype-aps.it/img/social-aps.jpg">
+  
+  <!-- CANONICAL -->
+  <link rel="canonical" href="https://arqtype-aps.it">
+  
+  <!-- ROBOTS -->
+  <meta name="robots" content="index, follow">
+  
+  <!-- ❌ NON includere -->
+  <!-- meta name="keywords" content="servizi, consulenza, preventivi" -->
+</head>
+```
+
+**SITO SRL:**
+
+```html
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <!-- TITOLI E DESCRIZIONI -->
+  <title>Arqtype S.r.l. - Design & Innovation Studio</title>
+  <meta name="description" content="Studio professionale specializzato 
+  in design, innovazione e consulenza strategica. Portiamo innovazione 
+  concreta nelle aziende.">
+  
+  <!-- KEYWORDS -->
+  <meta name="keywords" content="design studio, consulenza innovazione, 
+  servizi professionali, strategic design, innovation consulting">
+  
+  <!-- SOCIAL META TAGS -->
+  <meta property="og:title" content="Arqtype S.r.l.">
+  <meta property="og:description" content="Design & Innovation Studio">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://arqtype.com">
+  <meta property="og:image" content="https://arqtype.com/img/social-srl.jpg">
+  
+  <!-- CANONICAL -->
+  <link rel="canonical" href="https://arqtype.com">
+  
+  <!-- ROBOTS -->
+  <meta name="robots" content="index, follow">
+  
+  <!-- SCHEMA.ORG - Professional Service -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ProfessionalService",
+    "name": "Arqtype S.r.l.",
+    "description": "Design & Innovation Studio",
+    "url": "https://arqtype.com",
+    "telephone": "+39-XXX-XXXXXXX",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "[Indirizzo]",
+      "addressLocality": "Milano",
+      "addressCountry": "IT"
+    }
+  }
+  </script>
+</head>
+```
+
+**VIETATO:**
+```html
+<!-- ❌ Stesso contenuto duplicato -->
+<!-- ❌ Canonical incrociato -->
+<!-- ❌ Hreflang che rimanda all'altro dominio -->
+```
+
+#### 7. FOOTER LEGALI
+
+**FOOTER SITO ASSOCIAZIONE (obbligatorio per legge):**
+
+```html
+<footer class="legal-footer">
+  <div class="entity-info">
+    <h3>ASSOCIAZIONE ARQTYPE</h3>
+    <p><strong>Associazione senza scopo di lucro</strong></p>
+    <p>Codice Fiscale: XXXXXXXX</p>
+    <p>Sede: [Indirizzo completo]</p>
+    <p>Email: info@arqtype-aps.it</p>
+    <p>Tel: +39 XXX XXXXXXX</p>
+  </div>
+  
+  <div class="legal-disclaimer">
+    <p><strong>Informativa Legale</strong></p>
+    <p>L'Associazione Arqtype è un ente senza scopo di lucro 
+    costituito ai sensi degli articoli 36-38 del Codice Civile 
+    italiano. L'associazione NON svolge attività commerciale e 
+    non ha rapporti economici con soggetti profit.</p>
+    
+    <p>Le attività dell'associazione sono esclusivamente culturali, 
+    educative e di promozione sociale, ai sensi del D.Lgs. 117/2017 
+    (Codice del Terzo Settore).</p>
+  </div>
+  
+  <nav class="footer-nav">
+    <a href="/privacy-policy">Privacy Policy</a>
+    <a href="/cookie-policy">Cookie Policy</a>
+    <a href="/statuto">Statuto</a>
+  </nav>
+  
+  <p class="copyright">© 2024 Associazione Arqtype. 
+  Tutti i diritti riservati.</p>
+</footer>
+```
+
+**FOOTER SITO SRL (obbligatorio per legge):**
+
+```html
+<footer class="legal-footer">
+  <div class="entity-info">
+    <h3>ARQTYPE S.R.L.</h3>
+    <p>Sede Legale: [Indirizzo completo]</p>
+    <p>Partita IVA: XXXXXXXXXXX</p>
+    <p>Codice Fiscale: XXXXXXXXXXX</p>
+    <p>Capitale Sociale: € XXX,XX i.v.</p>
+    <p>REA: MI-XXXXXXX</p>
+    <p>PEC: arqtype@pec.it</p>
+    <p>Email: info@arqtype.com</p>
+    <p>Tel: +39 XXX XXXXXXX</p>
+  </div>
+  
+  <div class="legal-disclaimer">
+    <p><small>Società soggetta a direzione e coordinamento 
+    ai sensi dell'art. 2497-bis c.c.: nessuna</small></p>
+    
+    <p><small><strong>Nota informativa:</strong> Esiste un'entità 
+    giuridicamente separata denominata "Associazione Arqtype" che 
+    svolge attività culturali no-profit. Arqtype S.r.l. non ha 
+    rapporti economici o organizzativi con tale entità.</small></p>
+  </div>
+  
+  <nav class="footer-nav">
+    <a href="/privacy-policy">Privacy Policy</a>
+    <a href="/cookie-policy">Cookie Policy</a>
+    <a href="/termini-servizio">Termini di Servizio</a>
+  </nav>
+  
+  <p class="copyright">© 2024 Arqtype S.r.l. 
+  Tutti i diritti riservati.</p>
+</footer>
+```
+
+---
+
+### DELIVERABLES RICHIESTI
+
+1. **DUE SITI WEB COMPLETAMENTE SEPARATI**
+   - Installazioni separate
+   - Database separati
+   - Admin separati
+   - Tracking separati
+
+2. **DOCUMENTAZIONE TECNICA**
+   - Credenziali accesso (separate)
+   - Mappa sitemap di ciascun sito
+   - Certificato assenza link incrociati
+   - Report Privacy/Cookie compliance
+
+3. **TEST DI CONFORMITÀ**
+   - [ ] Nessun link tra siti
+   - [ ] Analytics separati testati
+   - [ ] Form separati funzionanti
+   - [ ] Footer legali corretti
+   - [ ] Meta tag distinti verificati
+
+4. **FORMAZIONE TEAM**
+   - Come aggiungere contenuti rispettando separazione
+   - Cosa NON fare mai
+   - Come verificare compliance
+
+---
+
+### TIMELINE SUGGERITA
+
+**Settimana 1:**
+- Setup hosting separati
+- Installazione CMS
+
+**Settimana 2:**
+- Implementazione design
+- Configurazione tracking
+
+**Settimana 3:**
+- Contenuti e SEO
+- Test funzionali
+
+**Settimana 4:**
+- Test compliance legale
+- Go live
+
+---
+
+### SUPPORTO POST-LANCIO
+
+**Manutenzione mensile richiesta:**
+- Audit link (verifica nessun link incrociato)
+- Check analytics separazione
+- Backup separati
+- Aggiornamenti sicurezza
+
+**CRITICAL: Alert immediato se:**
+- Rilevi link incrociato inserito per errore
+- Tracking condiviso per errore
+- Form non conformi
+
+---
+
+### CONTATTI PER CHIARIMENTI
+
+**Referente legale progetto:**
+[Nome]
+[Email]
+[Telefono]
+
+**Documentazione normativa completa:**
+Vedi documento "Manuale Operativo Legale - Associazione Arqtype"
+
+---
+
+### ACCETTAZIONE INCARICO
+
+Confermo di aver compreso:
+- [ ] Natura giuridica separata delle due entità
+- [ ] Conseguenze legali di violazioni
+- [ ] Requisiti tecnici obbligatori
+- [ ] Responsabilità in caso di non conformità
+
+Data: _______________
+Firma Sviluppatore: _______________
+```
+
+---
+
+## CONCLUSIONI E RACCOMANDAZIONI FINALI
+
+### Priorità Assolute
+
+1. **STATUTO ASSOCIAZIONE** con clausole conformi (entro 30 giorni)
+2. **SEPARAZIONE CONTI** bancari (immediato)
+3. **SEPARAZIONE DIGITALE** completa (entro 60 giorni)
+4. **FORMAZIONE TEAM** su best practices (entro 45 giorni)
+
+### Monitoraggio Continuo
+
+**Indicatore chiave di successo:**
+> "Se un ispettore fiscale analizza le due entità, 
+> deve concludere che sono completamente indipendenti"
+
+**Test pratico mensile:**
+- Zero transazioni economiche? ✅
+- Zero link web incrociati? ✅
+- Comunicazione separata? ✅
+- Ruoli distinti chiari? ✅
+
+### Conseguenze Non Conformità
+
+**Scenario peggiore (da evitare):**
+1. Agenzia Entrate contesta "associazione schermo"
+2. Riqualificazione attività associazione come commerciale
+3. Recupero imposte + sanzioni 120-240%
+4. Possibile reato art. 2 D.Lgs. 74/2000 (dichiarazione infedele)
+
+**Costi stimati violazione:** €20.000 - €100.000+
+
+**Costo conformità preventiva:** €2.000 - €5.000
+
+---
+
+### Riferimenti Normativi Completi
+
+- **Codice Civile:** artt. 36-38, 2463, 2475-2476, 2497-bis, 2740
+- **D.Lgs. 117/2017:** artt. 4, 5, 6, 48, 79
+- **DPR 600/1973:** art. 37
+- **TUIR (DPR 917/86):** art. 148
+- **D.L. 179/2012:** art. 4
+- **Reg. UE 2016/679 (GDPR):** artt. 4, 26
+- **Circolare Agenzia Entrate 3/E/2018**
+
+---
+
+**Documento redatto il:** 3 Gennaio 2026  
+**Valido fino a:** Modifiche normative sostanziali  
+**Versione:** 1.0
+
+**DISCLAIMER:** Questo documento ha finalità informativa e operativa. 
+Per consulenza specifica sul vostro caso, rivolgersi a commercialista 
+e avvocato abilitati.
+
+---
+
+## ALLEGATI
+
+- Allegato A: Template Statuto Associazione
+- Allegato B: Template Delibera Separazione Entità
+- Allegato C: Clausole Contrattuali Tipo
+- Allegato D: Checklist Audit Annuale

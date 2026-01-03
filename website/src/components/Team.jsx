@@ -1,10 +1,10 @@
 import React from 'react';
 
 const teamMembers = [
-    { name: 'Francesco', role: 'Presidente / Founder', img: '/assets/founder1.jpg' },
-    { name: 'Emilio', role: 'Co-Founder', img: '/assets/co-founder2.jpg' },
-    { name: 'Giovanni', role: 'Developer', img: '/assets/dev2.jpg' },
-    { name: 'Michele', role: 'Sales & Marketing', img: '/assets/sales2.jpg' },
+    { name: 'Francesco', role: 'Presidente', img: '/assets/founder1.jpg' },
+    { name: 'Emilio', role: 'Socio Fondatore', img: '/assets/co-founder2.jpg' },
+    { name: 'Giovanni', role: 'Socio Fondatore', img: '/assets/dev2.jpg' },
+    { name: 'Michele', role: 'Socio Fondatore', img: '/assets/sales2.jpg' },
 ];
 
 const Team = () => {
@@ -15,10 +15,10 @@ const Team = () => {
                     <h2 className="text-4xl md:text-5xl font-bold mt-2 mb-6">Soci Fondatori</h2>
                 </div>
 
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-12 max-w-4xl mx-auto">
+                <div className="grid grid-cols-1 md:grid-cols-4 gap-8 max-w-6xl mx-auto">
                     {teamMembers.map((member, index) => (
                         <div key={index} className="text-center group flex flex-col items-center">
-                            <div className="relative w-64 h-80 overflow-hidden rounded-2xl mb-6 border border-white/10 group-hover:border-arq-accent/50 transition-all">
+                            <div className="relative w-full aspect-[3/4] overflow-hidden rounded-2xl mb-6 border border-white/10 group-hover:border-arq-accent/50 transition-all">
                                 <img
                                     src={member.img}
                                     alt={member.role}
@@ -29,8 +29,8 @@ const Team = () => {
                                     <span className="text-arq-accent font-bold">{member.role}</span>
                                 </div>
                             </div>
-                            <h3 className="text-2xl font-bold">{member.name}</h3>
-                            <p className="text-gray-400 font-light">{member.role}</p>
+                            <h3 className="text-xl font-bold">{member.name}</h3>
+                            <p className="text-gray-400 font-light text-sm">{member.role}</p>
                         </div>
                     ))}
                 </div>

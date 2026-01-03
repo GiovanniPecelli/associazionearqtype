@@ -1,21 +1,8 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
-import ConfirmationModal from './ConfirmationModal';
 
 const Hero = () => {
-    const [showModal, setShowModal] = useState(false);
-
-    const handleExternalLink = (e) => {
-        e.preventDefault();
-        setShowModal(true);
-    };
-
-    const proceedToExternal = () => {
-        window.open('https://arqtype.netlify.app/', '_blank', 'noopener,noreferrer');
-        setShowModal(false);
-    };
-
     return (
         <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20">
             {/* Background Effects */}
@@ -31,7 +18,7 @@ const Hero = () => {
                     transition={{ duration: 0.8 }}
                 >
                     <span className="inline-block py-1 px-3 rounded-full bg-arq-glass border border-arq-glassBorder text-xs tracking-widest uppercase mb-6 text-arq-accent">
-                        Associazione ARQtype
+                        Associazione Culturale ARQtype
                     </span>
                     <h1 className="text-5xl md:text-7xl lg:text-8xl font-black tracking-tighter mb-6 leading-tight">
                         ARQ<span className="text-gradient">type</span>
@@ -44,18 +31,12 @@ const Hero = () => {
                         <Link to="/statuto" className="px-8 py-4 bg-white text-black font-bold rounded-lg hover:bg-gray-200 transition-colors">
                             Leggi lo Statuto
                         </Link>
-                        <button onClick={handleExternalLink} className="px-8 py-4 glass text-white font-bold rounded-lg hover:bg-white/10 transition-colors flex items-center justify-center gap-2 cursor-pointer">
-                            Vai alla App ARQtype <span className="text-xl">↗</span>
+                        <button onClick={() => document.getElementById('attivita').scrollIntoView({ behavior: 'smooth' })} className="px-8 py-4 glass text-white font-bold rounded-lg hover:bg-white/10 transition-colors flex items-center justify-center gap-2 cursor-pointer">
+                            Scopri le Attività
                         </button>
                     </div>
                 </motion.div>
             </div>
-
-            <ConfirmationModal
-                isOpen={showModal}
-                onClose={() => setShowModal(false)}
-                onConfirm={proceedToExternal}
-            />
         </section>
     );
 };
