@@ -8,8 +8,8 @@ const Footer = () => {
 
                 <div className="flex flex-col md:flex-row justify-center gap-12 mb-12 text-sm text-gray-400">
                     <div>
-                        <h4 className="text-white font-semibold mb-2">Sede Legale</h4>
-                        <p>Terni (TR)</p>
+                        <h4 className="text-white font-semibold mb-2">Sede</h4>
+                        <p>Terni (Umbria)</p>
                     </div>
                     <div>
                         <h4 className="text-white font-semibold mb-2">Contatti</h4>

@@ -21,8 +21,8 @@ const Contact = () => {
                                     <MapPin size={20} />
                                 </div>
                                 <div>
-                                    <h4 className="font-bold text-white">Sede</h4>
-                                    <p>Terni, Italia</p>
+                                    <h4 className="font-bold text-white">Sede Operativa</h4>
+                                    <p>Terni (Umbria)</p>
                                 </div>
                             </div>
                         </div>
