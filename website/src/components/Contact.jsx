@@ -24,7 +24,7 @@ const Contact = () => {
                                 <MapPin size={24} />
                             </div>
                             <div>
-                                <h3 className="text-2xl font-bold">Sede Operativa</h3>
+                                <h3 className="text-2xl font-bold">Sede Legale</h3>
                                 <p className="text-gray-400">Vieni a trovarci</p>
                             </div>
                         </div>
