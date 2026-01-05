@@ -1,6 +1,14 @@
+import React from 'react';
+import SEO from './SEO';
+
 const PrivacyPolicy = () => {
     return (
         <div className="bg-black min-h-screen text-white font-sans selection:bg-arq-accent selection:text-white">
+            <SEO
+                title="Privacy Policy"
+                description="Informativa sul trattamento dei dati personali dell'Associazione ARQtype (GDPR)."
+                canonical="/privacy-policy"
+            />
             <div className="container mx-auto px-6 pt-36 pb-20 max-w-4xl">
                 <h1 className="text-4xl md:text-5xl font-bold mb-12 text-arq-accent leading-tight">Privacy Policy</h1>
 
@@ -21,7 +29,7 @@ const PrivacyPolicy = () => {
                             <ul className="list-none space-y-1 text-gray-400 text-base">
                                 <li>Sede legale: Galleria del Corso 7, 05100 Terni (TR)</li>
                                 <li>Codice Fiscale: [In fase di assegnazione]</li>
-                                <li>Email di contatto: <a href="mailto:associazione.arqtype@protonmail.com" className="text-arq-accent hover:text-white transition-colors underline decoration-arq-accent/30 hover:decoration-white">associazione.arqtype@protonmail.com</a></li>
+                                <li>Email di contatto: <a href="mailto:associazionearqtype@protonmail.com" className="text-arq-accent hover:text-white transition-colors underline decoration-arq-accent/30 hover:decoration-white">associazionearqtype@protonmail.com</a></li>
                             </ul>
                         </div>
                     </section>
@@ -99,7 +107,7 @@ const PrivacyPolicy = () => {
                             <p className="mb-4">
                                 Gli utenti hanno diritto di chiedere al Titolare l'accesso ai dati, la rettifica, la cancellazione, la limitazione del trattamento o di opporsi al trattamento (artt. 15-22 GDPR).
                             </p>
-                            <a href="mailto:associazione.arqtype@protonmail.com" className="inline-flex items-center gap-2 px-6 py-3 bg-arq-primary text-white rounded-lg font-bold hover:bg-arq-primary/80 transition-all">
+                            <a href="mailto:associazionearqtype@protonmail.com" className="inline-flex items-center gap-2 px-6 py-3 bg-arq-primary text-white rounded-lg font-bold hover:bg-arq-primary/80 transition-all">
                                 Esercita i tuoi diritti via Email
                             </a>
                         </div>

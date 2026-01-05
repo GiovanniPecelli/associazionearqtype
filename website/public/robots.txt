@@ -1,3 +1,3 @@
 User-agent: *
 Allow: /
-Sitemap: https://associazione.arqtype.netlify.app/sitemap.xml
+Sitemap: https://www.associazionearqtype.it/sitemap.xml

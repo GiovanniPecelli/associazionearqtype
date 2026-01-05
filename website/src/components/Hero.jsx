@@ -17,11 +17,11 @@ const Hero = () => {
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.8 }}
                 >
-                    <span className="inline-block py-1 px-3 rounded-full bg-arq-glass border border-arq-glassBorder text-xs tracking-widest uppercase mb-6 text-arq-accent">
+                    <span className="inline-block py-1 px-3 rounded-full bg-arq-glass border border-arq-glassBorder text-sm tracking-widest mb-6 text-arq-accent">
                         Associazione Culturale ARQtype
                     </span>
-                    <h1 className="text-5xl md:text-7xl lg:text-8xl font-black tracking-tighter mb-6 leading-tight">
-                        ARQ<span className="text-gradient">type</span>
+                    <h1 className="text-3xl md:text-5xl lg:text-6xl font-black tracking-tighter mb-6 leading-tight py-2 pr-2">
+                        Associazione ARQ<span className="text-gradient">type</span>
                     </h1>
                     <p className="text-xl md:text-2xl text-gray-400 max-w-2xl mx-auto mb-10 font-light">
                         Promuoviamo una cultura critica, etica e consapevole delle tecnologie digitali e dell'intelligenza artificiale.

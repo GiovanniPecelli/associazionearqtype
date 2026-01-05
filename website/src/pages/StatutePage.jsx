@@ -3,10 +3,16 @@ import { statuteData } from '../data/statuteData';
 import { motion } from 'framer-motion';
 import { ArrowLeft } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import SEO from '../components/SEO';
 
 const StatutePage = () => {
     return (
         <div className="min-h-screen bg-arq-bg pt-20 pb-20">
+            <SEO
+                title="Statuto"
+                description="Consulta lo Statuto dell'Associazione ARQtype. Regolamento, scopi associativi e norme per i soci."
+                canonical="/statuto"
+            />
             <div className="container mx-auto px-6 max-w-4xl">
                 <Link to="/" className="inline-flex items-center gap-2 text-arq-accent hover:text-white transition-colors mb-8">
                     <ArrowLeft size={20} /> Torna alla Home

@@ -1,9 +1,15 @@
 import React from 'react';
 import { ShieldCheck, Server, Ban } from 'lucide-react';
+import SEO from './SEO';
 
 const CookiePolicy = () => {
     return (
         <div className="bg-black min-h-screen text-white font-sans selection:bg-arq-accent selection:text-white">
+            <SEO
+                title="Cookie Policy"
+                description="Informativa sull'uso dei cookie dell'Associazione ARQtype. Uso esclusivo di cookie tecnici."
+                canonical="/cookie-policy"
+            />
             <div className="container mx-auto px-6 pt-36 pb-20 max-w-4xl">
                 <h1 className="text-4xl md:text-5xl font-bold mb-12 text-arq-accent leading-tight">Cookie Policy</h1>
 

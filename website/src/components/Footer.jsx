@@ -6,11 +6,11 @@ const Footer = () => {
             <div className="container mx-auto px-6">
                 <div className="grid md:grid-cols-2 gap-8 mb-12 text-left max-w-4xl mx-auto border-b border-white/5 pb-8">
                     <div>
-                        <h3 className="text-xl font-bold mb-4">ASSOCIAZIONE ARQTYPE</h3>
+                        <h3 className="text-xl font-bold mb-4">Associazione ARQtype</h3>
                         <p className="text-sm text-gray-400 mb-1"><strong>Associazione senza scopo di lucro</strong></p>
                         <p className="text-sm text-gray-400 mb-1">Codice Fiscale: [In fase di assegnazione]</p>
                         <p className="text-sm text-gray-400">Sede: Galleria del Corso 7, Terni (TR)</p>
-                        <p className="text-sm text-gray-400">Email: associazione.arqtype@protonmail.com</p>
+                        <p className="text-sm text-gray-400">Email: associazionearqtype@protonmail.com</p>
                     </div>
                     <div>
                         <p className="text-sm text-gray-400 mb-2 font-bold">Informativa Legale</p>

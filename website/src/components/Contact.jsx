@@ -61,12 +61,12 @@ const Contact = () => {
 
                         <div className="w-full bg-white/5 p-4 rounded-xl border border-white/10 mb-8">
                             <code className="text-arq-accent font-mono text-sm md:text-base break-all">
-                                associazione.arqtype@protonmail.com
+                                associazionearqtype@protonmail.com
                             </code>
                         </div>
 
                         <a
-                            href="mailto:associazione.arqtype@protonmail.com"
+                            href="mailto:associazionearqtype@protonmail.com?subject=Richiesta%20Informazioni"
                             className="w-full bg-arq-primary text-white font-bold py-4 rounded-lg hover:bg-arq-primary/80 transition-all flex items-center justify-center gap-2 shadow-lg shadow-arq-primary/25 transform hover:scale-[1.02]"
                         >
                             Invia Email <Send size={18} />

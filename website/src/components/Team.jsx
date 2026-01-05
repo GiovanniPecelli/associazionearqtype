@@ -21,7 +21,7 @@ const Team = () => {
                             <div className="relative w-full aspect-[3/4] overflow-hidden rounded-2xl mb-6 border border-white/10 group-hover:border-arq-accent/50 transition-all">
                                 <img
                                     src={member.img}
-                                    alt={member.role}
+                                    alt={member.name}
                                     className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500 transform group-hover:scale-105"
                                     onError={(e) => { e.target.src = 'https://via.placeholder.com/300x400?text=Member' }}
                                 />
