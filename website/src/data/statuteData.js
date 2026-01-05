@@ -142,12 +142,5 @@ export const statuteData = [
   "Art. 16 – Scioglimento",
   "In caso di scioglimento dell'Associazione, deliberato dall'Assemblea dei Soci Fondatori, il patrimonio residuo è devoluto ad enti operanti nei settori dell'educazione, della ricerca o della formazione, con finalità analoghe o di pubblica utilità. È in ogni caso esclusa la distribuzione ai soci.",
   "Art. 17 – Norma finale",
-  "Per quanto non previsto dal presente Statuto si applicano le norme del Codice civile in materia di associazioni non riconosciute.",
-  "Letto, confermato e sottoscritto.",
-  "Terni, lì ____________________",
-  "I Soci fondatori:",
-  "1. ________________________________________ (Presidente)",
-  "2. ________________________________________",
-  "3. ________________________________________",
-  "4. ________________________________________"
+  "Per quanto non previsto dal presente Statuto si applicano le norme del Codice civile in materia di associazioni non riconosciute."
 ];
