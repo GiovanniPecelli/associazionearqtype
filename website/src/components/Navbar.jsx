@@ -34,10 +34,10 @@ const Navbar = () => {
                 <div className="hidden md:flex space-x-8 items-center">
                     {isHome ? (
                         <>
-                            <button onClick={() => scrollToSection('home')} className="text-sm font-medium hover:text-arq-accent transition-colors">Home</button>
-                            <button onClick={() => scrollToSection('attivita')} className="text-sm font-medium hover:text-arq-accent transition-colors">Attività</button>
+                            <a href="#home" onClick={() => setIsOpen(false)} className="text-sm font-medium hover:text-arq-accent transition-colors">Home</a>
+                            <a href="#attivita" onClick={() => setIsOpen(false)} className="text-sm font-medium hover:text-arq-accent transition-colors">Attività</a>
                             <Link to="/statuto" className="text-sm font-medium hover:text-arq-accent transition-colors">Statuto</Link>
-                            <button onClick={() => scrollToSection('contatti')} className="text-sm font-medium hover:text-arq-accent transition-colors">Contatti</button>
+                            <a href="#contatti" onClick={() => setIsOpen(false)} className="text-sm font-medium hover:text-arq-accent transition-colors">Contatti</a>
                         </>
                     ) : (
                         <Link to="/" className="text-sm font-medium hover:text-arq-accent transition-colors">Torna alla Home</Link>
@@ -57,10 +57,10 @@ const Navbar = () => {
                 <div className="md:hidden bg-[#050505]/95 backdrop-blur-xl absolute top-full left-0 w-full py-4 flex flex-col items-center space-y-4 shadow-lg border-t border-white/10">
                     {isHome ? (
                         <>
-                            <button onClick={() => scrollToSection('home')} className="text-sm hover:text-arq-accent">Home</button>
-                            <button onClick={() => scrollToSection('attivita')} className="text-sm hover:text-arq-accent">Attività</button>
+                            <a href="#home" onClick={() => setIsOpen(false)} className="text-sm hover:text-arq-accent">Home</a>
+                            <a href="#attivita" onClick={() => setIsOpen(false)} className="text-sm hover:text-arq-accent">Attività</a>
                             <Link to="/statuto" className="text-sm hover:text-arq-accent" onClick={() => setIsOpen(false)}>Statuto</Link>
-                            <button onClick={() => scrollToSection('contatti')} className="text-sm hover:text-arq-accent">Contatti</button>
+                            <a href="#contatti" onClick={() => setIsOpen(false)} className="text-sm hover:text-arq-accent">Contatti</a>
                         </>
                     ) : (
                         <Link to="/" className="text-sm hover:text-arq-accent" onClick={() => setIsOpen(false)}>Torna alla Home</Link>

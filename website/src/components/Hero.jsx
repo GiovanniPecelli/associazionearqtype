@@ -31,9 +31,9 @@ const Hero = () => {
                         <Link to="/statuto" className="px-8 py-4 bg-white text-black font-bold rounded-lg hover:bg-gray-200 transition-colors">
                             Leggi lo Statuto
                         </Link>
-                        <button onClick={() => document.getElementById('attivita').scrollIntoView({ behavior: 'smooth' })} className="px-8 py-4 glass text-white font-bold rounded-lg hover:bg-white/10 transition-colors flex items-center justify-center gap-2 cursor-pointer">
+                        <a href="#attivita" className="px-8 py-4 glass text-white font-bold rounded-lg hover:bg-white/10 transition-colors flex items-center justify-center gap-2 cursor-pointer">
                             Scopri le Attività
-                        </button>
+                        </a>
                     </div>
                 </motion.div>
             </div>

@@ -54,3 +54,7 @@
 body {
   @apply bg-arq-bg text-gray-100 font-serif antialiased overflow-x-hidden;
 }
+
+html {
+  scroll-behavior: smooth;
+}
