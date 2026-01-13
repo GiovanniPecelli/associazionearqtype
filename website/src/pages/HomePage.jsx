@@ -9,8 +9,8 @@ const HomePage = () => {
     return (
         <>
             <SEO
-                title="Home"
-                description="Associazione culturale no-profit a Terni per la promozione dell'etica nell'Intelligenza Artificiale e della cultura digitale. Unisciti a noi."
+                title="Associazione ARQtype | Cultura Digitale, IA e Innovazione a Terni"
+                description="Associazione ARQtype è un'associazione culturale no-profit a Terni. Promuoviamo l'uso etico dell'Intelligenza Artificiale, la cultura digitale e l'innovazione sociale in Umbria."
                 canonical="/"
             />
             <Hero />

@@ -12,10 +12,18 @@ const SEO = ({
     const siteName = 'Associazione ARQtype';
     const fullCanonical = canonical.startsWith('http') ? canonical : `${siteUrl}${canonical}`;
 
+    // Determine the actual title to display
+    let metaTitle = title;
+    if (title === siteName) {
+        metaTitle = siteName;
+    } else if (!title.includes(siteName)) {
+        metaTitle = `${title} | ${siteName}`;
+    }
+
     return (
         <Helmet>
             {/* Standard metadata tags */}
-            <title>{title} | {siteName}</title>
+            <title>{metaTitle}</title>
             <meta name='description' content={description} />
             <meta name='keywords' content={keywords} />
             <link rel="canonical" href={fullCanonical} />
@@ -24,7 +32,7 @@ const SEO = ({
             <meta property="og:type" content="website" />
             <meta property="og:site_name" content={siteName} />
             <meta property="og:url" content={fullCanonical} />
-            <meta property="og:title" content={`${title} | ${siteName}`} />
+            <meta property="og:title" content={metaTitle} />
             <meta property="og:description" content={description} />
             <meta property="og:image" content={image} />
             <meta property="og:locale" content="it_IT" />
@@ -33,7 +41,7 @@ const SEO = ({
             <meta name="twitter:card" content="summary_large_image" />
             <meta name="twitter:creator" content="@associazionearqtype" />
             <meta name="twitter:url" content={fullCanonical} />
-            <meta name="twitter:title" content={`${title} | ${siteName}`} />
+            <meta name="twitter:title" content={metaTitle} />
             <meta name="twitter:description" content={description} />
             <meta name="twitter:image" content={image} />
         </Helmet>
