@@ -8,7 +8,7 @@ const Footer = () => {
                     <div>
                         <h3 className="text-xl font-bold mb-4">Associazione ARQtype</h3>
                         <p className="text-sm text-gray-400 mb-1"><strong>Associazione senza scopo di lucro</strong></p>
-                        <p className="text-sm text-gray-400 mb-1">Codice Fiscale: [In fase di assegnazione]</p>
+                        <p className="text-sm text-gray-400 mb-1">Codice Fiscale: 91088550552</p>
                         <p className="text-sm text-gray-400">Sede: Galleria del Corso 7, Terni (TR)</p>
                         <p className="text-sm text-gray-400">Email: associazionearqtype@protonmail.com</p>
                     </div>

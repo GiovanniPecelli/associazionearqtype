@@ -28,7 +28,7 @@ const PrivacyPolicy = () => {
                             <p className="mb-2">Il Titolare del trattamento è l'<strong>Associazione ARQtype</strong></p>
                             <ul className="list-none space-y-1 text-gray-400 text-base">
                                 <li>Sede legale: Galleria del Corso 7, 05100 Terni (TR)</li>
-                                <li>Codice Fiscale: [In fase di assegnazione]</li>
+                                <li>Codice Fiscale: 91088550552</li>
                                 <li>Email di contatto: <a href="mailto:associazionearqtype@protonmail.com" className="text-arq-accent hover:text-white transition-colors underline decoration-arq-accent/30 hover:decoration-white">associazionearqtype@protonmail.com</a></li>
                             </ul>
                         </div>
