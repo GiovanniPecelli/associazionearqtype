@@ -8,6 +8,9 @@ const Navbar = () => {
     const location = useLocation();
     const isHome = location.pathname === '/';
 
+    // Get workspace URL from environment variable
+    const WORKSPACE_URL = import.meta.env.VITE_WORKSPACE_URL || 'http://localhost:5174';
+
     useEffect(() => {
         const handleScroll = () => setScrolled(window.scrollY > 50);
         window.addEventListener('scroll', handleScroll);
@@ -35,12 +38,18 @@ const Navbar = () => {
                     {isHome ? (
                         <>
                             <a href="#home" onClick={() => setIsOpen(false)} className="text-sm font-medium hover:text-arq-accent transition-colors">Home</a>
-                            <a href="#attivita" onClick={() => setIsOpen(false)} className="text-sm font-medium hover:text-arq-accent transition-colors">Attività</a>
-                            <Link to="/statuto" className="text-sm font-medium hover:text-arq-accent transition-colors">Statuto</Link>
-                            <a href="#contatti" onClick={() => setIsOpen(false)} className="text-sm font-medium hover:text-arq-accent transition-colors">Contatti</a>
+                            <a href="#attivita" onClick={() => setIsOpen(false)} className="text-sm font-medium hover:text-arq-accent transition-colors">Activities</a>
+                            <Link to="/statuto" className="text-sm font-medium hover:text-arq-accent transition-colors">Statute</Link>
+                            <a href="#contatti" onClick={() => setIsOpen(false)} className="text-sm font-medium hover:text-arq-accent transition-colors">Contact</a>
+                            <a
+                                href={`${WORKSPACE_URL}/login`}
+                                className="px-4 py-2 bg-arq-accent/20 hover:bg-arq-accent/30 text-arq-accent border border-arq-accent/50 rounded-lg transition-all text-sm font-medium"
+                            >
+                                Sign In
+                            </a>
                         </>
                     ) : (
-                        <Link to="/" className="text-sm font-medium hover:text-arq-accent transition-colors">Torna alla Home</Link>
+                        <Link to="/" className="text-sm font-medium hover:text-arq-accent transition-colors">Back to Home</Link>
                     )}
                 </div>
 
@@ -58,12 +67,19 @@ const Navbar = () => {
                     {isHome ? (
                         <>
                             <a href="#home" onClick={() => setIsOpen(false)} className="text-sm hover:text-arq-accent">Home</a>
-                            <a href="#attivita" onClick={() => setIsOpen(false)} className="text-sm hover:text-arq-accent">Attività</a>
-                            <Link to="/statuto" className="text-sm hover:text-arq-accent" onClick={() => setIsOpen(false)}>Statuto</Link>
-                            <a href="#contatti" onClick={() => setIsOpen(false)} className="text-sm hover:text-arq-accent">Contatti</a>
+                            <a href="#attivita" onClick={() => setIsOpen(false)} className="text-sm hover:text-arq-accent">Activities</a>
+                            <Link to="/statuto" className="text-sm hover:text-arq-accent" onClick={() => setIsOpen(false)}>Statute</Link>
+                            <a href="#contatti" onClick={() => setIsOpen(false)} className="text-sm hover:text-arq-accent">Contact</a>
+                            <a
+                                href={`${WORKSPACE_URL}/login`}
+                                className="px-4 py-2 bg-arq-accent/20 hover:bg-arq-accent/30 text-arq-accent border border-arq-accent/50 rounded-lg transition-all text-sm font-medium"
+                                onClick={() => setIsOpen(false)}
+                            >
+                                Sign In
+                            </a>
                         </>
                     ) : (
-                        <Link to="/" className="text-sm hover:text-arq-accent" onClick={() => setIsOpen(false)}>Torna alla Home</Link>
+                        <Link to="/" className="text-sm hover:text-arq-accent" onClick={() => setIsOpen(false)}>Back to Home</Link>
                     )}
                 </div>
             )}

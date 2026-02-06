@@ -8,4 +8,13 @@ export default defineConfig({
     react(),
     tailwindcss(),
   ],
+  server: {
+    proxy: {
+      '/workspace': {
+        target: 'http://localhost:5174',
+        changeOrigin: true,
+        secure: false,
+      }
+    }
+  }
 })
