@@ -7,8 +7,10 @@ const Contact = () => {
             <div className="container mx-auto px-6">
 
                 <div className="text-center max-w-3xl mx-auto mb-16">
-                    <span className="text-arq-accent tracking-widest uppercase text-sm font-bold">Contattaci</span>
-                    <h2 className="text-4xl md:text-5xl font-bold mt-2 mb-6">Parliamo del Futuro</h2>
+                    <span className="text-indigo-400 tracking-widest uppercase text-sm font-bold">Contattaci</span>
+                    <h2 className="text-4xl md:text-5xl font-bold mt-2 mb-6 text-white">
+                        Parliamo del <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-400 via-fuchsia-400 to-white">Futuro</span>
+                    </h2>
                     <p className="text-gray-300 text-lg font-light leading-relaxed">
                         Siamo sempre alla ricerca di nuove collaborazioni, idee e progetti.
                         Se sei interessato alle nostre attività o vuoi proporre una partnership, scrivici.
@@ -20,7 +22,7 @@ const Contact = () => {
                     {/* Card Sede */}
                     <div className="glass p-8 rounded-3xl border border-white/10 shadow-2xl flex flex-col h-full">
                         <div className="flex items-center gap-4 mb-6">
-                            <div className="w-12 h-12 bg-white/5 rounded-full flex items-center justify-center text-arq-accent shrink-0">
+                            <div className="w-12 h-12 bg-white/5 rounded-full flex items-center justify-center text-indigo-400 shrink-0">
                                 <MapPin size={24} />
                             </div>
                             <div>
@@ -50,7 +52,7 @@ const Contact = () => {
 
                     {/* Card Email */}
                     <div className="glass p-8 rounded-3xl border border-white/10 shadow-2xl flex flex-col h-full items-center text-center justify-center">
-                        <div className="w-20 h-20 bg-arq-primary/20 rounded-full flex items-center justify-center text-arq-primary mb-6 animate-pulse">
+                        <div className="w-20 h-20 bg-indigo-500/10 rounded-full flex items-center justify-center text-indigo-400 mb-6">
                             <Mail size={40} />
                         </div>
 
@@ -60,14 +62,14 @@ const Contact = () => {
                         </p>
 
                         <div className="w-full bg-white/5 p-4 rounded-xl border border-white/10 mb-8">
-                            <code className="text-arq-accent font-mono text-sm md:text-base break-all">
+                            <code className="text-indigo-300 font-mono text-sm md:text-base break-all">
                                 associazionearqtype@protonmail.com
                             </code>
                         </div>
 
                         <a
                             href="mailto:associazionearqtype@protonmail.com?subject=Richiesta%20Informazioni"
-                            className="w-full bg-arq-primary text-white font-bold py-4 rounded-lg hover:bg-arq-primary/80 transition-all flex items-center justify-center gap-2 shadow-lg shadow-arq-primary/25 transform hover:scale-[1.02]"
+                            className="w-full bg-indigo-600 text-white font-bold py-4 rounded-lg hover:bg-indigo-700 transition-all flex items-center justify-center gap-2 shadow-lg shadow-indigo-600/25 transform hover:scale-[1.02]"
                         >
                             Invia Email <Send size={18} />
                         </a>

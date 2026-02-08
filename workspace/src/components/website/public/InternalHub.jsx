@@ -1,48 +1,32 @@
 import React from 'react';
-import { motion } from 'framer-motion';
 import { Users, Share2, Heart, Rocket } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
-const FeatureCard = ({ icon: Icon, title, description, delay }) => (
-    <motion.div
-        initial={{ opacity: 0, y: 20 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.5, delay }}
-        viewport={{ once: true }}
-        className="p-6 rounded-2xl bg-white/5 border border-white/10 hover:border-indigo-500/30 transition-all hover:bg-white/[0.07] group"
-    >
-        <div className="w-12 h-12 rounded-lg bg-indigo-500/10 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
-            <Icon className="w-6 h-6 text-indigo-400 group-hover:text-indigo-300" />
+const FeatureCard = ({ icon: Icon, title, description }) => (
+    <div className="p-6 rounded-2xl bg-white/5 border border-white/10 hover:border-indigo-500/30 transition-colors group">
+        <div className="w-12 h-12 rounded-lg bg-indigo-500/10 flex items-center justify-center mb-4 text-indigo-400 group-hover:text-indigo-300 transition-colors">
+            <Icon className="w-6 h-6" />
         </div>
         <h3 className="text-xl font-bold text-white mb-2">{title}</h3>
         <p className="text-gray-400 leading-relaxed text-sm">{description}</p>
-    </motion.div>
+    </div>
 );
 
 const InternalHub = () => {
     return (
         <section id="hub" className="py-24 bg-[#0a0a0a] relative overflow-hidden">
-            {/* Background Gradient */}
-            <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-7xl h-full pointer-events-none">
-                <div className="absolute top-[20%] left-[20%] w-96 h-96 bg-indigo-900/10 rounded-full blur-[50px] md:blur-[100px]" />
-            </div>
 
             <div className="container mx-auto px-6 relative z-10">
                 <div className="grid lg:grid-cols-2 gap-16 items-center">
 
                     {/* Left Content */}
-                    <motion.div
-                        initial={{ opacity: 0, x: -30 }}
-                        whileInView={{ opacity: 1, x: 0 }}
-                        transition={{ duration: 0.8 }}
-                        viewport={{ once: true }}
-                    >
+                    <div>
                         <span className="inline-block py-1 px-3 rounded-full bg-indigo-500/10 border border-indigo-500/20 text-indigo-400 text-xs font-bold tracking-widest uppercase mb-6">
                             Community Hub
                         </span>
                         <h2 className="text-3xl md:text-5xl font-black text-white mb-6 leading-tight">
                             Il Cuore Pulsante <br />
-                            <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-400 to-purple-400">
+                            <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-400 via-fuchsia-400 to-white">
                                 della Nostra Community
                             </span>
                         </h2>
@@ -59,7 +43,7 @@ const InternalHub = () => {
                                 Come Partecipare
                             </Link>
                         </div>
-                    </motion.div>
+                    </div>
 
                     {/* Right Grid */}
                     <div className="grid sm:grid-cols-2 gap-4">
@@ -67,25 +51,21 @@ const InternalHub = () => {
                             icon={Users}
                             title="Networking"
                             description="Connettiti con professionisti, sviluppatori e creativi che condividono la tua passione per il digitale."
-                            delay={0.1}
                         />
                         <FeatureCard
                             icon={Share2}
                             title="Condivisione"
                             description="Uno spazio per scambiare conoscenze, risorse e competenze. Cresciamo insieme condividendo il sapere."
-                            delay={0.2}
                         />
                         <FeatureCard
                             icon={Rocket}
                             title="Progetti"
                             description="Partecipa allo sviluppo di strumenti open-source e iniziative digitali collaborative."
-                            delay={0.3}
                         />
                         <FeatureCard
                             icon={Heart}
                             title="No-Profit"
                             description="Promuoviamo iniziative sociali e culturali senza scopo di lucro per il bene della comunità."
-                            delay={0.4}
                         />
                     </div>
                 </div>
