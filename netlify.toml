@@ -1,5 +1,5 @@
 [build]
-  base = "website"
+  base = "workspace"
   publish = "dist"
   command = "npm run build"
 
