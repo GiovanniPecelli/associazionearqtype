@@ -24,7 +24,7 @@ const InternalHub = () => {
         <section id="hub" className="py-24 bg-[#0a0a0a] relative overflow-hidden">
             {/* Background Gradient */}
             <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-7xl h-full pointer-events-none">
-                <div className="absolute top-[20%] left-[20%] w-96 h-96 bg-indigo-900/10 rounded-full blur-[100px]" />
+                <div className="absolute top-[20%] left-[20%] w-96 h-96 bg-indigo-900/10 rounded-full blur-[50px] md:blur-[100px]" />
             </div>
 
             <div className="container mx-auto px-6 relative z-10">

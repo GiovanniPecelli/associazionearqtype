@@ -20,6 +20,10 @@
   --color-arq-accent: #d8b4fe;
   --color-arq-glass: rgba(255, 255, 255, 0.03);
   --color-arq-glassBorder: rgba(255, 255, 255, 0.1);
+  --font-serif: "Libre Baskerville", serif;
+
+  --animate-fade-in: fadeIn 1s ease-out forwards;
+  --animate-slide-up: slideUp 0.8s ease-out forwards;
   /* END WEBSITE VARIABLES */
 
   font-family: 'Libre Baskerville', serif;
@@ -68,6 +72,18 @@ body {
   }
 
   to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideUp {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  100% {
     opacity: 1;
     transform: translateY(0);
   }
@@ -150,26 +166,19 @@ body {
 
 
 /* WEBSITE UTILITIES */
-.glass {
-  background: var(--color-arq-glass);
-  backdrop-filter: blur(10px);
-  border: 1px solid var(--color-arq-glassBorder);
-}
+@layer utilities {
+  .glass {
+    background: var(--color-arq-glass);
+    backdrop-filter: blur(10px);
+    border: 1px solid var(--color-arq-glassBorder);
+  }
 
-.text-gradient {
-  background: linear-gradient(to right, var(--color-arq-accent), #818cf8);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  color: transparent;
-  padding-right: 0.1em;
-  padding-bottom: 0.1em;
-}
-
-/* UNIVERSAL OVERRIDE FOR HIGHEST PRIORITY */
-* {
-  font-family: 'Libre Baskerville', serif !important;
-}
-
-body {
-  font-family: 'Libre Baskerville', serif !important;
+  .text-gradient {
+    background: linear-gradient(to right, var(--color-arq-accent), #818cf8);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent;
+    padding-right: 0.1em;
+    padding-bottom: 0.1em;
+  }
 }

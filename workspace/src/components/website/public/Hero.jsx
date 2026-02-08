@@ -8,13 +8,13 @@ const Hero = () => {
             {/* Background Effects: Brighter & Alive */}
             <div className="absolute inset-0 overflow-hidden pointer-events-none">
                 {/* Main Light Source (Top Left) */}
-                <div className="absolute top-[-20%] left-[-10%] w-[60%] h-[60%] bg-purple-600/30 rounded-full blur-[120px]" />
+                <div className="absolute top-[-20%] left-[-10%] w-[60%] h-[60%] bg-purple-600/30 rounded-full blur-[60px] md:blur-[120px]" />
 
                 {/* Secondary Light Source (Bottom Right) */}
-                <div className="absolute bottom-[-10%] right-[-10%] w-[50%] h-[50%] bg-indigo-500/20 rounded-full blur-[100px]" />
+                <div className="absolute bottom-[-10%] right-[-10%] w-[50%] h-[50%] bg-indigo-500/20 rounded-full blur-[50px] md:blur-[100px]" />
 
                 {/* Center Accent Glow */}
-                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[80%] h-[80%] bg-gradient-radial from-indigo-500/5 via-transparent to-transparent blur-3xl" />
+                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[80%] h-[80%] bg-gradient-radial from-indigo-500/5 via-transparent to-transparent blur-2xl md:blur-3xl" />
 
                 {/* Grid Texture */}
                 <div className="absolute inset-0 bg-[url('/grid.svg')] opacity-[0.03]" />
