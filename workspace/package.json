@@ -8,11 +8,11 @@
   },
   "scripts": {
     "dev": "vite",
+    "prebuild": "npm rebuild lightningcss --update-binary",
     "build": "vite build",
     "preview": "vite preview"
   },
   "devDependencies": {
-    "@rollup/rollup-linux-x64-gnu": "4.6.1",
     "@supabase/supabase-js": "^2.84.0",
     "@tailwindcss/postcss": "^4.1.17",
     "@vitejs/plugin-react": "^5.1.1",

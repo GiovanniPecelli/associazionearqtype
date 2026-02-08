@@ -1,7 +1,7 @@
 [build]
   base = "workspace"
   publish = "dist"
-  command = "npm rebuild lightningcss --update-binary && npm run build"
+  command = "npm run build"
 
 [[redirects]]
   from = "/*"
