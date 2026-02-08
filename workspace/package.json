@@ -8,7 +8,7 @@
   },
   "scripts": {
     "dev": "vite",
-    "prebuild": "npm rebuild lightningcss --update-binary",
+    "prebuild": "npm rebuild lightningcss rollup --update-binary",
     "build": "vite build",
     "preview": "vite preview"
   },
