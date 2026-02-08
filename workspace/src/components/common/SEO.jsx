@@ -1,17 +1,15 @@
-import { Helmet } from 'react-helmet-async';
-
 export default function SEO({
     title,
     description,
     name = 'ARQTYPE',
     type = 'website',
-    image = '/og-image.png' // We'll need to create/ensure this exists
+    image = '/og-image.png'
 }) {
     const siteTitle = title ? `${title} | ${name}` : name;
 
     return (
-        <Helmet>
-            {/* Standard metadata */}
+        <>
+            {/* Standard metadata - React 19 native support */}
             <title>{siteTitle}</title>
             <meta name="description" content={description} />
 
@@ -26,6 +24,6 @@ export default function SEO({
             <meta name="twitter:title" content={siteTitle} />
             <meta name="twitter:description" content={description} />
             <meta name="twitter:image" content={image} />
-        </Helmet>
+        </>
     );
 }

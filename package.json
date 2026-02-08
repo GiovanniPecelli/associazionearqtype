@@ -2,9 +2,6 @@
     "name": "arqtype-monorepo",
     "version": "1.0.0",
     "private": true,
-    "workspaces": [
-        "workspace"
-    ],
     "scripts": {
         "dev": "npm run dev --prefix workspace",
         "build": "npm run build --prefix workspace",

@@ -1,6 +1,5 @@
 import { Routes, Route, Navigate, useLocation } from 'react-router-dom';
 // import { AnimatePresence } from 'framer-motion';
-import { HelmetProvider } from 'react-helmet-async';
 import { useAuth } from './hooks/useAuth.jsx';
 import ErrorBoundary from './components/common/ErrorBoundary';
 import { Login } from './components/auth/Login';
@@ -142,13 +141,11 @@ function AppContent() {
 
 function App() {
   return (
-    <HelmetProvider>
-      <ErrorBoundary>
-        <ToastProvider>
-          <AppContent />
-        </ToastProvider>
-      </ErrorBoundary>
-    </HelmetProvider>
+    <ErrorBoundary>
+      <ToastProvider>
+        <AppContent />
+      </ToastProvider>
+    </ErrorBoundary>
   );
 }
 
