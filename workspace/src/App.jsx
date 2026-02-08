@@ -13,8 +13,13 @@ import { ToastProvider } from './contexts/ToastContext';
 import React, { Suspense, lazy } from 'react'; // Import lazy and Suspense
 import './style.css';
 
+import { AuthProvider } from './hooks/useAuth.jsx';
+import { ChatNotificationProvider } from './context/ChatNotificationContext.jsx';
+import { GamificationProvider } from './context/GamificationContext.jsx';
+import { SystemSettingsProvider } from './contexts/SystemSettingsContext.jsx';
+
 import PublicLayout from './components/website/PublicLayout';
-const PublicHomePage = lazy(() => import('./components/website/pages/HomePage'));
+const StaticLanding = lazy(() => import('./components/website/pages/StaticLanding'));
 const PublicStatutePage = lazy(() => import('./components/website/pages/StatutePage'));
 const PublicPrivacyPolicyPage = lazy(() => import('./components/website/pages/PrivacyPolicyPage'));
 const PublicCookiePolicyPage = lazy(() => import('./components/website/pages/CookiePolicyPage'));
@@ -31,7 +36,6 @@ const MyTasks = lazy(() => import('./pages/MyTasks'));
 const Chat = lazy(() => import('./pages/Chat'));
 const Profile = lazy(() => import('./pages/Profile'));
 const UserProfile = lazy(() => import('./pages/UserProfile'));
-// LandingPage is now directly imported
 const Guide = lazy(() => import('./pages/Guide'));
 const Dashboard = lazy(() => import('./pages/Dashboard'));
 const Documents = lazy(() => import('./pages/Documents'));
@@ -55,6 +59,7 @@ function AppContent() {
     if (path.startsWith('/workflows') || path.startsWith('/workflow/') || path === '/mytasks') return 'workflows';
     if (path.startsWith('/documents')) return 'documents';
     if (path.startsWith('/career')) return 'career';
+    if (path === '/' || path === '/index.html' || path.startsWith('/statuto')) return 'landing';
     return 'default';
   };
   const isWorkflowPage = location.pathname.startsWith('/workflows') || location.pathname.startsWith('/workflow/');
@@ -63,7 +68,7 @@ function AppContent() {
 
   const isStorePage = location.pathname === '/store';
 
-  const isPublicPage = location.pathname.startsWith('/statuto') || location.pathname === '/' || location.pathname === '/home' || location.pathname === '/privacy-policy' || location.pathname === '/cookie-policy';
+  const isPublicPage = location.pathname.startsWith('/statuto') || location.pathname === '/' || location.pathname === '/privacy-policy' || location.pathname === '/cookie-policy';
 
   return (
     <div className={`${isChatPage ? 'h-screen overflow-hidden flex flex-col' : 'min-h-screen flex flex-col'} text-gray-100 selection:bg-violet-500 selection:text-white relative font-sans`}>
@@ -84,8 +89,9 @@ function AppContent() {
             <Suspense fallback={<Loading fullScreen={false} message="Loading module..." />}>
               <Routes location={location} key={location.pathname}>
                 {/* Public Website Routes */}
+                <Route path="/" element={user ? <Navigate to="/home" replace /> : <StaticLanding />} />
+
                 <Route element={<PublicLayout />}>
-                  <Route path="/" element={user ? <Navigate to="/home" replace /> : <PublicHomePage />} />
                   <Route path="/statuto" element={<PublicStatutePage />} />
                   <Route path="/privacy-policy" element={<PublicPrivacyPolicyPage />} />
                   <Route path="/cookie-policy" element={<PublicCookiePolicyPage />} />
@@ -139,12 +145,42 @@ function AppContent() {
   );
 }
 
+function DashboardApp() {
+  return (
+    <AuthProvider>
+      <SystemSettingsProvider>
+        <ChatNotificationProvider>
+          <GamificationProvider>
+            <ToastProvider>
+              <AppContent />
+            </ToastProvider>
+          </GamificationProvider>
+        </ChatNotificationProvider>
+      </SystemSettingsProvider>
+    </AuthProvider>
+  );
+}
+
 function App() {
+  const location = useLocation();
+  // If exact root path or public pages, render StaticLanding without providers
+  const isPublic = location.pathname === '/' || location.pathname === '/index.html' || location.pathname.startsWith('/statuto') || location.pathname === '/privacy-policy' || location.pathname === '/cookie-policy';
+
+  if (isPublic) {
+    return (
+      <Routes>
+        <Route path="/" element={<StaticLanding />} />
+        <Route path="/statuto" element={<PublicStatutePage />} />
+        <Route path="/privacy-policy" element={<PublicPrivacyPolicyPage />} />
+        <Route path="/cookie-policy" element={<PublicCookiePolicyPage />} />
+        <Route path="*" element={<Navigate to="/" replace />} />
+      </Routes>
+    );
+  }
+
   return (
     <ErrorBoundary>
-      <ToastProvider>
-        <AppContent />
-      </ToastProvider>
+      <DashboardApp />
     </ErrorBoundary>
   );
 }

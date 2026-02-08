@@ -30,15 +30,7 @@ function renderApp() {
     <StrictMode>
       <ErrorBoundary>
         <BrowserRouter>
-          <AuthProvider>
-            <SystemSettingsProvider>
-              <ChatNotificationProvider>
-                <GamificationProvider>
-                  <App />
-                </GamificationProvider>
-              </ChatNotificationProvider>
-            </SystemSettingsProvider>
-          </AuthProvider>
+          <App />
         </BrowserRouter>
       </ErrorBoundary>
     </StrictMode>,

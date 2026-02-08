@@ -34,6 +34,12 @@ export function DynamicBackground({ variant = 'default' }) {
                 <div className="absolute bottom-[-20%] right-[-10%] w-[60%] h-[60%] bg-blue-900/30 blur-[140px] rounded-full mix-blend-screen animate-float-2" />
                 <div className="absolute top-[40%] left-[30%] w-[50%] h-[50%] bg-indigo-500/10 blur-[120px] rounded-full mix-blend-screen animate-float-3" />
             </>
+        ),
+        landing: (
+            // Ultra-lightweight variant for mobile performance
+            <div className="absolute inset-0 bg-[#030305]">
+                <div className="absolute inset-0 bg-gradient-to-b from-[#111] to-[#050505] opacity-50" />
+            </div>
         )
     };
 

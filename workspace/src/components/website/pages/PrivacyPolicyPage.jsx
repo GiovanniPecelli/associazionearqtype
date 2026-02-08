@@ -1,10 +1,13 @@
-import React from 'react';
-import { motion } from 'framer-motion';
+import React, { useEffect } from 'react';
 import { ArrowLeft } from 'lucide-react';
 import { Link } from 'react-router-dom';
-import SEO from '../public/SEO';
 
 const PrivacyPolicyPage = () => {
+    useEffect(() => {
+        document.title = "Privacy Policy | ARQtype";
+        window.scrollTo(0, 0);
+    }, []);
+
     return (
         <div className="min-h-screen bg-[#0a0a0a] pt-24 pb-20 relative overflow-hidden">
             {/* Background Effects */}
@@ -14,24 +17,13 @@ const PrivacyPolicyPage = () => {
                 <div className="absolute inset-0 bg-[url('/grid.svg')] opacity-[0.03]" />
             </div>
 
-            <SEO
-                title="Privacy Policy"
-                description="Informativa sul trattamento dei dati personali dell'Associazione ARQtype (GDPR)."
-                canonical="/privacy-policy"
-            />
-
             <div className="container mx-auto px-6 max-w-4xl relative z-10">
                 <Link to="/" className="inline-flex items-center gap-2 text-indigo-400 hover:text-white transition-colors mb-8 group bg-white/5 pl-2 pr-4 py-2 rounded-full border border-white/5 hover:border-white/20">
                     <ArrowLeft size={18} className="group-hover:-translate-x-1 transition-transform" />
                     <span className="text-sm font-medium">Torna alla Home</span>
                 </Link>
 
-                <motion.div
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.6 }}
-                    className="p-8 md:p-12 rounded-3xl border border-white/5 bg-white/[0.02] backdrop-blur-xl shadow-2xl"
-                >
+                <div className="p-8 md:p-12 rounded-3xl border border-white/5 bg-white/[0.02] backdrop-blur-xl shadow-2xl animate-fade-in-up">
                     <div className="text-center mb-16">
                         <h1 className="text-4xl md:text-5xl font-black mb-6 text-white tracking-tight">Privacy Policy</h1>
                         <div className="w-24 h-1.5 bg-gradient-to-r from-indigo-500 to-purple-500 mx-auto rounded-full" />
@@ -143,7 +135,7 @@ const PrivacyPolicyPage = () => {
                             Ultimo aggiornamento: 03/01/2026
                         </p>
                     </div>
-                </motion.div>
+                </div>
             </div>
         </div>
     );
