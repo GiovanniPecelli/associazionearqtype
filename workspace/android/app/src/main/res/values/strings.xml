@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">Arqtype</string>
+    <string name="title_activity_main">Arqtype</string>
+    <string name="package_name">com.arqtype.app</string>
+    <string name="custom_url_scheme">com.arqtype.app</string>
+</resources>
