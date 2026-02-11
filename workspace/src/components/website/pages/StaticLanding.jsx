@@ -36,7 +36,7 @@ const StaticNavbar = () => {
 
                 {/* Desktop Menu */}
                 <div className="hidden md:flex items-center bg-white/5 backdrop-blur-md px-2 py-1.5 rounded-full border border-white/5 space-x-1">
-                    {['home', 'hub', 'attivita', 'team', 'contatti'].map((item) => (
+                    {['home', 'hub', 'attività', 'team', 'contatti'].map((item) => (
                         <button
                             key={item}
                             onClick={() => scrollTo(item)}
@@ -60,7 +60,7 @@ const StaticNavbar = () => {
             {/* Mobile Menu */}
             {isOpen && (
                 <div className="md:hidden absolute top-full left-0 w-full bg-[#050505] border-b border-white/10 py-4 flex flex-col items-center space-y-4 shadow-2xl">
-                    {['home', 'hub', 'attivita', 'team', 'contatti'].map((item) => (
+                    {['home', 'hub', 'attività', 'team', 'contatti'].map((item) => (
                         <button
                             key={item}
                             onClick={() => scrollTo(item)}
