@@ -106,7 +106,7 @@ const StaticLanding = () => {
                             <Link to="/statuto" className="w-full sm:w-auto px-8 py-4 bg-white text-black font-bold rounded-lg hover:bg-gray-200 transition-colors">
                                 Leggi lo Statuto
                             </Link>
-                            <a href="#attivita" className="w-full sm:w-auto px-8 py-4 border border-white/10 text-white font-bold rounded-lg hover:bg-white/5 transition-colors flex items-center justify-center gap-2">
+                            <a href="#attività" className="w-full sm:w-auto px-8 py-4 border border-white/10 text-white font-bold rounded-lg hover:bg-white/5 transition-colors flex items-center justify-center gap-2">
                                 Scopri le Attività
                             </a>
                         </div>
@@ -164,7 +164,7 @@ const StaticLanding = () => {
             </section>
 
             {/* ACTIVITIES SECTION */}
-            <section id="attivita" className="py-24 border-b border-white/5">
+            <section id="attività" className="py-24 border-b border-white/5">
                 <div className="container mx-auto px-6">
                     <div className="text-center mb-16">
                         <span className="text-indigo-400 tracking-widest uppercase text-sm font-bold">Cosa facciamo</span>
