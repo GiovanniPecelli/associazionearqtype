@@ -203,7 +203,7 @@ const StaticLanding = () => {
                         </h2>
                     </div>
 
-                    <div className="grid grid-cols-1 md:grid-cols-4 gap-8 max-w-6xl mx-auto">
+                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-12 max-w-7xl mx-auto">
                         {[
                             { name: 'Francesco', role: 'Presidente', img: '/assets/founder1.jpg' },
                             { name: 'Emilio', role: 'Socio Fondatore', img: '/assets/co-founder2.jpg' },
@@ -257,7 +257,7 @@ const StaticLanding = () => {
                             </div>
                             <div className="mt-auto">
                                 <a
-                                    href="https://maps.app.goo.gl/YourMapLinkHere"
+                                    href="https://www.google.com/maps/search/?api=1&query=Galleria+del+Corso+7+Terni"
                                     target="_blank"
                                     rel="noopener noreferrer"
                                     className="w-full block text-center px-8 py-4 bg-white/5 hover:bg-white/10 text-white font-bold rounded-xl transition-colors border border-white/10"
@@ -315,6 +315,7 @@ const StaticFooter = () => {
                     <Link to="/statuto" className="hover:text-indigo-400 transition-colors">Statuto</Link>
                     <Link to="/privacy-policy" className="hover:text-indigo-400 transition-colors">Privacy Policy</Link>
                     <Link to="/cookie-policy" className="hover:text-indigo-400 transition-colors">Cookie Policy</Link>
+                    <Link to="/terms-and-conditions" className="hover:text-indigo-400 transition-colors">Termini e Condizioni</Link>
                 </div>
 
                 <div className="text-xs text-gray-700 text-center">

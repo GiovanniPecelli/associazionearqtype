@@ -23,6 +23,7 @@ const StaticLanding = lazy(() => import('./components/website/pages/StaticLandin
 const PublicStatutePage = lazy(() => import('./components/website/pages/StatutePage'));
 const PublicPrivacyPolicyPage = lazy(() => import('./components/website/pages/PrivacyPolicyPage'));
 const PublicCookiePolicyPage = lazy(() => import('./components/website/pages/CookiePolicyPage'));
+const PublicTermsAndConditionsPage = lazy(() => import('./components/website/pages/TermsAndConditionsPage'));
 
 // Lazy Load Pages
 const Navbar = lazy(() => import('./components/layout/Navbar').then(module => ({ default: module.Navbar })));
@@ -68,7 +69,7 @@ function AppContent() {
 
   const isStorePage = location.pathname === '/store';
 
-  const isPublicPage = location.pathname.startsWith('/statuto') || location.pathname === '/' || location.pathname === '/privacy-policy' || location.pathname === '/cookie-policy';
+  const isPublicPage = location.pathname.startsWith('/statuto') || location.pathname === '/' || location.pathname === '/privacy-policy' || location.pathname === '/cookie-policy' || location.pathname === '/terms-and-conditions';
 
   return (
     <div className={`${isChatPage ? 'h-screen overflow-hidden flex flex-col' : 'min-h-screen flex flex-col'} text-gray-100 selection:bg-violet-500 selection:text-white relative font-sans`}>
@@ -95,6 +96,7 @@ function AppContent() {
                   <Route path="/statuto" element={<PublicStatutePage />} />
                   <Route path="/privacy-policy" element={<PublicPrivacyPolicyPage />} />
                   <Route path="/cookie-policy" element={<PublicCookiePolicyPage />} />
+                  <Route path="/terms-and-conditions" element={<PublicTermsAndConditionsPage />} />
                 </Route>
 
                 {/* Login Page */}
@@ -164,7 +166,7 @@ function DashboardApp() {
 function App() {
   const location = useLocation();
   // If exact root path or public pages, render StaticLanding without providers
-  const isPublic = location.pathname === '/' || location.pathname === '/index.html' || location.pathname.startsWith('/statuto') || location.pathname === '/privacy-policy' || location.pathname === '/cookie-policy';
+  const isPublic = location.pathname === '/' || location.pathname === '/index.html' || location.pathname.startsWith('/statuto') || location.pathname === '/privacy-policy' || location.pathname === '/cookie-policy' || location.pathname === '/terms-and-conditions';
 
   if (isPublic) {
     return (
@@ -173,6 +175,7 @@ function App() {
         <Route path="/statuto" element={<PublicStatutePage />} />
         <Route path="/privacy-policy" element={<PublicPrivacyPolicyPage />} />
         <Route path="/cookie-policy" element={<PublicCookiePolicyPage />} />
+        <Route path="/terms-and-conditions" element={<PublicTermsAndConditionsPage />} />
         <Route path="*" element={<Navigate to="/" replace />} />
       </Routes>
     );
