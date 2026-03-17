@@ -22,12 +22,22 @@ const StaticLanding = () => {
     const handleVideoLoad = () => {
       setVideoLoaded(true);
       if (videoRef.current) {
-        videoRef.current.playbackRate = 0.8;
+        videoRef.current.playbackRate = 1.0; // Velocità normale
+        videoRef.current.play().catch(console.error);
+      }
+    };
+
+    const handleVisibilityChange = () => {
+      if (document.visibilityState === 'visible' && videoRef.current) {
+        // Quando la pagina diventa visibile, fai ripartire il video
+        videoRef.current.currentTime = 0; // Riporta all'inizio
+        videoRef.current.playbackRate = 1.0; // Velocità normale
         videoRef.current.play().catch(console.error);
       }
     };
 
     window.addEventListener('scroll', handleScroll);
+    document.addEventListener('visibilitychange', handleVisibilityChange);
 
     const video = videoRef.current;
     if (video) {
@@ -36,6 +46,7 @@ const StaticLanding = () => {
 
     return () => {
       window.removeEventListener('scroll', handleScroll);
+      document.removeEventListener('visibilitychange', handleVisibilityChange);
       if (video) {
         video.removeEventListener('loadeddata', handleVideoLoad);
       }

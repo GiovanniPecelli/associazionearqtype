@@ -155,7 +155,7 @@ export function Login({ isSignup = false }) {
           <div className="space-y-6 text-center">
             <div className="p-6 rounded-2xl bg-white/5 border border-white/10">
               <p className="text-gray-700 text-sm">
-                L\'accesso è attualmente limitato a inviti o membri esistenti.
+                L'accesso è attualmente limitato a inviti o membri esistenti.
                 Se hai un account, per favore accedi.
               </p>
             </div>
