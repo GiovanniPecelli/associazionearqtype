@@ -2,10 +2,13 @@
     "name": "arqtype-monorepo",
     "version": "1.0.0",
     "private": true,
+    "workspaces": [
+        "workspace"
+    ],
     "scripts": {
-        "dev": "npm run dev --prefix workspace",
-        "build": "npm run build --prefix workspace",
-        "install:all": "npm install && npm install --prefix workspace"
+        "dev": "npm run dev -w arqtype-workspace",
+        "build": "npm run build -w arqtype-workspace",
+        "install:all": "npm install"
     },
     "devDependencies": {
         "concurrently": "^8.2.2"

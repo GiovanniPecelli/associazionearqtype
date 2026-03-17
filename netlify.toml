@@ -1,6 +1,7 @@
 [build]
-  command = "npm run build --prefix workspace"
-  publish = "workspace/dist"
+  base = "workspace"
+  command = "npm run build"
+  publish = "dist"
 
 [[redirects]]
   from = "/*"
