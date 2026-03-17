@@ -19,11 +19,12 @@ import { GamificationProvider } from './context/GamificationContext.jsx';
 import { SystemSettingsProvider } from './contexts/SystemSettingsContext.jsx';
 
 import PublicLayout from './components/website/PublicLayout';
-const StaticLanding = lazy(() => import('./components/website/pages/StaticLanding'));
-const PublicStatutePage = lazy(() => import('./components/website/pages/StatutePage'));
-const PublicPrivacyPolicyPage = lazy(() => import('./components/website/pages/PrivacyPolicyPage'));
-const PublicCookiePolicyPage = lazy(() => import('./components/website/pages/CookiePolicyPage'));
-const PublicTermsAndConditionsPage = lazy(() => import('./components/website/pages/TermsAndConditionsPage'));
+import StaticLanding from './components/website/pages/StaticLanding';
+import Statuto from './components/website/pages/Statuto';
+import Privacy from './components/website/pages/Privacy';
+import Cookie from './components/website/pages/Cookie';
+import TermsAndConditionsPage from './components/website/pages/TermsAndConditionsPage';
+import Termini from './components/website/pages/Termini';
 
 // Lazy Load Pages
 const Navbar = lazy(() => import('./components/layout/Navbar').then(module => ({ default: module.Navbar })));
@@ -69,10 +70,10 @@ function AppContent() {
 
   const isStorePage = location.pathname === '/store';
 
-  const isPublicPage = location.pathname.startsWith('/statuto') || location.pathname === '/' || location.pathname === '/privacy-policy' || location.pathname === '/cookie-policy' || location.pathname === '/terms-and-conditions';
+  const isPublicPage = location.pathname.startsWith('/statuto') || location.pathname === '/' || location.pathname === '/privacy' || location.pathname === '/cookie' || location.pathname === '/terms-and-conditions' || location.pathname === '/termini';
 
   return (
-    <div className={`${isChatPage ? 'h-screen overflow-hidden flex flex-col' : 'min-h-screen flex flex-col'} text-gray-100 selection:bg-violet-500 selection:text-white relative font-sans`}>
+    <div className={`${isChatPage ? 'h-screen overflow-hidden flex flex-col' : 'min-h-screen flex flex-col'} text-gray-900 selection:bg-[#c0672a] selection:text-white relative font-sans`}>
 
       {/* Dynamic Global Background */}
       <DynamicBackground variant={getBackgroundVariant()} />
@@ -93,10 +94,11 @@ function AppContent() {
                 <Route path="/" element={user ? <Navigate to="/home" replace /> : <StaticLanding />} />
 
                 <Route element={<PublicLayout />}>
-                  <Route path="/statuto" element={<PublicStatutePage />} />
-                  <Route path="/privacy-policy" element={<PublicPrivacyPolicyPage />} />
-                  <Route path="/cookie-policy" element={<PublicCookiePolicyPage />} />
-                  <Route path="/terms-and-conditions" element={<PublicTermsAndConditionsPage />} />
+                  <Route path="/statuto" element={<Statuto />} />
+                  <Route path="/privacy" element={<Privacy />} />
+                  <Route path="/cookie" element={<Cookie />} />
+                  <Route path="/terms-and-conditions" element={<TermsAndConditionsPage />} />
+                  <Route path="/termini" element={<Termini />} />
                 </Route>
 
                 {/* Login Page */}
@@ -166,16 +168,17 @@ function DashboardApp() {
 function App() {
   const location = useLocation();
   // If exact root path or public pages, render StaticLanding without providers
-  const isPublic = location.pathname === '/' || location.pathname === '/index.html' || location.pathname.startsWith('/statuto') || location.pathname === '/privacy-policy' || location.pathname === '/cookie-policy' || location.pathname === '/terms-and-conditions';
+  const isPublic = location.pathname === '/' || location.pathname === '/index.html' || location.pathname.startsWith('/statuto') || location.pathname === '/privacy' || location.pathname === '/cookie' || location.pathname === '/terms-and-conditions' || location.pathname === '/termini';
 
   if (isPublic) {
     return (
       <Routes>
         <Route path="/" element={<StaticLanding />} />
-        <Route path="/statuto" element={<PublicStatutePage />} />
-        <Route path="/privacy-policy" element={<PublicPrivacyPolicyPage />} />
-        <Route path="/cookie-policy" element={<PublicCookiePolicyPage />} />
-        <Route path="/terms-and-conditions" element={<PublicTermsAndConditionsPage />} />
+        <Route path="/statuto" element={<Statuto />} />
+        <Route path="/privacy" element={<Privacy />} />
+        <Route path="/cookie" element={<Cookie />} />
+        <Route path="/terms-and-conditions" element={<TermsAndConditionsPage />} />
+        <Route path="/termini" element={<Termini />} />
         <Route path="*" element={<Navigate to="/" replace />} />
       </Routes>
     );

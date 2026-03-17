@@ -13,30 +13,30 @@ export default defineConfig(({ mode }) => ({
             registerType: 'autoUpdate',
             injectRegister: null, // We will manually register in main.jsx
             devOptions: {
-                enabled: true // Enable in development to prevent import errors
+                enabled: false // Disable PWA in development to prevent errors
             },
             includeAssets: ['vite.svg', 'robots.txt'],
             manifest: {
-                name: 'ARQTYPE',
-                short_name: 'ARQTYPE',
-                description: 'Exclusive Community Platform',
-                theme_color: '#111827',
-                background_color: '#111827',
+                name: 'ARQtype Association',
+                short_name: 'ARQtype',
+                description: 'Intelligenza Artificiale Etica e Sostenibile per il Terzo Settore',
+                theme_color: '#1a2b4b',
+                background_color: '#ffffff',
                 display: 'standalone',
                 scope: '/',
                 start_url: '/',
                 orientation: 'portrait',
                 icons: [
                     {
-                        src: '/pwa-192x192.png',
+                        src: '/pwa-192x192.webp',
                         sizes: '192x192',
-                        type: 'image/png',
+                        type: 'image/webp',
                         purpose: 'any maskable'
                     },
                     {
-                        src: '/pwa-512x512.png',
+                        src: '/pwa-512x512.webp',
                         sizes: '512x512',
-                        type: 'image/png',
+                        type: 'image/webp',
                         purpose: 'any maskable'
                     }
                 ]
@@ -44,7 +44,8 @@ export default defineConfig(({ mode }) => ({
         })
     ],
     server: {
-        port: 5174,
-        strictPort: true,
+        port: 3000,
+        strictPort: false,
+        host: true
     },
 }))

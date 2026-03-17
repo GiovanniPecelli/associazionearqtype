@@ -1,22 +1,22 @@
 {
-    "name": "Associazione ARQtype",
+    "name": "ARQtype Association",
     "short_name": "ARQtype",
+    "description": "Intelligenza Artificiale Etica, Leggera e Sostenibile per il Terzo Settore",
     "start_url": "/",
     "display": "standalone",
-    "description": "Associazione culturale per la promozione dell'etica nell'IA e cultura digitale.",
-    "background_color": "#030305",
-    "theme_color": "#030305",
+    "background_color": "#ffffff",
+    "theme_color": "#1a2b4b",
     "icons": [
         {
-            "src": "/pwa-192x192.png",
+            "src": "/pwa-192x192.webp",
             "sizes": "192x192",
-            "type": "image/png",
+            "type": "image/webp",
             "purpose": "any"
         },
         {
-            "src": "/pwa-512x512.png",
+            "src": "/pwa-512x512.webp",
             "sizes": "512x512",
-            "type": "image/png",
+            "type": "image/webp",
             "purpose": "any"
         }
     ]

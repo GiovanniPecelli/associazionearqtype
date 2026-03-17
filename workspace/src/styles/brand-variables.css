@@ -1,0 +1,370 @@
+/* 
+  ARQtype Brand System - CSS Variables
+  Based on logo-derived color palette: Deep Blue & Warm Orange
+  Philosophy: Technology + Humanity, Modern + Light, Accessible + Elegant
+*/
+
+:root {
+  /* Primary Brand Colors - Logo Derived */
+  --color-deep-blue-brand: #1a2b4b;
+  --color-warm-orange-brand: #c0672a;
+  
+  /* Extended Color Palettes */
+  --color-deep-blue-50: #f0f9ff;
+  --color-deep-blue-100: #e0f2fe;
+  --color-deep-blue-200: #bae6fd;
+  --color-deep-blue-300: #7dd3fc;
+  --color-deep-blue-400: #38bdf8;
+  --color-deep-blue-500: #0ea5e9;
+  --color-deep-blue-600: #0284c7;
+  --color-deep-blue-700: #0369a1;
+  --color-deep-blue-800: #075985;
+  --color-deep-blue-900: #0c4a6e;
+  --color-deep-blue-950: #082f49;
+  
+  --color-warm-orange-50: #fff7ed;
+  --color-warm-orange-100: #ffedd5;
+  --color-warm-orange-200: #fed7aa;
+  --color-warm-orange-300: #fdba74;
+  --color-warm-orange-400: #fb923c;
+  --color-warm-orange-500: #f97316;
+  --color-warm-orange-600: #ea580c;
+  --color-warm-orange-700: #c2410c;
+  --color-warm-orange-800: #9a3412;
+  --color-warm-orange-900: #7c2d12;
+  --color-warm-orange-950: #431407;
+  
+  /* Secondary Palette - Clean & Minimal */
+  --color-neutral-50: #fafafa;
+  --color-neutral-100: #f5f5f5;
+  --color-neutral-200: #e5e5e5;
+  --color-neutral-300: #d4d4d4;
+  --color-neutral-400: #a3a3a3;
+  --color-neutral-500: #737373;
+  --color-neutral-600: #525252;
+  --color-neutral-700: #404040;
+  --color-neutral-800: #262626;
+  --color-neutral-900: #171717;
+  --color-neutral-950: #0a0a0a;
+  
+  /* Semantic Colors */
+  --color-white: #ffffff;
+  --color-gray-50: #f9fafb;
+  --color-gray-100: #f3f4f6;
+  --color-gray-200: #e5e7eb;
+  --color-gray-300: #d1d5db;
+  --color-gray-400: #9ca3af;
+  --color-gray-500: #6b7280;
+  --color-gray-600: #4b5563;
+  --color-gray-700: #374151;
+  --color-gray-800: #1f2937;
+  --color-gray-900: #111827;
+  --color-gray-950: #030712;
+  
+  /* Dynamic Theme Variables */
+  --color-arq-bg: #ffffff;
+  --color-arq-primary: var(--color-deep-blue-brand);
+  --color-arq-accent: var(--color-warm-orange-brand);
+  --color-arq-glass: rgba(255, 255, 255, 0.8);
+  --color-arq-glassBorder: rgba(255, 255, 255, 0.2);
+  
+  /* Brand Gradients */
+  --gradient-brand-primary: linear-gradient(135deg, var(--color-deep-blue-brand) 0%, var(--color-warm-orange-brand) 100%);
+  --gradient-brand-subtle: linear-gradient(135deg, var(--color-deep-blue-brand) 0%, var(--color-warm-orange-brand) 100%);
+  --gradient-brand-soft: linear-gradient(135deg, var(--color-deep-blue-brand) 10%, var(--color-warm-orange-brand) 90%);
+  --gradient-blue-only: linear-gradient(135deg, var(--color-deep-blue-600) 0%, var(--color-deep-blue-brand) 100%);
+  --gradient-orange-only: linear-gradient(135deg, var(--color-warm-orange-500) 0%, var(--color-warm-orange-brand) 100%);
+  
+  /* Interactive States */
+  --gradient-hover-primary: linear-gradient(135deg, var(--color-deep-blue-700) 0%, var(--color-warm-orange-600) 100%);
+  --gradient-active-primary: linear-gradient(135deg, var(--color-deep-blue-800) 0%, var(--color-warm-orange-700) 100%);
+  
+  /* Glass Effects */
+  --glass-white: rgba(255, 255, 255, 0.8);
+  --glass-white-border: rgba(255, 255, 255, 0.2);
+  --glass-blue: rgba(26, 43, 75, 0.1);
+  --glass-blue-border: rgba(26, 43, 75, 0.2);
+  --glass-orange: rgba(192, 103, 42, 0.1);
+  --glass-orange-border: rgba(192, 103, 42, 0.2);
+  
+  /* Shadows with Brand Colors */
+  --shadow-brand-blue: 0 4px 20px rgba(26, 43, 75, 0.15);
+  --shadow-brand-orange: 0 4px 20px rgba(192, 103, 42, 0.15);
+  --shadow-brand-hover: 0 8px 30px rgba(26, 43, 75, 0.25);
+  --shadow-brand-active: 0 12px 40px rgba(192, 103, 42, 0.3);
+  
+  /* Transition Timing */
+  --transition-smooth: cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-bounce: cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  --transition-slow: 0.4s var(--transition-smooth);
+  --transition-fast: 0.2s var(--transition-smooth);
+  
+  /* Border Radius */
+  --radius-sm: 0.375rem;
+  --radius-md: 0.5rem;
+  --radius-lg: 0.75rem;
+  --radius-xl: 1rem;
+  --radius-2xl: 1.5rem;
+  --radius-3xl: 2rem;
+  --radius-full: 9999px;
+}
+
+/* Dark theme support */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-arq-bg: #0a0a0a;
+    --color-arq-glass: rgba(10, 10, 10, 0.8);
+    --color-arq-glassBorder: rgba(255, 255, 255, 0.1);
+  }
+}
+
+/* Utility classes for brand colors */
+.bg-brand-primary { background-color: var(--color-deep-blue-brand); }
+.bg-brand-accent { background-color: var(--color-warm-orange-brand); }
+.bg-gradient-brand { background: var(--gradient-brand-primary); }
+.bg-gradient-brand-subtle { background: var(--gradient-brand-subtle); }
+.bg-gradient-brand-soft { background: var(--gradient-brand-soft); }
+
+.text-brand-primary { color: var(--color-deep-blue-brand); }
+.text-brand-accent { color: var(--color-warm-orange-brand); }
+
+.border-brand-primary { border-color: var(--color-deep-blue-brand); }
+.border-brand-accent { border-color: var(--color-warm-orange-brand); }
+
+.shadow-brand-blue { box-shadow: var(--shadow-brand-blue); }
+.shadow-brand-orange { box-shadow: var(--shadow-brand-orange); }
+
+/* Smooth transitions for interactive elements */
+.transition-brand {
+  transition: all var(--transition-smooth);
+}
+
+.transition-brand-slow {
+  transition: all var(--transition-slow);
+}
+
+.transition-brand-fast {
+  transition: all var(--transition-fast);
+}
+
+/* Hover states */
+.hover-lift:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-brand-hover);
+}
+
+.hover-glow-blue:hover {
+  box-shadow: 0 0 30px rgba(26, 43, 75, 0.4);
+}
+
+.hover-glow-orange:hover {
+  box-shadow: 0 0 30px rgba(192, 103, 42, 0.4);
+}
+
+/* Enhanced Brand Gradients with Smooth Animations */
+:root {
+  /* Animated gradient backgrounds */
+  --gradient-brand-animated: linear-gradient(270deg, var(--color-deep-blue-brand), var(--color-warm-orange-brand), var(--color-deep-blue-brand));
+  --gradient-brand-animated-size: 400% 400%;
+  
+  /* Micro-interaction gradients */
+  --gradient-hover-subtle: linear-gradient(135deg, 
+    rgba(26, 43, 75, 0.05) 0%, 
+    rgba(192, 103, 42, 0.05) 50%, 
+    rgba(26, 43, 75, 0.05) 100%);
+  
+  --gradient-active-subtle: linear-gradient(135deg, 
+    rgba(26, 43, 75, 0.1) 0%, 
+    rgba(192, 103, 42, 0.1) 50%, 
+    rgba(26, 43, 75, 0.1) 100%);
+  
+  /* Focus states */
+  --gradient-focus-ring: linear-gradient(135deg, 
+    var(--color-deep-blue-brand) 0%, 
+    var(--color-warm-orange-brand) 100%);
+  
+  /* Loading states */
+  --gradient-loading: linear-gradient(90deg, 
+    var(--color-deep-blue-brand/20) 0%, 
+    var(--color-warm-orange-brand/20) 50%, 
+    var(--color-deep-blue-brand/20) 100%);
+}
+
+/* Animated gradient utility */
+@keyframes gradientFlow {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.gradient-animated {
+  background: var(--gradient-brand-animated);
+  background-size: var(--gradient-brand-animated-size);
+  animation: gradientFlow 8s ease infinite;
+}
+
+/* Smooth color transitions for interactive elements */
+.interactive-blue {
+  transition: all var(--transition-smooth);
+  background: linear-gradient(135deg, var(--color-deep-blue-brand) 0%, var(--color-deep-blue-700) 100%);
+}
+
+.interactive-blue:hover {
+  background: linear-gradient(135deg, var(--color-deep-blue-700) 0%, var(--color-deep-blue-800) 100%);
+  box-shadow: var(--shadow-brand-hover);
+  transform: translateY(-1px);
+}
+
+.interactive-orange {
+  transition: all var(--transition-smooth);
+  background: linear-gradient(135deg, var(--color-warm-orange-brand) 0%, var(--color-warm-orange-600) 100%);
+}
+
+.interactive-orange:hover {
+  background: linear-gradient(135deg, var(--color-warm-orange-600) 0%, var(--color-warm-orange-700) 100%);
+  box-shadow: var(--shadow-brand-hover);
+  transform: translateY(-1px);
+}
+
+/* Subtle hover effects */
+.hover-glow-subtle {
+  transition: all var(--transition-smooth);
+}
+
+.hover-glow-subtle:hover {
+  box-shadow: 0 0 20px rgba(26, 43, 75, 0.1);
+  transform: translateY(-1px);
+}
+
+/* Focus states with smooth transitions */
+.focus-ring {
+  transition: all var(--transition-smooth);
+}
+
+.focus-ring:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(26, 43, 75, 0.1),
+              0 0 0 1px var(--color-deep-blue-brand);
+}
+
+/* Loading shimmer effect */
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+.loading-shimmer {
+  background: var(--gradient-loading);
+  background-size: 200% 100%;
+  animation: shimmer 2s ease-in-out infinite;
+}
+
+/* Smooth transitions for text colors */
+.text-transition {
+  transition: color var(--transition-smooth);
+}
+
+.text-transition:hover {
+  color: var(--color-warm-orange-brand);
+}
+
+/* Button states with smooth transitions */
+.btn-primary {
+  background: linear-gradient(135deg, var(--color-deep-blue-brand) 0%, var(--color-deep-blue-700) 100%);
+  color: white;
+  border: none;
+  transition: all var(--transition-smooth);
+  box-shadow: var(--shadow-brand-blue);
+}
+
+.btn-primary:hover {
+  background: linear-gradient(135deg, var(--color-deep-blue-700) 0%, var(--color-deep-blue-800) 100%);
+  box-shadow: var(--shadow-brand-hover);
+  transform: translateY(-2px);
+}
+
+.btn-primary:active {
+  background: linear-gradient(135deg, var(--color-deep-blue-800) 0%, var(--color-deep-blue-900) 100%);
+  transform: translateY(0);
+}
+
+.btn-accent {
+  background: linear-gradient(135deg, var(--color-warm-orange-brand) 0%, var(--color-warm-orange-600) 100%);
+  color: white;
+  border: none;
+  transition: all var(--transition-smooth);
+  box-shadow: var(--shadow-brand-orange);
+}
+
+.btn-accent:hover {
+  background: linear-gradient(135deg, var(--color-warm-orange-600) 0%, var(--color-warm-orange-700) 100%);
+  box-shadow: var(--shadow-brand-hover);
+  transform: translateY(-2px);
+}
+
+.btn-accent:active {
+  background: linear-gradient(135deg, var(--color-warm-orange-700) 0%, var(--color-warm-orange-800) 100%);
+  transform: translateY(0);
+}
+
+/* Card hover effects */
+.card-hover {
+  transition: all var(--transition-smooth);
+  border: 1px solid var(--color-gray-200);
+}
+
+.card-hover:hover {
+  border-color: var(--color-warm-orange-brand/30);
+  box-shadow: 0 8px 30px rgba(26, 43, 75, 0.1);
+  transform: translateY(-4px);
+}
+
+/* Smooth transitions for navigation */
+.nav-link {
+  transition: all var(--transition-smooth);
+  position: relative;
+}
+
+.nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: linear-gradient(90deg, var(--color-deep-blue-brand), var(--color-warm-orange-brand));
+  transition: width var(--transition-smooth);
+}
+
+.nav-link:hover::after,
+.nav-link.active::after {
+  width: 100%;
+}
+
+/* Pulse animations for emphasis */
+@keyframes pulse-subtle {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.7; }
+}
+
+.pulse-subtle {
+  animation: pulse-subtle 3s ease-in-out infinite;
+}
+
+/* Smooth scroll behavior */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+  
+  html {
+    scroll-behavior: auto;
+  }
+}

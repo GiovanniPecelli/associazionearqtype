@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, Fragment } from 'react';
 import { ArrowLeft, ScrollText, Users, ShieldAlert, Gavel } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
@@ -9,7 +9,8 @@ const TermsAndConditionsPage = () => {
     }, []);
 
     return (
-        <div className="min-h-screen bg-[#0a0a0a] pt-24 pb-20 relative overflow-hidden">
+        <Fragment>
+            <div className="min-h-screen bg-[#0a0a0a] pt-24 pb-20 relative overflow-hidden">
             {/* Background Effects */}
             <div className="absolute inset-0 overflow-hidden pointer-events-none">
                 <div className="absolute top-[-20%] left-[-10%] w-[60%] h-[60%] bg-purple-600/10 rounded-full blur-[120px]" />
@@ -23,20 +24,24 @@ const TermsAndConditionsPage = () => {
                     <span className="text-sm font-medium">Torna alla Home</span>
                 </Link>
 
-                <div className="p-8 md:p-12 rounded-3xl border border-white/5 bg-white/[0.02] backdrop-blur-xl shadow-2xl animate-fade-in-up">
-                    <div className="text-center mb-16">
-                        <h1 className="text-4xl md:text-5xl font-black mb-6 text-white tracking-tight">Termini e Condizioni</h1>
-                        <div className="w-24 h-1.5 bg-gradient-to-r from-indigo-500 to-purple-500 mx-auto rounded-full" />
-                        <p className="mt-6 text-indigo-200/60 font-mono text-sm uppercase tracking-widest">Regolamento d'uso del servizio</p>
-                    </div>
+                <div className="text-center">
+                    <img 
+                        src="/assets/logonobg.png"
+                        alt="ARQtype Association"
+                        className="h-16 w-auto mx-auto mb-8"
+                    />
+                    <h1 className="text-4xl md:text-5xl font-black mb-6 leading-tight">Termini e Condizioni</h1>
+                    <div className="w-24 h-1.5 bg-gradient-to-r from-indigo-500 to-purple-500 mx-auto rounded-full" />
+                    <p className="mt-6 text-indigo-200/60 font-mono text-sm uppercase tracking-widest">Regolamento d'uso del servizio</p>
+                </div>
 
-                    <div className="space-y-12 text-gray-300 leading-relaxed text-lg font-light">
-                        {/* Intro */}
-                        <div className="p-6 rounded-2xl bg-white/5 border border-white/10 text-center">
-                            <p className="font-medium text-white">
-                                Benvenuto su ARQtype. L'accesso e l'utilizzo di questo sito e dei servizi associati sono regolati dai presenti Termini e Condizioni.
-                            </p>
-                        </div>
+                <div className="space-y-12 text-gray-300 leading-relaxed text-lg font-light">
+                    {/* Intro */}
+                    <div className="p-6 rounded-2xl bg-white/5 border border-white/10 text-center">
+                        <p className="font-medium text-white">
+                            Benvenuto in Associazione ARQtype. L'accesso e l'utilizzo di questo sito e dei servizi associati sono regolati dai presenti Termini e Condizioni.
+                        </p>
+                    </div>
 
                         {/* Sezione 1: Natura dell'Associazione */}
                         <section>
@@ -71,7 +76,7 @@ const TermsAndConditionsPage = () => {
                                 <p>
                                     L'accesso a determinati servizi, aree riservate o attività formative può essere subordinato all'iscrizione all'Associazione in qualità di Socio Ordinario o Aderente.
                                 </p>
-                                <ul className="list-disc pl-5 mt-2 space-y-2 text-gray-400">
+                                <ul className="list-disc pl-5 mt-2 space-y-2 text-gray-300">
                                     <li>L'ammissione è subordinata all'accettazione da parte del Consiglio Direttivo.</li>
                                     <li>La qualifica di socio è personale e non trasmissibile.</li>
                                     <li>Il mancato rispetto dello Statuto o dei regolamenti interni può comportare l'esclusione.</li>
@@ -157,12 +162,12 @@ const TermsAndConditionsPage = () => {
                         </section>
 
                         <p className="text-xs text-center text-gray-600 pt-12 mt-12 border-t border-white/5">
-                            Ultimo aggiornamento: 06/02/2026
+                            Ultimo aggiornamento: 17/03/2026
                         </p>
                     </div>
                 </div>
             </div>
-        </div>
+        </Fragment>
     );
 };
 

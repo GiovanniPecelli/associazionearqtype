@@ -126,15 +126,15 @@ export function Navbar() {
   };
 
   return (
-    <nav className="fixed top-0 left-0 w-full z-[100] h-[80px] bg-[#050505]/20 backdrop-blur-md border-b border-white/5 shadow-2xl shadow-black/20">
+    <nav className="fixed top-0 left-0 w-full z-[100] h-[80px] glass-white border-b border-gray-200/50 shadow-sm">
       <div className="w-full px-6 md:px-[48px] h-full relative">
         <div className="flex justify-between h-full items-center">
           {/* Logo */}
           <Link to="/home" className="flex items-center gap-[12px] group">
             <img
-              src="/arqtype_logo.png"
+              src="/assets/newlogo.png"
               alt="ARQTYPE"
-              className="h-[36px] w-auto object-contain drop-shadow-[0_0_15px_rgba(99,102,241,0.5)] group-hover:scale-105 transition-transform duration-300"
+              className="h-[36px] w-auto object-contain group-hover:scale-105 transition-transform duration-300"
             />
           </Link>
 
@@ -145,9 +145,9 @@ export function Navbar() {
               <button
                 onClick={() => setWorkflowMenuOpen(!workflowMenuOpen)}
                 onMouseEnter={() => handlePrefetch('/workflows')}
-                className={`px-3 py-2 rounded-lg text-sm font-medium transition-all flex items-center gap-1 ${location.pathname === '/workflows' || location.pathname === '/mytasks'
-                  ? 'bg-white/10 text-white'
-                  : 'text-gray-400 hover:text-white hover:bg-white/5'
+                className={`px-3 py-2 rounded-lg text-sm font-medium transition-brand flex items-center gap-1 ${location.pathname === '/workflows' || location.pathname === '/mytasks'
+                  ? 'bg-deep-blue-50 text-deep-blue-700 border border-deep-blue-100'
+                  : 'text-gray-600 hover:text-deep-blue-brand hover:bg-deep-blue-50'
                   }`}
               >
                 <span className="hidden lg:inline">Workflows</span>
@@ -158,16 +158,16 @@ export function Navbar() {
               </button>
 
               {workflowMenuOpen && (
-                <div className="absolute left-0 mt-2 w-48 bg-zinc-900 rounded-xl shadow-xl border border-white/10 z-50 py-1 overflow-hidden">
+                <div className="absolute left-0 mt-2 w-48 bg-white rounded-xl shadow-xl border border-gray-100 z-50 py-1 overflow-hidden">
                   {workflowItems.map(item => (
                     <Link
                       key={item.path}
                       to={item.path}
                       onClick={() => setWorkflowMenuOpen(false)}
                       onMouseEnter={() => handlePrefetch(item.path)}
-                      className={`flex items-center gap-3 px-4 py-3 text-sm transition-colors ${location.pathname === item.path
-                        ? 'bg-indigo-600/20 text-indigo-300 font-medium'
-                        : 'text-gray-300 hover:bg-white/5 hover:text-white'
+                      className={`flex items-center gap-3 px-4 py-3 text-sm transition-brand ${location.pathname === item.path
+                        ? 'bg-deep-blue-50 text-deep-blue-700 font-medium border border-deep-blue-100'
+                        : 'text-gray-600 hover:bg-deep-blue-50 hover:text-deep-blue-brand'
                         }`}
                     >
                       <span className="text-lg">{item.icon}</span>
@@ -183,15 +183,15 @@ export function Navbar() {
                 key={item.path}
                 to={item.path}
                 onMouseEnter={() => handlePrefetch(item.path)}
-                className={`px-3 py-2 rounded-lg text-sm font-medium transition-all relative ${location.pathname === item.path
-                  ? 'bg-white/10 text-white'
-                  : 'text-gray-400 hover:text-white hover:bg-white/5'
+                className={`px-3 py-2 rounded-lg text-sm font-medium transition-brand relative ${location.pathname === item.path
+                  ? 'bg-deep-blue-50 text-deep-blue-700 border border-deep-blue-100'
+                  : 'text-gray-600 hover:text-deep-blue-brand hover:bg-deep-blue-50'
                   }`}
               >
                 <span className="hidden lg:inline">{item.label}</span>
                 <span className="lg:hidden text-lg">{item.icon}</span>
                 {item.path === '/chat' && totalUnread > 0 && (
-                  <span className="absolute -top-1 -right-1 bg-gradient-to-r from-red-500 to-pink-500 text-white text-xs font-bold px-1.5 py-0.5 rounded-full min-w-[1.25rem] text-center shadow-sm">
+                  <span className="absolute -top-1 -right-1 bg-gradient-brand text-white text-xs font-bold px-1.5 py-0.5 rounded-full min-w-[1.25rem] text-center shadow-sm animate-glow-orange">
                     {totalUnread > 99 ? '99+' : totalUnread}
                   </span>
                 )}
@@ -206,7 +206,7 @@ export function Navbar() {
               <div className="relative">
                 <button
                   onClick={() => setHostMenuOpen(!hostMenuOpen)}
-                  className="flex items-center gap-1.5 px-3 py-2 text-gray-300 hover:text-white hover:bg-white/5 rounded-lg transition-colors border border-white/5"
+                  className="flex items-center gap-1.5 px-3 py-2 text-gray-600 hover:text-deep-blue-brand hover:bg-deep-blue-50 rounded-lg transition-brand border border-gray-200"
                 >
                   <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" />
@@ -219,9 +219,9 @@ export function Navbar() {
                 </button>
 
                 {hostMenuOpen && (
-                  <div className="absolute right-0 mt-2 w-56 bg-zinc-900 rounded-xl shadow-xl border border-white/10 z-50 py-1 overflow-hidden">
-                    <div className="px-3 py-2 border-b border-white/5 bg-gray-900/50">
-                      <span className="text-[10px] bg-purple-500/20 text-purple-300 px-2 py-0.5 rounded border border-purple-500/30 font-semibold tracking-wide">HOST ONLY</span>
+                  <div className="absolute right-0 mt-2 w-56 bg-white rounded-xl shadow-xl border border-gray-100 z-50 py-1 overflow-hidden">
+                    <div className="px-3 py-2 border-b border-gray-100 bg-gray-50">
+                      <span className="text-[10px] bg-purple-100 text-purple-700 px-2 py-0.5 rounded border border-purple-200 font-semibold tracking-wide">HOST ONLY</span>
                     </div>
                     {hostConfigItems.map(item => (
                       <Link
@@ -229,9 +229,9 @@ export function Navbar() {
                         to={item.path}
                         onClick={() => setHostMenuOpen(false)}
                         onMouseEnter={() => handlePrefetch(item.path)}
-                        className={`flex items-center gap-3 px-4 py-3 text-sm transition-colors ${location.pathname === item.path
-                          ? 'bg-indigo-600/20 text-indigo-300 font-medium'
-                          : 'text-gray-300 hover:bg-white/5 hover:text-white'
+                        className={`flex items-center gap-3 px-4 py-3 text-sm transition-brand ${location.pathname === item.path
+                          ? 'bg-deep-blue-50 text-deep-blue-700 font-medium border border-deep-blue-100'
+                          : 'text-gray-600 hover:bg-deep-blue-50 hover:text-deep-blue-brand'
                           }`}
                       >
                         <span className="text-lg">{item.icon}</span>
@@ -252,7 +252,7 @@ export function Navbar() {
               ) : (
                 <Link
                   to="/dashboard" // Redirect to protected route to trigger Login
-                  className="px-5 py-2.5 rounded-xl bg-white text-black font-bold text-sm hover:bg-gray-200 transition-all shadow-[0_0_20px_rgba(255,255,255,0.1)]"
+                  className="px-5 py-2.5 rounded-xl bg-gradient-brand text-white font-bold text-sm hover:bg-gradient-brand-subtle transition-brand shadow-md hover:shadow-lg hover-lift"
                 >
                   Sign In
                 </Link>
@@ -263,16 +263,10 @@ export function Navbar() {
           {/* Mobile Hamburger Button */}
           <button
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            className="md:hidden p-2 rounded-lg text-gray-400 hover:text-white hover:bg-white/5 transition-colors"
+            className="md:hidden p-2 rounded-lg text-gray-600 hover:text-deep-blue-brand hover:bg-deep-blue-50 transition-brand"
             aria-label="Toggle menu"
           >
-            <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              {mobileMenuOpen ? (
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
-              ) : (
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
-              )}
-            </svg>
+            {mobileMenuOpen ? <Icons.Close className="w-6 h-6" /> : <Icons.Menu className="w-6 h-6" />}
           </button>
         </div>
 
@@ -298,7 +292,7 @@ export function Navbar() {
               }
             }
           }}
-          className="md:hidden absolute top-full left-0 w-full border-b border-white/5 bg-black/95 backdrop-blur-xl shadow-2xl overflow-hidden z-40"
+          className="md:hidden absolute top-full left-0 w-full border-b border-gray-200 glass-white shadow-lg overflow-hidden z-40"
         >
           <div className="py-4 pb-32 space-y-2 max-h-[calc(100dvh-4rem)] overflow-y-auto overscroll-contain">
             {/* User Stats Card - Mobile */}
@@ -308,24 +302,24 @@ export function Navbar() {
                 closed: { opacity: 0, y: -20 }
               }}
               className={`mx-4 mb-4 p-4 rounded-xl border ${isElite
-                ? 'bg-gradient-to-br from-amber-900/40 to-yellow-900/40 border-yellow-500/30'
-                : 'bg-white/5 border-white/10'
+                ? 'bg-gradient-brand-subtle border-warm-orange-200'
+                : 'bg-gray-50 border-gray-200'
                 }`}
             >
               <div className="flex items-center gap-3 mb-3">
-                <div className={`w-12 h-12 rounded-full flex items-center justify-center font-bold text-lg shadow-lg ${isElite
-                  ? 'bg-gradient-to-br from-yellow-400 via-amber-500 to-orange-500 text-white'
-                  : 'bg-gradient-to-br from-indigo-500 to-purple-600 text-white'
+                <div className={`w-12 h-12 rounded-full flex items-center justify-center font-bold text-lg shadow-sm ${isElite
+                  ? 'bg-gradient-brand text-white'
+                  : 'bg-gradient-blue-only text-white'
                   }`}>
                   {isElite ? <Icons.Crown className="w-6 h-6" /> : stats.level}
                 </div>
                 <div className="flex-1">
-                  <h3 className="font-bold text-white truncate">
+                  <h3 className="font-bold text-gray-900 truncate">
                     {profile?.display_name || user?.email?.split('@')[0] || 'Guest'}
                   </h3>
                   <p className={`text-xs font-semibold ${isElite
-                    ? 'text-transparent bg-clip-text bg-gradient-to-r from-yellow-400 to-orange-400'
-                    : 'text-indigo-400'
+                    ? 'text-transparent bg-clip-text bg-gradient-brand'
+                    : 'text-deep-blue-brand'
                     }`}>
                     {stats.roleLevel}
                   </p>
@@ -333,25 +327,25 @@ export function Navbar() {
               </div>
 
               <div className="grid grid-cols-3 gap-2 mb-3">
-                <div className="bg-black/30 rounded-lg p-2 text-center border border-white/5">
-                  <div className="text-xs text-gray-400 font-medium">Level</div>
-                  <div className="text-lg font-bold text-white">{stats.level}</div>
+                <div className="bg-white rounded-lg p-2 text-center border border-gray-100 shadow-sm">
+                  <div className="text-xs text-gray-500 font-medium">Level</div>
+                  <div className="text-lg font-bold text-gray-900">{stats.level}</div>
                 </div>
-                <div className="bg-black/30 rounded-lg p-2 text-center border border-white/5">
-                  <div className="text-xs text-gray-400 font-medium">IP</div>
-                  <div className="text-lg font-bold text-purple-400">{stats.impactPoints}</div>
+                <div className="bg-white rounded-lg p-2 text-center border border-gray-100 shadow-sm">
+                  <div className="text-xs text-gray-500 font-medium">IP</div>
+                  <div className="text-lg font-bold text-warm-orange-brand">{stats.impactPoints}</div>
                 </div>
-                <div className="bg-black/30 rounded-lg p-2 text-center border border-white/5">
-                  <div className="text-xs text-gray-400 font-medium">XP</div>
-                  <div className="text-lg font-bold text-blue-400">{stats.xp}</div>
+                <div className="bg-white rounded-lg p-2 text-center border border-gray-100 shadow-sm">
+                  <div className="text-xs text-gray-500 font-medium">XP</div>
+                  <div className="text-lg font-bold text-deep-blue-brand">{stats.xp}</div>
                 </div>
               </div>
 
-              <div className="w-full h-2 rounded-full overflow-hidden bg-white/10">
+              <div className="w-full h-2 rounded-full overflow-hidden bg-gray-200">
                 <motion.div
                   className={`h-full ${isElite
-                    ? 'bg-gradient-to-r from-yellow-400 via-amber-500 to-orange-500'
-                    : 'bg-gradient-to-r from-indigo-500 to-purple-600'
+                    ? 'bg-gradient-brand'
+                    : 'bg-gradient-blue-only'
                     }`}
                   initial={{ width: 0 }}
                   animate={{ width: `${progress}%` }}
@@ -375,8 +369,8 @@ export function Navbar() {
                 to="/workflows"
                 onClick={() => setMobileMenuOpen(false)}
                 className={`flex items-center justify-between px-4 py-4 rounded-xl text-lg font-medium transition-all active:scale-[0.98] ${location.pathname === '/workflows'
-                  ? 'bg-gradient-to-r from-white/15 to-white/5 text-white border border-white/10 shadow-lg'
-                  : 'text-gray-300 hover:text-white hover:bg-white/10'
+                  ? 'bg-deep-blue-50 text-deep-blue-700 border border-deep-blue-100 shadow-sm'
+                  : 'text-gray-600 hover:text-deep-blue-brand hover:bg-deep-blue-50'
                   }`}
               >
                 <span className="flex items-center gap-4">
@@ -397,8 +391,8 @@ export function Navbar() {
                 to="/mytasks"
                 onClick={() => setMobileMenuOpen(false)}
                 className={`flex items-center justify-between px-4 py-4 rounded-xl text-lg font-medium transition-all active:scale-[0.98] ${location.pathname === '/mytasks'
-                  ? 'bg-gradient-to-r from-white/15 to-white/5 text-white border border-white/10 shadow-lg'
-                  : 'text-gray-300 hover:text-white hover:bg-white/10'
+                  ? 'bg-deep-blue-50 text-deep-blue-700 border border-deep-blue-100 shadow-sm'
+                  : 'text-gray-600 hover:text-deep-blue-brand hover:bg-deep-blue-50'
                   }`}
               >
                 <span className="flex items-center gap-4">
@@ -420,7 +414,7 @@ export function Navbar() {
                   to={item.path}
                   onClick={() => setMobileMenuOpen(false)}
                   className={`flex items-center justify-between px-4 py-4 rounded-xl text-lg font-medium transition-all active:scale-[0.98] ${location.pathname === item.path
-                    ? 'bg-gradient-to-r from-white/15 to-white/5 text-white border border-white/10 shadow-lg'
+                    ? 'bg-gradient-brand-subtle text-white border border-white/10 shadow-lg'
                     : 'text-gray-300 hover:text-white hover:bg-white/10'
                     }`}
                 >
@@ -429,7 +423,7 @@ export function Navbar() {
                     {item.label}
                   </span>
                   {item.path === '/chat' && totalUnread > 0 && (
-                    <span className="bg-gradient-to-r from-red-500 to-pink-500 text-white text-sm font-bold px-2.5 py-1 rounded-full shadow-lg shadow-red-500/20">
+                    <span className="bg-gradient-brand text-white text-sm font-bold px-2.5 py-1 rounded-full shadow-lg shadow-warm-orange-brand/20 animate-glow-orange">
                       {totalUnread > 99 ? '99+' : totalUnread}
                     </span>
                   )}
@@ -448,7 +442,7 @@ export function Navbar() {
                   className="px-4 py-3 flex items-center gap-2 mt-6"
                 >
                   <span className="text-sm font-bold text-gray-500 uppercase tracking-wider">Admin Tools</span>
-                  <span className="text-[10px] bg-purple-500/20 text-purple-300 px-2 py-0.5 rounded border border-purple-500/30 font-semibold">HOST ONLY</span>
+                  <span className="text-[10px] bg-warm-orange-100 text-warm-orange-700 px-2 py-0.5 rounded border border-warm-orange-200 font-semibold">HOST ONLY</span>
                 </motion.div>
                 {hostConfigItems.map(item => (
                   <motion.div
@@ -462,8 +456,8 @@ export function Navbar() {
                       to={item.path}
                       onClick={() => setMobileMenuOpen(false)}
                       className={`flex items-center gap-4 px-4 py-4 rounded-xl text-lg font-medium transition-all active:scale-[0.98] ${location.pathname === item.path
-                        ? 'bg-indigo-600/20 text-indigo-300 border border-indigo-500/30'
-                        : 'text-gray-400 hover:text-white hover:bg-white/10'
+                        ? 'bg-deep-blue-50 text-deep-blue-700 border border-deep-blue-100'
+                        : 'text-gray-600 hover:text-deep-blue-brand hover:bg-deep-blue-50'
                         }`}
                     >
                       <span className="text-2xl">{item.icon}</span>
@@ -492,7 +486,7 @@ export function Navbar() {
                   <Link
                     to={action.to}
                     onClick={() => setMobileMenuOpen(false)}
-                    className="flex items-center gap-4 px-4 py-4 bg-white/5 rounded-xl text-gray-200 font-bold text-lg hover:bg-white/10 transition-all border border-white/5 active:scale-[0.98]"
+                    className="flex items-center gap-4 px-4 py-4 bg-gray-50 rounded-xl text-gray-800 font-bold text-lg hover:bg-deep-blue-50 hover:text-deep-blue-brand transition-brand border border-gray-100 active:scale-[0.98]"
                   >
                     {action.icon}
                     {action.label}
@@ -509,14 +503,12 @@ export function Navbar() {
               }}
               className="px-4 pb-12 mt-8"
             >
-              <div className="h-px bg-white/10 mb-8" /> {/* Separator Line */}
+              <div className="h-px bg-gray-200 mb-8" /> {/* Separator Line */}
               <button
                 onClick={handleSignOut}
-                className="w-full flex items-center justify-center gap-3 px-6 py-5 bg-red-500/10 text-red-400 rounded-2xl font-black text-xl hover:bg-red-500/20 transition-all border border-red-500/20 shadow-lg active:scale-[0.98]"
+                className="w-full flex items-center justify-center gap-3 px-6 py-5 bg-red-50 text-red-600 rounded-2xl font-black text-xl hover:bg-red-100 transition-brand border border-red-100 shadow-sm active:scale-[0.98] hover-lift"
               >
-                <svg className="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1" />
-                </svg>
+                <Icons.LogOut className="w-6 h-6 border" />
                 Sign Out
               </button>
               <p className="text-center text-xs text-gray-600 mt-6 font-medium">

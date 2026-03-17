@@ -1,9 +1,0 @@
-/* TEAM */
-  Presidente: Francesco
-  Associazione: ARQtype
-  Location: Terni, Italy
-
-/* SITE */
-  Last update: 2026/01/05
-  Standards: HTML5, CSS3, React, PWA
-  Components: Tailwind CSS (v4), Framer Motion, React Helmet Async
