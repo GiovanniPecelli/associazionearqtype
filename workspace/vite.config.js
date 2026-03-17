@@ -28,15 +28,15 @@ export default defineConfig(({ mode }) => ({
                 orientation: 'portrait',
                 icons: [
                     {
-                        src: '/pwa-192x192.webp',
+                        src: '/assets/logonobg.png',
                         sizes: '192x192',
-                        type: 'image/webp',
+                        type: 'image/png',
                         purpose: 'any maskable'
                     },
                     {
-                        src: '/pwa-512x512.webp',
+                        src: '/assets/logonobg.png',
                         sizes: '512x512',
-                        type: 'image/webp',
+                        type: 'image/png',
                         purpose: 'any maskable'
                     }
                 ]
