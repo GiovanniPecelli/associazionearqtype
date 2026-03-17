@@ -21,7 +21,7 @@ export function MessageContent({ text }) {
               href={part}
               target="_blank"
               rel="noopener noreferrer"
-              className="text-blue-600 hover:underline"
+              className="text-[#c0672a] hover:text-[#1a2b4b] font-bold underline transition-colors"
               onClick={(e) => e.stopPropagation()} // Prevents clicks from bubbling up if the bubble itself is clickable
             >
               {part}

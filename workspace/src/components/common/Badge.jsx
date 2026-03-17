@@ -1,18 +1,18 @@
 export function Badge({ status, type = 'workflow' }) {
     const workflowStyles = {
-        proposed: 'bg-yellow-100 text-yellow-800 border-yellow-200',
-        approved: 'bg-green-100 text-green-800 border-green-200',
-        active: 'bg-blue-100 text-blue-800 border-blue-200',
-        completed: 'bg-gray-100 text-gray-800 border-gray-200',
-        rejected: 'bg-red-100 text-red-800 border-red-200'
+        proposed: 'bg-amber-100 text-amber-900 border-amber-200',
+        approved: 'bg-emerald-100 text-emerald-900 border-emerald-200',
+        active: 'bg-[#1a2b4b]/10 text-[#1a2b4b] border-[#1a2b4b]/20',
+        completed: 'bg-slate-100 text-slate-700 border-slate-200',
+        rejected: 'bg-rose-100 text-rose-900 border-rose-200'
     }
 
     const taskStyles = {
-        todo: 'bg-gray-100 text-gray-800 border-gray-200',
-        doing: 'bg-blue-100 text-blue-800 border-blue-200',
-        done: 'bg-green-100 text-green-800 border-green-200',
-        pending_approval: 'bg-yellow-100 text-yellow-800 border-yellow-200',
-        maintenance: 'bg-orange-100 text-orange-800 border-orange-200'
+        todo: 'bg-slate-100 text-slate-700 border-slate-200',
+        doing: 'bg-[#1a2b4b]/10 text-[#1a2b4b] border-[#1a2b4b]/20',
+        done: 'bg-emerald-100 text-emerald-900 border-emerald-200',
+        pending_approval: 'bg-amber-100 text-amber-900 border-amber-200',
+        maintenance: 'bg-[#c0672a]/10 text-[#c0672a] border-[#c0672a]/20'
     }
 
     const workflowLabels = {

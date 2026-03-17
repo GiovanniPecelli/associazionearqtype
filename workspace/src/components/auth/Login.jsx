@@ -6,12 +6,13 @@ import { useSystemSettings } from '../../contexts/SystemSettingsContext'
 import Button from '../common/Button.jsx'
 import PageTransition from '../common/PageTransition'
 
-// Memoized Background Component - Updated for Premium ARQTYPE Look
+// Memoized Background Component - ARQtype Brand Design
 const Background = memo(() => (
-  <div className="absolute inset-0 overflow-hidden pointer-events-none bg-black">
-    {/* Darker, more subtle gradients */}
-    <div className="absolute top-[-20%] left-[-10%] w-[50%] h-[50%] rounded-full bg-indigo-900/10 blur-[120px]" />
-    <div className="absolute bottom-[-20%] right-[-10%] w-[50%] h-[50%] rounded-full bg-purple-900/10 blur-[120px]" />
+  <div className="absolute inset-0 overflow-hidden pointer-events-none bg-gradient-to-br from-slate-900 via-deep-blue-brand to-slate-900">
+    {/* ARQtype floating orbs */}
+    <div className="absolute top-[-20%] left-[-10%] w-[50%] h-[50%] rounded-full bg-warm-orange-brand/10 blur-[120px] animate-pulse" />
+    <div className="absolute bottom-[-20%] right-[-10%] w-[50%] h-[50%] rounded-full bg-gradient-brand/10 blur-[120px] animate-pulse" style={{ animationDelay: '2s' }} />
+    <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[40%] h-[40%] rounded-full bg-purple-500/5 blur-[100px] animate-pulse" style={{ animationDelay: '4s' }} />
   </div>
 ))
 
@@ -88,22 +89,22 @@ export function Login({ isSignup = false }) {
         <motion.div
           initial={{ opacity: 0, scale: 0.95 }}
           animate={{ opacity: 1, scale: 1 }}
-          className="bg-[#0a0a0a] border border-white/5 p-8 rounded-3xl shadow-2xl w-full max-w-md text-center relative z-10 backdrop-blur-md"
+          className="bg-white/10 backdrop-blur-md border border-white/20 p-8 rounded-3xl shadow-2xl w-full max-w-md text-center relative z-10"
         >
-          <div className="w-16 h-16 bg-green-500/10 rounded-full flex items-center justify-center mx-auto mb-6">
+          <div className="w-16 h-16 bg-warm-orange-brand/20 rounded-full flex items-center justify-center mx-auto mb-6 border border-warm-orange-brand/30">
             <span className="text-2xl">✉️</span>
           </div>
-          <h1 className="text-2xl font-bold mb-4 text-white">Sign Up Successful!</h1>
-          <p className="text-gray-400 mb-8 leading-relaxed">
-            Please check your email for the confirmation link to activate your account.
-            Once confirmed, you can sign in.
+          <h1 className="text-2xl font-bold mb-4 text-black">Registrazione Completata!</h1>
+          <p className="text-gray-700 mb-8 leading-relaxed">
+            Controlla la tua email per il link di conferma e attiva il tuo account.
+            Una volta confermato, potrai accedere.
           </p>
           <Button
             onClick={() => {
               setShowConfirmationMessage(false)
               setIsSignUp(false)
             }}
-            className="w-full py-3.5"
+            className="w-full py-3.5 text-black font-bold"
             variant="primary"
           >
             Back to Sign In
@@ -118,80 +119,80 @@ export function Login({ isSignup = false }) {
   const showClosedMessage = isSignUp && !signupEnabled;
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-black text-white relative font-sans py-12 px-4 overflow-y-auto">
+    <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-slate-900 via-deep-blue-brand to-slate-900 text-white relative font-sans py-12 px-4 overflow-y-auto">
       <Background />
 
       <PageTransition
-        className="bg-[#0a0a0a] border border-white/5 p-8 sm:p-10 md:p-14 rounded-3xl shadow-2xl w-full max-w-md md:max-w-lg relative z-10 backdrop-blur-md"
+        className="bg-white/10 backdrop-blur-md border border-white/20 p-8 sm:p-10 md:p-14 rounded-3xl shadow-2xl w-full max-w-md md:max-w-lg relative z-10"
       >
         {/* Back Button */}
         <div className="absolute top-6 left-6">
-          <Link to="/" className="text-gray-500 hover:text-white transition-colors flex items-center gap-2 group">
+          <Link to="/" className="text-gray-700 hover:text-warm-orange-brand transition-colors flex items-center gap-2 group">
             <span className="transform group-hover:-translate-x-1 transition-transform">←</span>
-            <span className="text-sm font-medium">Back</span>
+            <span className="text-sm font-medium">Indietro</span>
           </Link>
         </div>
 
         <div className="text-center mb-6">
           <div className="flex justify-center mb-4">
             <img
-              src="/arqtype_logo.png"
-              alt="ARQTYPE"
-              className="h-10 md:h-12 w-auto object-contain drop-shadow-[0_0_20px_rgba(99,102,241,0.5)]"
+              src="/assets/logonobg.png"
+              alt="ARQtype"
+              className="h-10 md:h-12 w-auto object-contain filter brightness-0 invert"
             />
           </div>
-          <h1 className="text-xl md:text-2xl font-bold text-white tracking-tight">
-            {showClosedMessage ? 'Registration Closed' : (isSignUp ? 'Create Account' : 'Welcome Back')}
+          <h1 className="text-xl md:text-2xl font-bold text-black tracking-tight">
+            {showClosedMessage ? 'Registrazione Chiusa' : (isSignUp ? 'Crea Account' : 'Bentornato')}
           </h1>
-          <p className="text-gray-500 mt-1 text-xs md:text-sm">
+          <p className="text-gray-700 mt-1 text-xs md:text-sm">
             {showClosedMessage
-              ? 'We are currently not accepting new public registrations.'
-              : (isSignUp ? 'Join the ARQTYPE ecosystem' : 'Enter your details to access')}
+              ? 'Attualmente non accettiamo nuove registrazioni pubbliche.'
+              : (isSignUp ? 'Unisciti all\'ecosistema ARQtype' : 'Inserisci i tuoi dati per accedere')}
           </p>
         </div>
 
         {showClosedMessage ? (
           <div className="space-y-6 text-center">
             <div className="p-6 rounded-2xl bg-white/5 border border-white/10">
-              <p className="text-gray-400 text-sm">
-                Access is currently restricted to invite-only or existing members.
-                If you have an account, please sign in.
+              <p className="text-gray-700 text-sm">
+                L\'accesso è attualmente limitato a inviti o membri esistenti.
+                Se hai un account, per favore accedi.
               </p>
             </div>
             <Button
               onClick={() => setIsSignUp(false)}
               variant="primary"
-              className="w-full py-3.5 md:py-4 md:text-lg"
+              className="w-full py-3.5 md:py-4 md:text-lg text-black font-bold"
             >
-              Sign In instead
+              Accedi invece
             </Button>
           </div>
         ) : (
           <>
             <form onSubmit={handleSubmit} className="space-y-4 md:space-y-5">
               <div>
-                <label className="block text-xs md:text-sm font-medium text-gray-400 uppercase tracking-wider mb-2">
-                  Email Address
+                <label className="block text-xs md:text-sm font-medium text-black uppercase tracking-wider mb-2">
+                  Indirizzo Email
                 </label>
                 <input
                   type="email"
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
-                  className="w-full px-3 py-2.5 md:py-3 text-sm bg-[#111] border border-white/10 rounded-xl text-white placeholder-gray-600 focus:outline-none focus:ring-2 focus:ring-indigo-500/50 focus:border-transparent transition-all"
-                  placeholder="name@company.com"
+                  className="w-full px-3 py-2.5 md:py-3 text-sm bg-white/90 border border-black/20 rounded-xl text-black placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-warm-orange-brand/50 focus:border-transparent transition-all"
+                  placeholder="nome@azienda.com"
                   required
                 />
               </div>
 
               <div>
-                <label className="block text-xs md:text-sm font-medium text-gray-400 uppercase tracking-wider mb-2">
+                <label className="block text-xs md:text-sm font-medium text-black uppercase tracking-wider mb-2">
                   Password
                 </label>
                 <input
                   type="password"
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
-                  className="w-full px-3 py-2.5 md:py-3 text-sm bg-[#111] border border-white/10 rounded-xl text-white placeholder-gray-600 focus:outline-none focus:ring-2 focus:ring-indigo-500/50 focus:border-transparent transition-all"
+                  className="w-full px-3 py-2.5 md:py-3 text-sm bg-white/90 border border-black/20 rounded-xl text-black placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-warm-orange-brand/50 focus:border-transparent transition-all"
                   placeholder="••••••••"
                   required
                 />
@@ -202,14 +203,14 @@ export function Login({ isSignup = false }) {
                   initial={{ opacity: 0, height: 0 }}
                   animate={{ opacity: 1, height: 'auto' }}
                 >
-                  <label className="block text-xs font-bold text-gray-500 uppercase tracking-wider mb-2">
-                    Confirm Password
+                  <label className="block text-xs font-bold text-black uppercase tracking-wider mb-2">
+                    Conferma Password
                   </label>
                   <input
                     type="password"
                     value={confirmPassword}
                     onChange={(e) => setConfirmPassword(e.target.value)}
-                    className="w-full px-3 py-2.5 bg-[#111] border border-white/10 rounded-xl text-white placeholder-gray-600 focus:outline-none focus:ring-2 focus:ring-indigo-500/50 focus:border-transparent transition-all"
+                    className="w-full px-3 py-2.5 bg-white/90 border border-black/20 rounded-xl text-black placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-warm-orange-brand/50 focus:border-transparent transition-all"
                     placeholder="••••••••"
                     required
                   />
@@ -231,28 +232,28 @@ export function Login({ isSignup = false }) {
                 type="submit"
                 disabled={loading}
                 variant="primary"
-                className="w-full py-2.5 md:py-3 text-sm md:text-base"
+                className="w-full py-2.5 md:py-3 text-sm md:text-base text-black font-bold"
               >
                 {loading ? (
                   <span className="flex items-center justify-center gap-2">
-                    <span className="w-4 h-4 rounded-full border-2 border-black/30 border-t-black animate-spin" />
-                    Processing...
+                    <span className="w-4 h-4 rounded-full border-2 border-white/30 border-t-warm-orange-brand animate-spin" />
+                    Elaborazione...
                   </span>
-                ) : isSignUp ? 'Create Account' : 'Sign In'}
+                ) : isSignUp ? 'Crea Account' : 'Accedi'}
               </Button>
             </form>
 
             <div className="mt-8 text-center">
-              <p className="text-gray-500 text-sm">
-                {isSignUp ? 'Already have an account?' : "Don't have an account?"}
+              <p className="text-gray-700 text-sm">
+                {isSignUp ? 'Hai già un account?' : "Non hai un account?"}
                 <button
                   onClick={() => {
                     setError(null)
                     setIsSignUp(!isSignUp)
                   }}
-                  className="ml-2 text-white font-bold hover:underline transition-all"
+                  className="ml-2 text-warm-orange-brand font-bold hover:text-black transition-all"
                 >
-                  {isSignUp ? 'Sign in' : 'Sign up'}
+                  {isSignUp ? 'Accedi' : 'Registrati'}
                 </button>
               </p>
             </div>

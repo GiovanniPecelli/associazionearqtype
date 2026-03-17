@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
-import { 
-  ArrowRight, Menu, X, ChevronDown, Play, 
+import {
+  ArrowRight, Menu, X, ChevronDown, Play,
   Users, Lightbulb, Globe, Shield, Zap,
   Activity, Layers, Info, ArrowUp, Calendar,
   Target, Heart, Sparkles, Award, BookOpen
@@ -28,7 +28,7 @@ const StaticLanding = () => {
     };
 
     window.addEventListener('scroll', handleScroll);
-    
+
     const video = videoRef.current;
     if (video) {
       video.addEventListener('loadeddata', handleVideoLoad);
@@ -51,15 +51,15 @@ const StaticLanding = () => {
 
   return (
     <div className="min-h-screen bg-white text-gray-900 font-sans overflow-x-hidden">
-      
+
       {/* Navigation - Glass morphism effect */}
       <nav className="fixed top-0 left-0 right-0 z-50 backdrop-blur-md bg-white/20 border-gray-200/50 shadow-lg">
         <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
           <div className="flex justify-between items-center h-20">
-            
+
             {/* Logo */}
             <Link to="/" className="flex items-center space-x-3 group">
-              <img 
+              <img
                 src="/assets/logonobg.png"
                 alt="ARQtype"
                 className="h-10 w-auto object-contain group-hover:scale-105 transition-transform duration-300"
@@ -88,7 +88,7 @@ const StaticLanding = () => {
 
             {/* CTA Button */}
             <div className="hidden md:block">
-              <Link 
+              <Link
                 to="/login"
                 className="px-6 py-3 bg-gradient-brand text-white font-semibold rounded-xl hover:shadow-xl hover-lift transition-all duration-300"
               >
@@ -120,14 +120,14 @@ const StaticLanding = () => {
                       scrollToSection(item.toLowerCase());
                     }
                   }}
-                  className="block w-full text-left text-white hover:text-warm-orange-brand font-medium transition-colors duration-300 py-2"
+                  className="block w-full text-left text-black hover:text-warm-orange-brand font-medium transition-colors duration-300 py-2"
                 >
                   {item}
                 </button>
               ))}
-              <Link 
+              <Link
                 to="/login"
-                className="block w-full text-center px-6 py-3 bg-gradient-brand text-white font-semibold rounded-xl hover:shadow-xl transition-all duration-300"
+                className="block w-full text-center px-6 py-3 bg-gradient-brand text-black font-semibold rounded-xl hover:shadow-xl transition-all duration-300"
               >
                 Accedi
               </Link>
@@ -137,8 +137,8 @@ const StaticLanding = () => {
       </nav>
 
       {/* Hero Section - Video in angolo e contenuto centrato */}
-      <section id="visione" ref={heroRef} className="relative min-h-screen flex items-center justify-center px-6 sm:px-8 lg:px-12 pt-20" style={{background: 'rgb(216, 216, 216)'}}>
-        
+      <section id="visione" ref={heroRef} className="relative min-h-screen flex items-center justify-center px-6 sm:px-8 lg:px-12 pt-20" style={{ background: 'rgb(216, 216, 216)' }}>
+
         {/* Video tra le scritte */}
         <div className="absolute top-20 right-8 z-0">
           <video
@@ -157,12 +157,12 @@ const StaticLanding = () => {
 
         {/* Content principale centrato */}
         <div className="relative z-10 max-w-4xl mx-auto text-center">
-          
+
           {/* Main Headline */}
           <h1 className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-black leading-tight mb-8" style={{ marginTop: '200px' }}>
             <span className="text-deep-blue-brand">Associazione ARQtype</span>
           </h1>
-          
+
           {/* Subtitle */}
           <p className="text-lg sm:text-xl text-gray-600 max-w-3xl mx-auto mb-12 leading-relaxedd">
             AI etica e sostenibile per tutti. Scopri come raggiungere i tuoi obiettivi con l'intelligenza artificiale responsabile.
@@ -170,14 +170,14 @@ const StaticLanding = () => {
 
           {/* CTA Buttons */}
           <div className="flex flex-col sm:flex-row gap-6 justify-center items-center mt-16">
-            <Link 
+            <Link
               to="/login"
               className="px-8 py-4 bg-gradient-brand text-white font-bold rounded-xl hover:shadow-xl hover-lift transition-all duration-300 flex items-center space-x-2"
             >
               <span>Prova la Piattaforma</span>
               <ArrowRight className="w-5 h-5" />
             </Link>
-            <button 
+            <button
               onClick={() => scrollToSection('soluzioni')}
               className="px-8 py-4 bg-black text-white font-bold rounded-xl transition-all duration-300"
             >
@@ -190,7 +190,7 @@ const StaticLanding = () => {
       {/* 3. ATTIVITÀ & PARTECIPAZIONI - Credibilità reale */}
       <section id="soluzioni" className="py-24 px-6 sm:px-8 lg:px-12 bg-gray-50">
         <div className="max-w-7xl mx-auto">
-          
+
           {/* Section Header */}
           <div className="text-center mb-20">
             <div className="inline-flex items-center space-x-2 px-4 py-2 bg-warm-orange-50 border border-warm-orange-100 rounded-full mb-8">
@@ -222,7 +222,7 @@ const StaticLanding = () => {
                   In collaborazione con Associazione Hacklab Terni - "L'infinito in 8 bit"
                 </p>
                 <p className="text-gray-600 leading-relaxed">
-                  Conferenza dedicata al pi-greco dove abbiamo esplorato analogie tra pi-greco e intelligenza artificiale, 
+                  Conferenza dedicata al pi-greco dove abbiamo esplorato analogie tra pi-greco e intelligenza artificiale,
                   apporssimazione e quantizzazione dei modelli. Focus su allucinazione ed affidabilità dei modelli AI.
                 </p>
               </div>
@@ -245,7 +245,7 @@ const StaticLanding = () => {
       {/* Team Section - Design elegante */}
       <section id="team" className="py-24 px-6 sm:px-8 lg:px-12 bg-gray-50">
         <div className="max-w-7xl mx-auto">
-          
+
           {/* Section Header */}
           <div className="text-center mb-20">
             <div className="inline-flex items-center space-x-2 px-4 py-2 bg-warm-orange-50 border border-warm-orange-100 rounded-full mb-8">
@@ -256,7 +256,7 @@ const StaticLanding = () => {
               I <span className="text-warm-orange-brand">Fondatori</span>
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-              Un team multidisciplinare unito dalla passione per l'innovazione etica 
+              Un team multidisciplinare unito dalla passione per l'innovazione etica
               e l'impatto sociale positivo.
             </p>
           </div>
@@ -264,30 +264,30 @@ const StaticLanding = () => {
           {/* Team Grid - Foto grandi in una riga */}
           <div className="flex flex-wrap justify-center gap-8">
             {[
-              { 
-                name: "Francesco", 
+              {
+                name: "Francesco",
                 role: "Presidente",
                 image: "/assets/founder1.jpg"
               },
-              { 
-                name: "Emilio", 
+              {
+                name: "Emilio",
                 role: "Co-Fondatore",
                 image: "/assets/co-founder2.jpg"
               },
-              { 
-                name: "Giovanni", 
+              {
+                name: "Giovanni",
                 role: "Co-Fondatore",
                 image: "/assets/dev2.jpg"
               },
-              { 
-                name: "Michele", 
+              {
+                name: "Michele",
                 role: "Co-Fondatore",
                 image: "/assets/sales2.jpg"
               }
             ].map((member, index) => (
               <div key={index} className="text-center group flex-shrink-0">
                 <div className="w-48 h-48 mx-auto mb-8 rounded-lg bg-gradient-to-br from-deep-blue-brand/10 to-warm-orange-brand/10 flex items-center justify-center group-hover:scale-105 transition-transform duration-300 overflow-hidden">
-                  <img 
+                  <img
                     src={member.image}
                     alt={member.name}
                     className="w-full h-full object-cover"
@@ -322,17 +322,17 @@ const StaticLanding = () => {
           <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] border border-white/10 rounded-full"></div>
           <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] border border-white/5 rounded-full"></div>
         </div>
-        
+
         <div className="relative z-10 max-w-4xl mx-auto text-center text-white">
           <h2 className="text-4xl sm:text-6xl font-black mb-8 leading-tight">
             La nostra piattaforma<br />
             per trasformare le Idee in Impatto?
           </h2>
           <p className="text-xl mb-12 opacity-90 leading-relaxed">
-            Unisciti a noi nel creare un futuro dove l'intelligenza artificiale 
+            Unisciti a noi nel creare un futuro dove l'intelligenza artificiale
             serve veramente le persone e le comunità.
           </p>
-          <Link 
+          <Link
             to="/login"
             className="inline-flex items-center space-x-3 px-8 py-4 bg-black text-deep-blue-brand font-bold rounded-xl hover:shadow-2xl hover-lift transition-all duration-300"
           >
@@ -345,14 +345,14 @@ const StaticLanding = () => {
       {/* Footer - Design Ottimizzato */}
       <footer id="contatti" className="relative py-16 px-6 sm:px-8 lg:px-12 bg-gradient-to-br from-slate-900 via-deep-blue-brand to-slate-900 text-white">
         <div className="max-w-7xl mx-auto">
-          
+
           {/* Main Content */}
           <div className="grid md:grid-cols-3 gap-12 mb-12">
-            
+
             {/* Brand */}
             <div className="space-y-6">
               <div className="flex items-center space-x-3">
-                <img 
+                <img
                   src="/assets/logonobg.png"
                   alt="ARQtype"
                   className="h-12 w-auto object-contain filter brightness-0 invert"
@@ -363,13 +363,13 @@ const StaticLanding = () => {
                 </div>
               </div>
               <p className="text-black leading-relaxed text-sm">
-                Promuoviamo la cultura digitale attraverso ricerca interdisciplinare, 
+                Promuoviamo la cultura digitale attraverso ricerca interdisciplinare,
                 educazione e sviluppo di tecnologie AI etiche e sostenibili.
               </p>
-              
+
               {/* Email CTA Button */}
               <div className="pt-4">
-                <a 
+                <a
                   href="mailto:associazionearqtype@protonmail.com"
                   className="inline-flex items-center space-x-2 px-6 py-3 bg-gradient-brand text-deep-blue-brand font-bold rounded-xl hover:shadow-2xl hover-lift transition-all duration-300"
                 >
@@ -380,7 +380,7 @@ const StaticLanding = () => {
                 </a>
               </div>
             </div>
-            
+
             {/* Navigation */}
             <div className="space-y-6">
               <h4 className="text-lg font-bold text-black flex items-center gap-2">
@@ -389,7 +389,7 @@ const StaticLanding = () => {
                 </svg>
                 Navigazione
               </h4>
-              
+
               {/* Main Sections */}
               <div className="space-y-4">
                 <div>
@@ -406,7 +406,7 @@ const StaticLanding = () => {
                     ))}
                   </div>
                 </div>
-                
+
                 {/* Legal Links */}
                 <div>
                   <p className="text-xs font-semibold text-gray-600 uppercase tracking-wider mb-2">Documenti</p>
@@ -434,7 +434,7 @@ const StaticLanding = () => {
                 </div>
               </div>
             </div>
-            
+
             {/* Contact Info */}
             <div className="space-y-6">
               <h4 className="text-lg font-bold text-black flex items-center gap-2">
@@ -475,9 +475,9 @@ const StaticLanding = () => {
                 </div>
               </div>
             </div>
-            
+
           </div>
-          
+
           {/* Bottom Bar */}
           <div className="border-t border-white/20 pt-8">
             <div className="flex flex-col md:flex-row justify-between items-center gap-4">
@@ -491,7 +491,7 @@ const StaticLanding = () => {
               </div>
             </div>
           </div>
-          
+
         </div>
       </footer>
 

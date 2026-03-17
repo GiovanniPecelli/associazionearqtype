@@ -20,35 +20,44 @@ const Guide = () => {
             <div className="max-w-6xl mx-auto space-y-16 px-6 md:px-8 animate-fade-in pt-32">
                 {/* Welcome Header - Bright & Bold */}
                 <div className="text-center space-y-6 pt-4 pb-8">
-                    <h1 className="text-4xl md:text-6xl font-black text-[#1a2b4b] tracking-tight drop-shadow-sm">
-                        Welcome to <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#1a2b4b] to-[#c0672a]">Associazione ARQtype</span>
+                    <h1 className="text-4xl md:text-5xl font-black mb-4 text-[#1a2b4b] tracking-tight">
+                        Benvenuto in Associazione ARQtype
                     </h1>
-
-                    <p className="text-2xl text-gray-600 max-w-3xl mx-auto leading-relaxed font-light">
-                        Your journey begins here. Explore the ecosystem, <span className="text-[#1a2b4b] font-semibold border-b border-[#c0672a]/30">unlock your potential</span>, and build the future.
+                    <p className="text-xl text-gray-600 mb-8 max-w-2xl font-medium leading-relaxed">
+                        Il tuo viaggio inizia qui. Esplora l'ecosistema, sblocca il tuo potenziale e costruisci il futuro insieme a noi.
                     </p>
                 </div>
 
                 {/* Section 1: Core Navigation (Light Glass Cards) */}
                 <div className="grid md:grid-cols-2 gap-8">
-                    <GuideCard
-                        title="Workflows"
-                        icon={<Icons.Lightning className="w-10 h-10" />}
-                        color="from-blue-50 to-blue-100"
-                        iconColor="text-[#1a2b4b]"
-                        accent="shadow-sm border-gray-200 hover:border-blue-300 hover:shadow-md"
-                        link="/workflows"
-                        description="Manage tasks and execute business processes with precision."
-                    />
-                    <GuideCard
-                        title="Chat"
-                        icon={<Icons.Chat className="w-10 h-10" />}
-                        color="from-orange-50 to-orange-100"
-                        iconColor="text-[#c0672a]"
-                        accent="shadow-sm border-gray-200 hover:border-orange-300 hover:shadow-md"
-                        link="/chat"
-                        description="Real-time encrypted communication and collaboration hubs."
-                    />
+                    <Link
+                        to="/workflows"
+                        className="block h-full p-8 rounded-[2rem] bg-white border border-gray-100 transition-all duration-300 group hover:-translate-y-2 hover:shadow-[0_20px_40px_rgba(26,43,75,0.08)] shadow-sm border-gray-200 hover:border-blue-300 hover:shadow-md"
+                    >
+                        <div className="flex items-start justify-between mb-8">
+                            <div className="w-18 h-18 p-4 rounded-2xl bg-gradient-to-br from-blue-50 to-blue-100 text-[#1a2b4b] text-4xl shadow-sm border border-gray-100 group-hover:scale-110 transition-transform duration-300">
+                                <Icons.Lightning className="w-10 h-10" />
+                            </div>
+                        </div>
+                        <h3 className="text-2xl font-black text-[#1a2b4b] mb-4">Project Management</h3>
+                        <p className="text-gray-600 leading-relaxed font-medium">
+                            Gestisci i task ed esegui i processi aziendali con precisione millimetrica.
+                        </p>
+                    </Link>
+                    <Link
+                        to="/chat"
+                        className="block h-full p-8 rounded-[2rem] bg-white border border-gray-100 transition-all duration-300 group hover:-translate-y-2 hover:shadow-[0_20px_40px_rgba(26,43,75,0.08)] shadow-sm border-gray-200 hover:border-orange-300 hover:shadow-md"
+                    >
+                        <div className="flex items-start justify-between mb-8">
+                            <div className="w-18 h-18 p-4 rounded-2xl bg-gradient-to-br from-orange-50 to-orange-100 text-[#c0672a] text-4xl shadow-sm border border-gray-100 group-hover:scale-110 transition-transform duration-300">
+                                <Icons.Chat className="w-10 h-10" />
+                            </div>
+                        </div>
+                        <h3 className="text-2xl font-black text-[#1a2b4b] mb-4">Chat</h3>
+                        <p className="text-gray-600 leading-relaxed font-medium">
+                            Hub di comunicazione e collaborazione crittografata in tempo reale.
+                        </p>
+                    </Link>
                 </div>
 
                 {/* Section 2: Resources & Knowledge */}
@@ -56,17 +65,17 @@ const Guide = () => {
                     <SectionTitle title="Knowledge & Growth" icon={<Icons.Brain className="w-6 h-6 text-[#1a2b4b]" />} />
 
                     {/* Documents Link - Single Row */}
-                    <Link to="/documents" className="block relative group p-8 rounded-3xl bg-white border border-gray-200 hover:border-[#1a2b4b]/30 transition-all duration-200 overflow-hidden shadow-sm hover:shadow-md">
-                        <div className="absolute inset-0 bg-blue-50/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                    <Link to="/documents" className="block relative group p-8 rounded-3xl bg-white border border-gray-200 hover:border-[#1a2b4b] transition-all duration-300 overflow-hidden shadow-sm hover:shadow-xl">
+                        <div className="absolute inset-0 bg-blue-50/30 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                         <div className="relative z-10 flex items-center gap-6">
-                            <div className="p-4 rounded-2xl bg-blue-50 text-4xl border border-blue-100 text-[#1a2b4b]">
+                            <div className="p-4 rounded-2xl bg-blue-50 text-4xl border border-blue-100 text-[#1a2b4b] group-hover:scale-110 transition-transform duration-300">
                                 <Icons.Folder className="w-10 h-10" />
                             </div>
                             <div className="flex-1">
                                 <h3 className="text-2xl font-bold text-gray-900 group-hover:text-[#1a2b4b] transition-colors mb-2">Web Source</h3>
-                                <p className="text-gray-500 text-sm leading-relaxed group-hover:text-gray-700 transition-colors">Project docs & assets.</p>
+                                <p className="text-gray-600 text-sm leading-relaxed group-hover:text-gray-800 transition-colors font-medium">Project docs & assets.</p>
                             </div>
-                            <Icons.ArrowRight className="w-6 h-6 text-gray-400 group-hover:text-[#1a2b4b] group-hover:translate-x-1 transition-all" />
+                            <Icons.ArrowRight className="w-6 h-6 text-gray-400 group-hover:text-[#1a2b4b] group-hover:translate-x-2 transition-all" />
                         </div>
                     </Link>
                 </div>
@@ -202,10 +211,10 @@ const Guide = () => {
 const GuideCard = ({ title, icon, color, iconColor, accent, link, description }) => (
     <Link
         to={link}
-        className={`block h-full p-8 rounded-[2rem] bg-white border border-gray-100 transition-all duration-300 group hover:-translate-y-1 hover:shadow-[0_8px_30px_rgba(0,0,0,0.04)] ${accent}`}
+        className={`block h-full p-8 rounded-[2rem] bg-white border border-gray-100 transition-all duration-300 group hover:-translate-y-2 hover:shadow-[0_20px_40px_rgba(26,43,75,0.08)] ${accent}`}
     >
         <div className="flex items-start justify-between mb-8">
-            <div className={`w-18 h-18 p-4 rounded-2xl bg-gradient-to-br ${color} ${iconColor} text-4xl shadow-sm border border-gray-100`}>
+            <div className={`w-18 h-18 p-4 rounded-2xl bg-gradient-to-br ${color} ${iconColor} text-4xl shadow-sm border border-gray-100 group-hover:scale-110 transition-transform duration-300`}>
                 {icon}
             </div>
         </div>
@@ -213,7 +222,7 @@ const GuideCard = ({ title, icon, color, iconColor, accent, link, description })
         <h3 className="text-3xl font-bold text-gray-900 mb-3 leading-tight group-hover:text-[#1a2b4b] transition-colors">
             {title}
         </h3>
-        <p className="text-gray-500 text-base leading-relaxed font-normal group-hover:text-gray-700 transition-colors">
+        <p className="text-gray-600 text-base leading-relaxed font-medium group-hover:text-gray-800 transition-colors">
             {description}
         </p>
     </Link>

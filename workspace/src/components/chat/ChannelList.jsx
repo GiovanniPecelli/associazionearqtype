@@ -123,7 +123,7 @@ export function ChannelList({ activeChannel, onSelectChannel, onOpenCreateModal,
     );
 
     return (
-        <div className="flex flex-col h-full bg-gray-900/50 border-r border-white/10">
+        <div className="flex flex-col h-full bg-white/40 backdrop-blur-xl border-r border-gray-200">
             {/* Header */}
             <div className="p-4 bg-gray-900/40 border-b border-white/5 space-y-3">
                 <div className="flex justify-between items-center">
@@ -131,8 +131,8 @@ export function ChannelList({ activeChannel, onSelectChannel, onOpenCreateModal,
                     {canCreateChannels && (
                         <button
                             onClick={onOpenCreateModal}
-                            className="p-2 rounded-full hover:bg-white/10 text-primary-400 transition-colors"
-                            title="Create New Channel"
+                            className="p-2 rounded-full hover:bg-[#1a2b4b]/5 text-[#c0672a] transition-colors"
+                            title="Crea Nuovo Canale"
                         >
                             <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 4v16m8-8H4" />
@@ -144,12 +144,12 @@ export function ChannelList({ activeChannel, onSelectChannel, onOpenCreateModal,
                 <div className="relative">
                     <input
                         type="text"
-                        placeholder="Search chats..."
+                        placeholder="Cerca chat..."
                         value={searchQuery}
                         onChange={(e) => setSearchQuery(e.target.value)}
-                        className="w-full bg-black/20 border border-white/10 rounded-lg pl-9 pr-4 py-2 text-sm text-white placeholder-gray-500 focus:ring-1 focus:ring-primary-500 focus:border-transparent"
+                        className="w-full bg-white/50 border border-gray-200 rounded-xl pl-9 pr-4 py-2 text-sm text-[#1a2b4b] placeholder-gray-400 focus:ring-1 focus:ring-[#1a2b4b] focus:border-transparent transition-all"
                     />
-                    <svg className="w-4 h-4 text-gray-500 absolute left-3 top-2.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <svg className="w-4 h-4 text-gray-400 absolute left-3 top-2.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
                     </svg>
                 </div>
@@ -169,9 +169,9 @@ export function ChannelList({ activeChannel, onSelectChannel, onOpenCreateModal,
                                     onSelectChannel(channel);
                                     clearUnread(channel.slug);
                                 }}
-                                className={`w-full text-left pl-4 pr-12 py-3 rounded-xl transition-all duration-200 relative overflow-hidden ${activeChannel?.id === channel.id
-                                    ? 'bg-primary-600/20 text-white shadow-md border border-primary-500/30'
-                                    : 'text-gray-400 hover:bg-white/5 hover:text-gray-200 border border-transparent'
+                                className={`w-full text-left pl-4 pr-12 py-3 rounded-xl transition-all duration-300 relative overflow-hidden ${activeChannel?.id === channel.id
+                                    ? 'bg-[#1a2b4b] text-white shadow-lg border-transparent'
+                                    : 'text-gray-600 hover:bg-white/60 hover:text-[#1a2b4b] border border-transparent'
                                     } `}
                             >
                                 <div className="flex items-center space-x-3 min-w-0">
@@ -180,13 +180,13 @@ export function ChannelList({ activeChannel, onSelectChannel, onOpenCreateModal,
                                         <span className="text-lg font-bold">{channel.name.charAt(0).toUpperCase()}</span>
                                     </div>
                                     <div className="truncate flex-1">
-                                        <p className="font-semibold text-sm truncate text-gray-200">{channel.name}</p>
+                                        <p className={`font-bold text-sm truncate ${activeChannel?.id === channel.id ? 'text-white' : 'text-[#1a2b4b]'}`}>{channel.name}</p>
                                         <div className="flex items-center justify-between">
-                                            <p className="text-xs text-gray-500 truncate mt-0.5">
-                                                {channel.type === 'role_restricted' ? 'Restricted Access' : 'Public Channel'}
+                                            <p className={`text-xs truncate mt-0.5 ${activeChannel?.id === channel.id ? 'text-white/70' : 'text-gray-500'}`}>
+                                                {channel.type === 'role_restricted' ? 'Accesso Riservato' : 'Canale Pubblico'}
                                             </p>
                                             {unreadCounts[channel.slug] > 0 && (
-                                                <span className="bg-red-500 text-white text-[10px] font-bold px-1.5 py-0.5 rounded-full shadow-lg shadow-red-500/20 min-w-[1.25rem] text-center animate-pulse">
+                                                <span className="bg-[#c0672a] text-white text-[10px] font-bold px-1.5 py-0.5 rounded-full shadow-lg min-w-[1.25rem] text-center animate-pulse">
                                                     {unreadCounts[channel.slug] > 99 ? '99+' : unreadCounts[channel.slug]}
                                                 </span>
                                             )}
@@ -224,8 +224,8 @@ export function ChannelList({ activeChannel, onSelectChannel, onOpenCreateModal,
             />
 
             {/* Online Users Section */}
-            <div className="px-4 py-2 bg-black/10 border-t border-white/5 shrink-0 overflow-y-auto max-h-48 custom-scrollbar">
-                <h3 className="text-xs font-bold text-gray-500 uppercase tracking-wider mb-2">Online - {Object.keys(onlineUsers).length}</h3>
+            <div className="px-4 py-4 bg-white/20 border-t border-gray-100 shrink-0 overflow-y-auto max-h-48 custom-scrollbar">
+                <h3 className="text-[10px] font-black text-gray-400 uppercase tracking-widest mb-3">Online - {Object.keys(onlineUsers).length}</h3>
                 <div className="space-y-2">
                     {Object.values(onlineUsers).length === 0 ? (
                         <p className="text-xs text-gray-600 italic">No one else online</p>
@@ -233,9 +233,9 @@ export function ChannelList({ activeChannel, onSelectChannel, onOpenCreateModal,
                         Object.values(onlineUsers).map(u => (
                             <div key={u.user_id} className="flex items-center space-x-2">
                                 <div className="w-2 h-2 rounded-full bg-green-500 animate-pulse shadow-[0_0_8px_rgba(34,197,94,0.6)]"></div>
-                                <span className={`text-sm truncate ${u.user_id === user?.id ? 'text-primary-400 font-medium' : 'text-gray-400'} `}>
+                                <span className={`text-sm truncate ${u.user_id === user?.id ? 'text-[#c0672a] font-bold' : 'text-gray-600 font-medium'} `}>
                                     {u.display_name || u.email?.split('@')[0]}
-                                    {u.user_id === user?.id && " (You)"}
+                                    {u.user_id === user?.id && " (Tu)"}
                                 </span>
                             </div>
                         ))
@@ -244,9 +244,9 @@ export function ChannelList({ activeChannel, onSelectChannel, onOpenCreateModal,
             </div>
 
             {/* User Footer */}
-            <div className="p-4 bg-black/20 border-t border-white/5 shrink-0">
+            <div className="p-4 bg-white/40 border-t border-gray-100 shrink-0">
                 <div className="flex items-center space-x-3">
-                    <div className="w-10 h-10 rounded-full bg-gradient-to-tr from-primary-600 to-purple-600 flex items-center justify-center text-white font-bold text-sm shadow-lg ring-2 ring-white/10">
+                    <div className="w-10 h-10 rounded-full bg-[#1a2b4b] flex items-center justify-center text-white font-black text-xs shadow-md">
                         {user?.email?.substring(0, 2).toUpperCase()}
                     </div>
                     <div className="flex-1 min-w-0">

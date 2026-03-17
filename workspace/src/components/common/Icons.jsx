@@ -48,7 +48,8 @@ import {
     Plus as PlusIcon,
     List as ListIcon,
     Eye as EyeIcon,
-    Link as LinkIcon
+    Link as LinkIcon,
+    Search as SearchIcon
 } from 'lucide-react';
 
 export const Home = HomeIcon;
@@ -103,6 +104,7 @@ export const Plus = PlusIcon;
 export const List = ListIcon;
 export const Eye = EyeIcon;
 export const Link = LinkIcon;
+export const Search = SearchIcon;
 export const FileText = FileTextIcon;
 
 export const Icons = {
@@ -158,5 +160,6 @@ export const Icons = {
     List,
     Eye,
     Link,
+    Search,
     FileText
 };

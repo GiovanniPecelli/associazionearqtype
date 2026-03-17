@@ -66,7 +66,6 @@ export function Navbar() {
   const navItems = [
     { path: '/documents', label: 'Web Source', icon: <Icons.Documents className="w-5 h-5" /> },
 
-    { path: '/store', label: 'Store', icon: <Icons.Store className="w-5 h-5" /> },
     { path: '/chat', label: 'Chat', icon: <Icons.Chat className="w-5 h-5" /> },
   ]
 
@@ -109,7 +108,6 @@ export function Navbar() {
     '/mytasks': () => import('../../pages/MyTasks'),
     '/documents': () => import('../../pages/Documents'),
 
-    '/store': () => import('../../pages/Store'),
     '/chat': () => import('../../pages/Chat'),
     '/team': () => import('../../components/team/TeamMembers'),
     '/competencies': () => import('../../components/competencies/CompetencyManager'),
@@ -132,9 +130,9 @@ export function Navbar() {
           {/* Logo */}
           <Link to="/home" className="flex items-center gap-[12px] group">
             <img
-              src="/assets/newlogo.png"
-              alt="ARQTYPE"
-              className="h-[36px] w-auto object-contain group-hover:scale-105 transition-transform duration-300"
+              src="/assets/logonobg.png"
+              alt="ARQtype"
+              className="h-[36px] w-auto object-contain filter brightness-0 invert group-hover:scale-105 transition-transform duration-300"
             />
           </Link>
 
@@ -206,7 +204,7 @@ export function Navbar() {
               <div className="relative">
                 <button
                   onClick={() => setHostMenuOpen(!hostMenuOpen)}
-                  className="flex items-center gap-1.5 px-3 py-2 text-gray-600 hover:text-deep-blue-brand hover:bg-deep-blue-50 rounded-lg transition-brand border border-gray-200"
+                  className="flex items-center gap-1.5 px-3 py-2 text-gray-600 hover:text-warm-orange-brand hover:bg-warm-orange-brand/10 rounded-lg transition-all duration-300 border border-gray-200"
                 >
                   <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" />
@@ -220,8 +218,8 @@ export function Navbar() {
 
                 {hostMenuOpen && (
                   <div className="absolute right-0 mt-2 w-56 bg-white rounded-xl shadow-xl border border-gray-100 z-50 py-1 overflow-hidden">
-                    <div className="px-3 py-2 border-b border-gray-100 bg-gray-50">
-                      <span className="text-[10px] bg-purple-100 text-purple-700 px-2 py-0.5 rounded border border-purple-200 font-semibold tracking-wide">HOST ONLY</span>
+                    <div className="px-3 py-2 border-b border-gray-100 bg-warm-orange-brand/10">
+                      <span className="text-[10px] bg-warm-orange-brand/20 text-warm-orange-brand px-2 py-0.5 rounded border border-warm-orange-brand/30 font-semibold tracking-wide">HOST ONLY</span>
                     </div>
                     {hostConfigItems.map(item => (
                       <Link
@@ -229,10 +227,7 @@ export function Navbar() {
                         to={item.path}
                         onClick={() => setHostMenuOpen(false)}
                         onMouseEnter={() => handlePrefetch(item.path)}
-                        className={`flex items-center gap-3 px-4 py-3 text-sm transition-brand ${location.pathname === item.path
-                          ? 'bg-deep-blue-50 text-deep-blue-700 font-medium border border-deep-blue-100'
-                          : 'text-gray-600 hover:bg-deep-blue-50 hover:text-deep-blue-brand'
-                          }`}
+                        className="flex items-center gap-3 px-4 py-3 text-sm text-gray-600 hover:bg-warm-orange-brand/10 hover:text-warm-orange-brand transition-all duration-300"
                       >
                         <span className="text-lg">{item.icon}</span>
                         {item.label}
@@ -252,7 +247,7 @@ export function Navbar() {
               ) : (
                 <Link
                   to="/dashboard" // Redirect to protected route to trigger Login
-                  className="px-5 py-2.5 rounded-xl bg-gradient-brand text-white font-bold text-sm hover:bg-gradient-brand-subtle transition-brand shadow-md hover:shadow-lg hover-lift"
+                  className="px-5 py-2.5 rounded-xl bg-gradient-brand text-black font-bold text-sm hover:bg-gradient-brand-subtle transition-brand shadow-md hover:shadow-lg hover-lift"
                 >
                   Sign In
                 </Link>

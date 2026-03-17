@@ -43,7 +43,6 @@ const Dashboard = lazy(() => import('./pages/Dashboard'));
 const Documents = lazy(() => import('./pages/Documents'));
 const Career = lazy(() => import('./pages/Career'));
 
-const Store = lazy(() => import('./pages/Store'));
 const Settings = lazy(() => import('./pages/Settings'));
 const DeveloperRequests = lazy(() => import('./pages/DeveloperRequests'));
 const SystemSettings = lazy(() => import('./pages/SystemSettings'));
@@ -68,8 +67,6 @@ function AppContent() {
 
   const isSystemSettings = location.pathname === '/system-settings';
 
-  const isStorePage = location.pathname === '/store';
-
   const isPublicPage = location.pathname.startsWith('/statuto') || location.pathname === '/' || location.pathname === '/privacy' || location.pathname === '/cookie' || location.pathname === '/terms-and-conditions' || location.pathname === '/termini';
 
   return (
@@ -86,7 +83,7 @@ function AppContent() {
             </Suspense>
           )}
           {/* Main Content Area */}
-          <main className={isChatPage || isGuidePage || isLoginPage || isWorkflowPage || isSystemSettings || isStorePage || isPublicPage ? ("w-full overflow-hidden flex-1 flex flex-col" + (isWorkflowPage ? " pt-36 md:pt-32" : "")) : "w-full mx-auto px-4 sm:px-6 lg:px-8 pb-8 pt-36 md:pt-32 md:overflow-hidden"}>
+          <main className={isChatPage || isGuidePage || isLoginPage || isWorkflowPage || isSystemSettings || isPublicPage ? ("w-full overflow-hidden flex-1 flex flex-col" + (isWorkflowPage ? " pt-36 md:pt-32" : "")) : "w-full mx-auto px-4 sm:px-6 lg:px-8 pb-8 pt-36 md:pt-32 md:overflow-hidden"}>
             {/* Suspense Wrapper for Lazy Loading */}
             <Suspense fallback={<Loading fullScreen={false} message="Loading module..." />}>
               <Routes location={location} key={location.pathname}>
@@ -134,7 +131,6 @@ function AppContent() {
                 {/* <Route path="/dashboard" element={<ProtectedRoute><Dashboard /></ProtectedRoute>} /> */}
                 <Route path="/documents" element={<ProtectedRoute><Documents /></ProtectedRoute>} />
 
-                <Route path="/store" element={<ProtectedRoute><Store /></ProtectedRoute>} />
                 <Route path="/competencies" element={<ProtectedRoute><CompetencyManager /></ProtectedRoute>} />
 
                 {/* Fallback */}

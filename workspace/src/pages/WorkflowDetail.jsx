@@ -119,7 +119,7 @@ export default function WorkflowDetail() {
   }
 
   return (
-    <PageTransition className="py-8 px-4 sm:px-6 lg:px-8">
+    <PageTransition className="py-8 px-4 sm:px-6 lg:px-8 bg-[#f8fafc] min-h-screen">
       <Link to="/workflows">
         <Button variant="outline" className="mb-4">
           &larr; Back to Workflows
@@ -127,55 +127,62 @@ export default function WorkflowDetail() {
       </Link>
 
       {isHost && workflow.status === 'proposed' && (
-        <div className="mb-6 p-4 rounded-xl border border-yellow-500/30 bg-yellow-900/10 flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
+        <div className="mb-8 p-6 rounded-2xl border border-amber-200 bg-amber-50 shadow-sm flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
           <div>
-            <h3 className="font-bold text-yellow-500 text-lg flex items-center gap-2">
-              ⏳ Pending Approval
+            <h3 className="font-bold text-amber-800 text-lg flex items-center gap-2">
+              <span>⏳ In Attesa di Revisione</span>
             </h3>
-            <p className="text-yellow-200/70 text-sm mt-1">
-              This workflow is currently a proposal. Review the details below and take action.
+            <p className="text-amber-700/80 text-sm mt-1">
+              Questo workflow è attualmente una proposta. Revisiona i dettagli e prendi una decisione.
             </p>
           </div>
           <div className="flex gap-3 w-full md:w-auto">
             <Button
               onClick={() => updateWorkflowStatus('approved')}
-              variant="success"
-              className="flex-1 md:flex-none"
+              className="bg-[#1a2b4b] hover:bg-green-600 text-white font-bold py-3 px-6 rounded-xl shadow-md transition-all flex-1 md:flex-none"
             >
-              Approve & Activate
+              Approva & Attiva
             </Button>
             <Button
               onClick={() => updateWorkflowStatus('rejected')}
-              variant="danger"
-              className="flex-1 md:flex-none"
+              variant="outline"
+              className="border-red-200 text-red-600 hover:bg-red-50 font-bold py-3 px-6 rounded-xl flex-1 md:flex-none"
             >
-              Reject
+              Rifiuta
             </Button>
           </div>
         </div>
       )}
 
-      <div className="flex justify-between items-start mb-4">
+      <div className="flex flex-col md:flex-row justify-between items-start mb-8 gap-4">
         <div className="flex-1">
-          <h1 className="text-3xl font-bold mb-2 text-white">{workflow.title}</h1>
-          <p className="text-gray-400 mb-4">Status: <span className="font-semibold text-primary-400">{workflow.status}</span></p>
+          <h1 className="text-4xl font-black mb-2 text-[#1a2b4b] tracking-tight">{workflow.title}</h1>
+          <div className="flex items-center gap-3">
+             <p className="text-gray-500">Stato:</p>
+             <span className="px-3 py-1 rounded-full text-xs font-bold bg-[#1a2b4b]/10 text-[#1a2b4b] uppercase tracking-wider">
+               {workflow.status}
+             </span>
+          </div>
         </div>
 
         {isHost && (
           <Button
-            variant="danger"
+            variant="outline"
             onClick={openDeleteModal}
-            className="ml-4"
+            className="text-red-500 border-red-200 hover:bg-red-50 rounded-xl"
           >
-            Delete Workflow
+            Elimina Workflow
           </Button>
         )}
       </div>
 
       {/* Divider */}
-      <div className="border-t border-white/10 my-6"></div>
+      <div className="border-t border-gray-200 my-8"></div>
 
-      <p className="mb-6 text-gray-300">{workflow.description}</p>
+      <div className="bg-white p-8 rounded-3xl shadow-sm border border-gray-100 mb-8">
+        <h3 className="text-lg font-bold text-[#1a2b4b] mb-4">Descrizione</h3>
+        <p className="text-gray-700 leading-relaxed whitespace-pre-wrap">{workflow.description}</p>
+      </div>
 
       {/* Divider */}
       <div className="border-t border-white/10 my-8"></div>
@@ -188,7 +195,12 @@ export default function WorkflowDetail() {
       <div className="border-t border-white/10 my-8"></div>
 
       <div className="mt-8">
-        <h2 className="text-2xl font-bold mb-4 text-white">Tasks</h2>
+        <h2 className="text-2xl font-bold mb-6 text-[#1a2b4b] flex items-center gap-3">
+          <span className="p-2 bg-[#1a2b4b]/5 rounded-lg">
+             <Icons.List className="w-6 h-6 text-[#1a2b4b]" />
+          </span>
+          Tasks
+        </h2>
         <TaskList workflowId={workflowId} />
       </div>
 

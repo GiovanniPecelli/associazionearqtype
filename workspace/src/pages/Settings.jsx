@@ -60,22 +60,23 @@ export default function Settings() {
     };
 
     return (
-        <PageTransition className="max-w-2xl mx-auto space-y-6">
+        <PageTransition className="max-w-2xl mx-auto space-y-6 pb-20">
             <div className="flex items-center justify-between">
                 <div>
-                    <h1 className="text-3xl font-bold text-white">Settings</h1>
-                    <p className="text-gray-400 mt-1">Manage your profile and preferences</p>
+                    <h1 className="text-3xl font-black text-[#1a2b4b]">Impostazioni</h1>
+                    <p className="text-gray-500 mt-1">Gestisci il tuo profilo e le tue preferenze</p>
                 </div>
                 <Link
                     to="/profile"
-                    className="text-sm text-primary-600 hover:text-primary-700 font-medium"
+                    className="text-sm text-[#c0672a] hover:text-[#1a2b4b] font-bold transition-colors"
                 >
-                    ← Back to Profile
+                    ← Torna al Profilo
                 </Link>
             </div>
 
-            <div className="bg-gray-900/60 backdrop-blur-xl rounded-xl shadow-lg border border-white/10 p-6">
-                <h2 className="text-xl font-bold text-white mb-6">Personal Information</h2>
+            <div className="bg-white rounded-2xl shadow-sm border border-gray-100 p-8">
+                <h2 className="text-xl font-bold text-[#1a2b4b] mb-8">Informazioni Personali</h2>
+                <div className="border-b border-gray-100 mb-8"></div>
 
                 {message && (
                     <div className={`p-4 rounded-lg mb-6 border ${message.type === 'success' ? 'bg-green-900/30 text-green-300 border-green-500/30' : 'bg-red-900/30 text-red-300 border-red-500/30'}`}>
@@ -94,8 +95,8 @@ export default function Settings() {
                             name="display_name"
                             value={formData.display_name}
                             onChange={handleChange}
-                            placeholder="e.g. John Doe"
-                            className="w-full px-3 py-2 bg-white/5 border border-white/10 rounded-xl focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-primary-500 text-white placeholder-gray-500"
+                            placeholder="es. Mario Rossi"
+                            className="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-[#1a2b4b] focus:border-[#1a2b4b] text-[#1a2b4b] placeholder-gray-400"
                         />
                         <p className="mt-1 text-xs text-gray-500">This name will be visible to the team.</p>
                     </div>
@@ -110,8 +111,8 @@ export default function Settings() {
                             rows="3"
                             value={formData.bio}
                             onChange={handleChange}
-                            placeholder="Tell us something about yourself..."
-                            className="w-full px-3 py-2 bg-white/5 border border-white/10 rounded-xl focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-primary-500 text-white placeholder-gray-500"
+                            placeholder="Raccontaci qualcosa di te..."
+                            className="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-[#1a2b4b] focus:border-[#1a2b4b] text-[#1a2b4b] placeholder-gray-400"
                         />
                     </div>
 
@@ -125,16 +126,16 @@ export default function Settings() {
                             name="skills"
                             value={formData.skills}
                             onChange={handleChange}
-                            placeholder="e.g. React, Design, Project Management (comma separated)"
-                            className="w-full px-3 py-2 bg-white/5 border border-white/10 rounded-xl focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-primary-500 text-white placeholder-gray-500"
+                            placeholder="es. React, Design, Project Management (separati da virgola)"
+                            className="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-[#1a2b4b] focus:border-[#1a2b4b] text-[#1a2b4b] placeholder-gray-400"
                         />
                         <p className="mt-1 text-xs text-gray-500">
                             Note: Official competencies are managed separately and visible on your profile.
                         </p>
                     </div>
 
-                    <div className="bg-white/5 rounded-xl border border-white/10 p-4">
-                        <h3 className="text-sm font-bold text-gray-300 mb-2 uppercase">Account Information</h3>
+                    <div className="bg-gray-50 rounded-2xl border border-gray-100 p-6">
+                        <h3 className="text-sm font-bold text-[#1a2b4b] mb-4 uppercase tracking-wider">Informazioni Account</h3>
                         <div className="space-y-1 text-sm text-gray-400">
                             <p><span className="font-medium text-gray-300">Email:</span> {user?.email}</p>
                             <p><span className="font-medium text-gray-300">Role:</span> <span className="capitalize">{profile?.role}</span></p>
@@ -144,9 +145,9 @@ export default function Settings() {
 
                     {/* System Controls moved to Admin Menu in Navbar */}
 
-                    <div className="flex justify-end pt-4 border-t border-white/10">
-                        <Button type="submit" variant="primary" disabled={loading}>
-                            {loading ? 'Saving...' : 'Save Changes'}
+                    <div className="flex justify-end pt-6 border-t border-gray-100">
+                        <Button type="submit" disabled={loading} className="bg-[#1a2b4b] hover:bg-[#c0672a] text-white px-8 py-3 rounded-xl font-bold shadow-md transition-all">
+                            {loading ? 'Salvataggio...' : 'Salva Modifiche'}
                         </Button>
                     </div>
                 </form>

@@ -8,6 +8,8 @@
   /* Primary Brand Colors - Logo Derived */
   --color-deep-blue-brand: #1a2b4b;
   --color-warm-orange-brand: #c0672a;
+  --color-deep-blue-dark: #0f1a2e;
+  --color-warm-orange-light: #d4834d;
   
   /* Extended Color Palettes */
   --color-deep-blue-50: #f0f9ff;
@@ -62,11 +64,11 @@
   --color-gray-950: #030712;
   
   /* Dynamic Theme Variables */
-  --color-arq-bg: #ffffff;
+  --color-arq-bg: #f8fafc;
   --color-arq-primary: var(--color-deep-blue-brand);
   --color-arq-accent: var(--color-warm-orange-brand);
-  --color-arq-glass: rgba(255, 255, 255, 0.8);
-  --color-arq-glassBorder: rgba(255, 255, 255, 0.2);
+  --color-arq-glass: rgba(255, 255, 255, 0.7);
+  --color-arq-glassBorder: rgba(0, 0, 0, 0.05);
   
   /* Brand Gradients */
   --gradient-brand-primary: linear-gradient(135deg, var(--color-deep-blue-brand) 0%, var(--color-warm-orange-brand) 100%);

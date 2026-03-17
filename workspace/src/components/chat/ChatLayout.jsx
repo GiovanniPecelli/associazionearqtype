@@ -87,10 +87,11 @@ export function ChatLayout() {
 
     return (
 
-        <div className="h-full w-full bg-[#0f1117] flex overflow-hidden border-t border-white/5 relative">
+        <div className="h-full w-full bg-[#f8fafc] flex overflow-hidden border-t border-gray-200 relative">
             {/* Background elements */}
-            <div className="absolute top-0 left-0 w-full h-full bg-[url('/grid.svg')] opacity-[0.03] pointer-events-none" />
-            <div className="absolute top-[-10%] left-[-10%] w-[40%] h-[40%] rounded-full bg-purple-900/10 blur-[120px] pointer-events-none" />
+            <div className="absolute top-0 left-0 w-full h-full bg-[url('/grid.svg')] opacity-[0.01] pointer-events-none" />
+            <div className="absolute top-[-10%] left-[-10%] w-[40%] h-[40%] rounded-full bg-[#c0672a]/5 blur-[120px] pointer-events-none animate-pulse" />
+            <div className="absolute bottom-[-10%] right-[-10%] w-[40%] h-[40%] rounded-full bg-[#1a2b4b]/5 blur-[120px] pointer-events-none animate-pulse" style={{animationDelay: '2s'}} />
 
             {/* Sidebar (Channel List) */}
             {/* Sidebar (Channel List) */}
@@ -102,7 +103,7 @@ export function ChatLayout() {
                         animate={{ x: 0, opacity: 1 }}
                         exit={isMobileView ? { x: -300, opacity: 0 } : undefined}
                         transition={{ type: "spring", stiffness: 300, damping: 30 }}
-                        className={`${isMobileView ? 'absolute inset-y-0 left-0 w-full z-50' : 'w-80 border-r border-white/5'} h-full bg-gray-900/95 backdrop-blur-xl z-20 pt-24`}
+                         className={`${isMobileView ? 'absolute inset-y-0 left-0 w-full z-50' : 'w-80 border-r border-gray-200'} h-full bg-white/80 backdrop-blur-xl z-20 pt-24`}
                     >
                         <ChannelList
                             key={refreshKey}
@@ -116,26 +117,25 @@ export function ChatLayout() {
             </AnimatePresence>
 
             {/* Main Chat Area */}
-            <div className={`${isMobileView
-                ? (!showMobileList ? 'w-full fixed inset-0 z-40 bg-[#0f1117]' : 'hidden')
+             <div className={`${isMobileView
+                ? (!showMobileList ? 'w-full fixed inset-0 z-40 bg-[#f8fafc]' : 'hidden')
                 : 'flex-1 relative'
-                } h-full flex flex-col pt-24`}>
-
+                } h-full flex flex-col pt-24 bg-[#f8fafc]`}>
                 {activeChannel ? (
                     <ChatWindow
                         channel={activeChannel}
                         onBack={isMobileView ? handleBackToList : undefined}
                     />
                 ) : (
-                    <div className="flex-1 flex flex-col items-center justify-center text-gray-400 p-8 text-center bg-gray-900/20 backdrop-blur-sm">
-                        <div className="w-24 h-24 mb-6 rounded-3xl bg-gradient-to-tr from-gray-800 to-gray-900 flex items-center justify-center shadow-xl border border-white/5">
-                            <svg className="w-10 h-10 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <div className="flex-1 flex flex-col items-center justify-center text-gray-500 p-8 text-center bg-transparent">
+                         <div className="w-24 h-24 mb-6 rounded-3xl bg-white border border-gray-200 flex items-center justify-center shadow-sm">
+                            <svg className="w-10 h-10 text-[#c0672a]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
                             </svg>
                         </div>
-                        <h3 className="text-xl font-bold text-white mb-2">Welcome to Team Chat</h3>
-                        <p className="max-w-md text-gray-500">
-                            Select a channel from the sidebar to start collaborating with your team.
+                        <h3 className="text-xl font-bold text-[#1a2b4b] mb-2">Benvenuto nel Team Chat</h3>
+                        <p className="max-w-md text-gray-700">
+                            Seleziona un canale dalla barra laterale per iniziare a collaborare con il tuo team.
                         </p>
                     </div>
                 )}

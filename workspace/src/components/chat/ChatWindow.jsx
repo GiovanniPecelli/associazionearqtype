@@ -194,21 +194,21 @@ export function ChatWindow({ channel, onBack }) { // channel is now the full obj
     return (
         <div className="h-full flex flex-col bg-transparent overflow-hidden">
             {/* Header */}
-            <div className="bg-gray-900/60 backdrop-blur-md border-b border-white/5 p-4 flex items-center justify-between shrink-0">
+            <div className="bg-white/60 backdrop-blur-md border-b border-gray-100 p-4 flex items-center justify-between shrink-0">
                 <div className="flex items-center gap-3">
                     {onBack && (
                         <button
                             onClick={onBack}
-                            className="md:hidden text-gray-400 hover:text-white p-1 -ml-1"
+                            className="md:hidden text-gray-500 hover:text-[#1a2b4b] p-1 -ml-1"
                         >
                             <Icons.ArrowLeft className="w-6 h-6" />
                         </button>
                     )}
                     <div className="flex items-center gap-3">
-                        <div className={`w-3 h-3 rounded-full ${channel.type === 'role_restricted' ? 'bg-amber-500' : 'bg-green-500'}`} />
+                        <div className={`w-3 h-3 rounded-full ${channel.type === 'role_restricted' ? 'bg-[#c0672a]' : 'bg-green-500'}`} />
                         <div>
-                            <h3 className="text-white text-lg leading-none">{channel.name}</h3>
-                            <p className="text-xs text-gray-400 mt-1">messages and files sent in chat are deleted after 7 days</p>
+                            <h3 className="text-[#1a2b4b] text-xl font-black leading-none">{channel.name}</h3>
+                            <p className="text-[10px] text-gray-500 font-medium mt-1 uppercase tracking-wider">i messaggi e i file vengono eliminati dopo 7 giorni</p>
                         </div>
                     </div>
                 </div>
@@ -218,16 +218,16 @@ export function ChatWindow({ channel, onBack }) { // channel is now the full obj
             <div className="flex-1 overflow-y-auto custom-scrollbar p-4 space-y-6">
                 {loading ? (
                     <div className="flex justify-center items-center h-full">
-                        <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-primary-500"></div>
+                        <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-[#1a2b4b]"></div>
                     </div>
                 ) : messages.length === 0 ? (
                     <div className="flex flex-col items-center justify-center h-full text-gray-500 space-y-4">
-                        <div className="p-4 rounded-full bg-white/5">
-                            <svg className="w-8 h-8 opacity-50" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <div className="p-4 rounded-full bg-gray-100">
+                            <svg className="w-8 h-8 text-[#1a2b4b] opacity-30" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
                             </svg>
                         </div>
-                        <p>No messages yet. Start the conversation!</p>
+                        <p className="font-medium">Nessun messaggio ancora. Inizia la conversazione!</p>
                     </div>
                 ) : (
                     messages.map((msg, index) => {
@@ -239,10 +239,10 @@ export function ChatWindow({ channel, onBack }) { // channel is now the full obj
             </div>
 
             {/* Input Area */}
-            <div className="p-4 bg-gray-900/60 backdrop-blur-md border-t border-white/5 shrink-0">
+            <div className="p-4 bg-white/60 backdrop-blur-md border-t border-gray-100 shrink-0">
                 <form
                     onSubmit={sendMessage}
-                    className="flex items-end gap-2 bg-[#0a0a0a] p-2 rounded-2xl border border-white/5 focus-within:border-indigo-500/50 focus-within:shadow-[0_0_20px_-5px_rgba(99,102,241,0.2)] focus-within:bg-white/[0.02] transition-all duration-300"
+                    className="flex items-end gap-2 bg-gray-50 p-2 rounded-2xl border border-gray-200 focus-within:border-[#1a2b4b]/30 focus-within:shadow-sm focus-within:bg-white transition-all duration-300"
                 >
 
                     {/* Attachment Button */}
@@ -259,9 +259,9 @@ export function ChatWindow({ channel, onBack }) { // channel is now the full obj
                                 type="button"
                                 onClick={() => fileInputRef.current?.click()}
                                 disabled={isUploading}
-                                className={`p-3 rounded-xl transition-all shrink-0 ${isUploading ? 'bg-white/5 text-gray-500 animate-pulse' : 'text-gray-400 hover:text-indigo-400 hover:bg-white/5'
+                                className={`p-3 rounded-xl transition-all shrink-0 ${isUploading ? 'bg-gray-100 text-gray-400 animate-pulse' : 'text-gray-400 hover:text-[#1a2b4b] hover:bg-gray-100'
                                     }`}
-                                title="Attach file"
+                                title="Allega file"
                             >
                                 <Icons.Paperclip className="w-5 h-5" />
                             </button>
@@ -282,8 +282,8 @@ export function ChatWindow({ channel, onBack }) { // channel is now the full obj
                                 sendMessage(e);
                             }
                         }}
-                        placeholder={`Message #${channel.name}...`}
-                        className="flex-1 bg-transparent border-none text-white placeholder-gray-600 focus:ring-0 resize-none max-h-32 py-3 px-2 custom-scrollbar text-sm leading-relaxed"
+                        placeholder={`Messaggio su #${channel.name}...`}
+                        className="flex-1 bg-transparent border-none text-[#1a2b4b] placeholder-gray-400 focus:ring-0 resize-none max-h-32 py-3 px-2 custom-scrollbar text-sm font-medium leading-relaxed"
                         rows="1"
                         style={{ minHeight: '44px' }}
                     />
@@ -291,8 +291,8 @@ export function ChatWindow({ channel, onBack }) { // channel is now the full obj
                         type="submit"
                         disabled={!newMessage.trim()}
                         className={`p-3 rounded-xl transition-all duration-300 shrink-0 ${newMessage.trim()
-                            ? 'bg-gradient-to-br from-indigo-500 to-purple-600 text-white shadow-lg shadow-indigo-500/20 hover:shadow-indigo-500/40 hover:scale-105 active:scale-95'
-                            : 'bg-white/5 text-gray-600 cursor-not-allowed'
+                            ? 'bg-[#1a2b4b] text-white shadow-lg hover:bg-[#c0672a] hover:scale-105 active:scale-95'
+                            : 'bg-gray-200 text-gray-400 cursor-not-allowed'
                             }`}
                     >
                         <Icons.Send className="w-5 h-5" />

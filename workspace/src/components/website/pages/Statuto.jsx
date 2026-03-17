@@ -1,10 +1,12 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { ArrowLeft, FileText, Download, Eye, Search, BookOpen, Users, Award, Calendar } from 'lucide-react';
+import { ArrowLeft, FileText, Download, Eye, Search, BookOpen, Users, Award, Calendar, Menu, X } from 'lucide-react';
+import { motion, AnimatePresence } from 'framer-motion';
 
 const Statuto = () => {
   const [searchTerm, setSearchTerm] = useState('');
   const [currentSection, setCurrentSection] = useState('all');
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   // Statuto content (semplificato per visualizzazione)
   const statutoContent = [
@@ -75,12 +77,12 @@ const Statuto = () => {
               />
             </Link>
 
-            {/* Download Button */}
-            <div className="flex items-center space-x-4">
+            {/* Desktop Actions */}
+            <div className="hidden md:flex items-center space-x-4">
               <a 
                 href="/statuto.pdf" 
                 download="statuto-arqtype.pdf"
-                className="flex items-center space-x-2 px-4 py-2 bg-gradient-brand text-white rounded-lg hover:shadow-lg transition-all duration-300"
+                className="flex items-center space-x-2 px-4 py-2 bg-gradient-brand text-black rounded-lg hover:shadow-lg transition-all duration-300"
               >
                 <Download className="w-4 h-4" />
                 <span className="font-medium">Download PDF</span>
@@ -93,8 +95,48 @@ const Statuto = () => {
                 <span className="font-medium">Torna indietro</span>
               </Link>
             </div>
+
+            {/* Mobile Menu Toggle */}
+            <button 
+              className="md:hidden p-2 text-deep-blue-brand hover:bg-deep-blue-50 rounded-lg transition-colors"
+              onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+            >
+              {isMobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+            </button>
           </div>
         </div>
+
+        {/* Mobile Menu */}
+        <AnimatePresence>
+          {isMobileMenuOpen && (
+            <motion.div
+              initial={{ opacity: 0, height: 0 }}
+              animate={{ opacity: 1, height: 'auto' }}
+              exit={{ opacity: 0, height: 0 }}
+              className="md:hidden border-t border-gray-100 bg-white overflow-hidden"
+            >
+              <div className="p-4 space-y-3">
+                <a 
+                  href="/statuto.pdf" 
+                  download="statuto-arqtype.pdf"
+                  className="flex items-center justify-center space-x-3 w-full px-6 py-4 bg-gradient-brand text-black font-bold rounded-xl"
+                  onClick={() => setIsMobileMenuOpen(false)}
+                >
+                  <Download className="w-5 h-5" />
+                  <span>Download PDF</span>
+                </a>
+                <Link 
+                  to="/"
+                  className="flex items-center justify-center space-x-3 w-full px-6 py-4 bg-gray-50 text-deep-blue-brand font-bold rounded-xl"
+                  onClick={() => setIsMobileMenuOpen(false)}
+                >
+                  <ArrowLeft className="w-5 h-5" />
+                  <span>Torna alla Home</span>
+                </Link>
+              </div>
+            </motion.div>
+          )}
+        </AnimatePresence>
       </nav>
 
       {/* Content */}
@@ -233,7 +275,7 @@ const Statuto = () => {
             <a 
               href="/statuto.pdf" 
               download="statuto-arqtype.pdf"
-              className="inline-flex items-center space-x-3 px-6 py-3 bg-white text-deep-blue-brand font-bold rounded-xl hover:shadow-xl transition-all duration-300"
+              className="inline-flex items-center space-x-3 px-6 py-3 bg-white text-black font-bold rounded-xl hover:shadow-xl transition-all duration-300 border border-gray-100"
             >
               <Download className="w-5 h-5" />
               <span>Download Statuto PDF</span>

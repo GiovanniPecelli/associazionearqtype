@@ -302,16 +302,16 @@ export function WorkflowList() {
   const hasActionItems = proposedWorkflows.length > 0 || rejectedWorkflows.length > 0;
 
   return (
-    <PageTransition className="space-y-10 pb-20 md:pb-0 relative min-h-screen px-4 sm:px-6 lg:px-8 py-8">
+    <PageTransition className="space-y-10 pb-20 md:pb-0 relative min-h-screen px-4 sm:px-6 lg:px-8 py-8 bg-[#f8fafc]">
 
       <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-8 mb-2 relative z-10">
-        <h1 className="text-4xl font-extrabold text-white tracking-tight">Workflows</h1>
+        <h1 className="text-4xl font-extrabold text-[#1a2b4b] tracking-tight">Workflows</h1>
         <div className="flex flex-col md:flex-row gap-4 w-full md:w-auto">
           {/* Desktop Pending Button */}
           {hasActionItems && (
             <Button
               onClick={() => setShowMobilePending(true)}
-              className="hidden lg:flex items-center gap-2 bg-amber-500/10 text-amber-500 border border-amber-500/50 hover:bg-amber-500/20 px-6 py-4 text-lg font-bold shadow-[0_0_15px_rgba(245,158,11,0.2)]"
+              className="hidden lg:flex items-center gap-2 bg-amber-50 text-amber-700 border border-amber-200 hover:bg-amber-100 px-6 py-4 text-lg font-bold shadow-sm"
             >
               <Icons.Lightning className="w-5 h-5" />
               Review Pending ({proposedWorkflows.length + rejectedWorkflows.length})
@@ -327,32 +327,35 @@ export function WorkflowList() {
               }
             }}
             variant="primary"
-            className="shadow-xl shadow-primary-500/20 w-full md:w-auto px-8 py-4 text-lg font-bold transform hover:scale-105 transition-all"
+            className="shadow-xl bg-white hover:bg-[#c0672a] text-black w-full md:w-auto px-8 py-4 text-lg font-bold transform hover:scale-105 transition-all rounded-2xl"
           >
-            {showForm ? 'Close Proposal' : '+ Propose Workflow'}
+            {showForm ? 'Chiudi Proposta' : '+ Proponi Workflow'}
           </Button>
         </div>
       </div>
 
       {/* Search and Filter Section */}
-      <div className="bg-[#020617]/60 backdrop-blur-xl p-6 rounded-2xl shadow-lg border border-white/10">
+      <div className="bg-white p-6 rounded-2xl shadow-sm border border-gray-200">
         <div className="flex flex-col md:flex-row gap-4">
-          <div className="flex-1">
-            <input
-              type="text"
-              placeholder="Search workflows by title or description..."
-              value={searchQuery}
-              onChange={(e) => setSearchQuery(e.target.value)}
-              className="w-full px-5 py-3 bg-white/5 border border-white/10 rounded-xl focus:outline-none focus:ring-2 focus:ring-primary-500 text-white placeholder-gray-400 text-lg transition-all focus:bg-white/10"
-            />
+          <div className="flex-1 flex items-center group">
+            <div className="bg-white p-2 rounded-2xl border border-gray-200 shadow-sm flex items-center group-focus-within:border-[#1a2b4b]/50 transition-all w-full">
+              <Icons.Search className="w-5 h-5 text-gray-400 ml-3 group-focus-within:text-[#1a2b4b]" />
+              <input
+                type="text"
+                placeholder="Cerca workflow per titolo o descrizione..."
+                className="w-full px-4 py-3 bg-transparent border-none focus:ring-0 text-[#1a2b4b] placeholder-gray-400 font-medium"
+                value={searchQuery}
+                onChange={(e) => setSearchQuery(e.target.value)}
+              />
+            </div>
           </div>
           <div className="md:w-72">
             <select
               value={selectedCategory}
               onChange={(e) => setSelectedCategory(e.target.value)}
-              className="w-full px-5 py-3 bg-[#020617] border border-white/10 rounded-xl focus:outline-none focus:ring-2 focus:ring-primary-500 text-white text-lg appearance-none cursor-pointer"
+              className="w-full px-5 py-3 bg-white/95 border border-white/20 rounded-xl focus:outline-none focus:ring-2 focus:ring-[#1a2b4b]/50 text-black text-lg appearance-none cursor-pointer"
             >
-              <option value="all">All Categories</option>
+              <option value="all">Tutte le Categorie</option>
               {categories.map(cat => (
                 <option key={cat.id} value={cat.id}>{cat.name}</option>
               ))}
@@ -363,37 +366,37 @@ export function WorkflowList() {
 
       {
         showForm && (
-          <form onSubmit={handleSubmit} className="bg-[#020617]/80 backdrop-blur-xl p-8 rounded-2xl shadow-2xl border border-white/10 animate-fade-in ring-1 ring-white/20">
+          <form onSubmit={handleSubmit} className="bg-white p-8 rounded-2xl shadow-xl border border-gray-200 animate-fade-in ring-1 ring-black/5">
             <div className="flex justify-between items-center mb-6">
-              <h2 className="text-2xl font-bold text-white">{editingId ? 'Edit Proposal' : 'Propose New Workflow'}</h2>
+              <h2 className="text-2xl font-bold text-black">{editingId ? 'Modifica Proposta' : 'Proponi Nuovo Workflow'}</h2>
               {editingId && <Badge status="rejected" />}
             </div>
 
             <div className="space-y-6">
               <fieldset className="space-y-4">
                 <div>
-                  <label className="block text-sm font-medium text-gray-300 mb-1">Title</label>
-                  <input type="text" value={newWorkflow.title} onChange={e => setNewWorkflow({ ...newWorkflow, title: e.target.value })} className="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-xl focus:outline-none focus:ring-2 focus:ring-primary-500 text-white" required />
+                  <label className="block text-sm font-medium text-black mb-1">Titolo</label>
+                  <input type="text" value={newWorkflow.title} onChange={e => setNewWorkflow({ ...newWorkflow, title: e.target.value })} className="w-full px-4 py-3 bg-white/95 border border-black/20 rounded-xl focus:outline-none focus:ring-2 focus:ring-[#1a2b4b]/50 text-black" required />
                 </div>
                 <div>
-                  <label className="block text-sm font-medium text-gray-300 mb-1">Description / Proposal</label>
-                  <textarea value={newWorkflow.description} onChange={e => setNewWorkflow({ ...newWorkflow, description: e.target.value })} className="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-xl focus:outline-none focus:ring-2 focus:ring-primary-500 text-white" rows="3" placeholder="Describe the workflow proposal..." />
+                  <label className="block text-sm font-medium text-black mb-1">Descrizione / Proposta</label>
+                  <textarea value={newWorkflow.description} onChange={e => setNewWorkflow({ ...newWorkflow, description: e.target.value })} className="w-full px-4 py-3 bg-white/95 border border-black/20 rounded-xl focus:outline-none focus:ring-2 focus:ring-[#1a2b4b]/50 text-black" rows="3" placeholder="Descrivi la proposta del workflow..." />
                 </div>
                 <div>
-                  <label className="block text-sm font-medium text-gray-300 mb-1">Obiettivo</label>
-                  <textarea value={newWorkflow.obiettivo} onChange={e => setNewWorkflow({ ...newWorkflow, obiettivo: e.target.value })} className="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-xl focus:outline-none focus:ring-2 focus:ring-primary-500 text-white" rows="2" placeholder="Qual è l'obiettivo di questo workflow?" />
+                  <label className="block text-sm font-medium text-black mb-1">Obiettivo</label>
+                  <textarea value={newWorkflow.obiettivo} onChange={e => setNewWorkflow({ ...newWorkflow, obiettivo: e.target.value })} className="w-full px-4 py-3 bg-white/95 border border-black/20 rounded-xl focus:outline-none focus:ring-2 focus:ring-[#1a2b4b]/50 text-black" rows="2" placeholder="Qual è l'obiettivo di questo workflow?" />
                 </div>
                 <div>
-                  <label className="block text-sm font-medium text-gray-300 mb-1">Fasi</label>
-                  <textarea value={newWorkflow.fasi} onChange={e => setNewWorkflow({ ...newWorkflow, fasi: e.target.value })} className="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-xl focus:outline-none focus:ring-2 focus:ring-primary-500 text-white" rows="4" placeholder="Elenca le fasi del workflow (una per riga)..." />
+                  <label className="block text-sm font-medium text-black mb-1">Fasi</label>
+                  <textarea value={newWorkflow.fasi} onChange={e => setNewWorkflow({ ...newWorkflow, fasi: e.target.value })} className="w-full px-4 py-3 bg-white/95 border border-black/20 rounded-xl focus:outline-none focus:ring-2 focus:ring-[#1a2b4b]/50 text-black" rows="4" placeholder="Elenca le fasi del workflow (una per riga)..." />
                 </div>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                   <div>
-                    <label className="block text-sm font-medium text-gray-300 mb-1">Proposed Coordinator</label>
+                    <label className="block text-sm font-medium text-black mb-1">Coordinatore Proposto</label>
                     <select
                       value={newWorkflow.architect_proposto || ''}
                       onChange={e => setNewWorkflow({ ...newWorkflow, architect_proposto: e.target.value || null })}
-                      className="w-full px-4 py-3 bg-black border border-white/10 rounded-xl focus:outline-none focus:ring-2 focus:ring-primary-500 text-white"
+                      className="w-full px-4 py-3 bg-white/95 border border-black/20 rounded-xl focus:outline-none focus:ring-2 focus:ring-[#1a2b4b]/50 text-black"
                     >
                       <option value="">Seleziona un architect (opzionale)</option>
                       {profiles.filter(p => p.role === 'architect' || p.role === 'host').map(profile => (
@@ -404,13 +407,13 @@ export function WorkflowList() {
                     </select>
                   </div>
                   <div>
-                    <label className="block text-sm font-medium text-gray-300 mb-1">Category</label>
+                    <label className="block text-sm font-medium text-black mb-1">Categoria</label>
                     <select
                       value={newWorkflow.category_id || ''}
                       onChange={e => setNewWorkflow({ ...newWorkflow, category_id: e.target.value || null })}
-                      className="w-full px-4 py-3 bg-black border border-white/10 rounded-xl focus:outline-none focus:ring-2 focus:ring-primary-500 text-white"
+                      className="w-full px-4 py-3 bg-white/95 border border-black/20 rounded-xl focus:outline-none focus:ring-2 focus:ring-[#1a2b4b]/50 text-black"
                     >
-                      <option value="">Select a category (optional)</option>
+                      <option value="">Seleziona una categoria (opzionale)</option>
                       {categories.map(category => (
                         <option key={category.id} value={category.id}>
                           {category.name}
@@ -422,33 +425,33 @@ export function WorkflowList() {
               </fieldset>
 
               <fieldset className="space-y-4">
-                <legend className="text-lg font-semibold text-white mb-4 block">Pre-defined Tasks</legend>
+                <legend className="text-lg font-semibold text-black mb-4 block">Task Predefiniti</legend>
                 {newTasks.map((task, index) => (
-                  <div key={index} className="bg-white/5 p-4 rounded-xl border border-white/10 space-y-3">
+                  <div key={index} className="bg-white/95 p-4 rounded-xl border border-black/20 space-y-3">
                     <div className="flex items-center justify-between mb-2">
-                      <p className="font-bold text-gray-300">Task #{index + 1}</p>
+                      <p className="font-bold text-black">Task #{index + 1}</p>
                       {newTasks.length > 1 && (
                         <Button type="button" onClick={() => removeTask(index)} variant="danger" className="p-2 rounded-lg text-xs">
-                          Remove
+                          Rimuovi
                         </Button>
                       )}
                     </div>
                     <div>
-                      <input type="text" placeholder="Task Title" value={task.title} onChange={e => handleTaskChange(index, 'title', e.target.value)} className="w-full px-4 py-2 bg-white/5 border border-white/10 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-500 text-white" />
+                      <input type="text" placeholder="Titolo Task" value={task.title} onChange={e => handleTaskChange(index, 'title', e.target.value)} className="w-full px-4 py-2 bg-white/95 border border-black/20 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#1a2b4b]/50 text-black" />
                     </div>
                     <div>
-                      <textarea placeholder="Task Description" value={task.description} onChange={e => handleTaskChange(index, 'description', e.target.value)} className="w-full px-4 py-2 bg-white/5 border border-white/10 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-500 text-white" rows="2" />
+                      <textarea placeholder="Descrizione Task" value={task.description} onChange={e => handleTaskChange(index, 'description', e.target.value)} className="w-full px-4 py-2 bg-white/95 border border-black/20 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#1a2b4b]/50 text-black" rows="2" />
                     </div>
                   </div>
                 ))}
                 <Button type="button" onClick={addTask} variant="outline" className="w-full py-3 border-dashed border-2">
-                  + Add Another Task
+                  + Aggiungi Altro Task
                 </Button>
               </fieldset>
 
-              <div className="flex justify-end pt-6 border-t border-white/10">
+              <div className="flex justify-end pt-6 border-t border-black/10">
                 <Button type="submit" disabled={submitting} variant="primary" className="px-8 py-3 text-lg">
-                  {submitting ? 'Submitting...' : (editingId ? 'Resubmit Proposal' : 'Submit Proposal')}
+                  {submitting ? 'Invio in corso...' : (editingId ? 'Invia di Nuovo' : 'Invia Proposta')}
                 </Button>
               </div>
             </div>
@@ -461,33 +464,33 @@ export function WorkflowList() {
 
         {/* Left Column: Active Workflows */}
         <div className="lg:col-span-8 space-y-8 min-h-[50vh]">
-          <h2 className="text-2xl font-bold text-white mb-6 mt-4 hidden lg:block">Active Projects</h2>
+          <h2 className="text-2xl font-black text-[#1a2b4b] mb-8">Workflows In Attesa</h2>
 
           {/* Mobile: Action Required Trigger Button (Refined) */}
           <div className="lg:hidden mb-6">
             {hasActionItems && (
               <button
                 onClick={() => setShowMobilePending(true)}
-                className="w-full bg-amber-500/10 border border-amber-500/30 p-4 rounded-xl flex items-center justify-between shadow-lg shadow-amber-500/5 active:scale-[0.98] transition-transform"
+                className="w-full bg-white border border-gray-200 p-4 rounded-xl flex items-center justify-between shadow-sm active:scale-[0.98] transition-transform"
               >
                 <div className="flex items-center gap-4">
-                  <div className="bg-amber-500 text-black font-bold h-10 w-10 rounded-full flex items-center justify-center text-lg animate-pulse">
+                  <div className="bg-[#c0672a] text-white font-bold h-10 w-10 rounded-full flex items-center justify-center text-lg">
                     {proposedWorkflows.length + rejectedWorkflows.length}
                   </div>
                   <div className="text-left">
-                    <h3 className="font-bold text-amber-100 text-lg">Action Required</h3>
-                    <p className="text-amber-500/60 text-sm">Review pending items</p>
+                    <h3 className="font-bold text-black text-lg">Azione Richiesta</h3>
+                    <p className="text-gray-700 text-sm">Revisiona elementi in attesa</p>
                   </div>
                 </div>
-                <Icons.List className="w-6 h-6 text-amber-500" />
+                <Icons.List className="w-6 h-6 text-[#c0672a]" />
               </button>
             )}
           </div>
 
           {Object.keys(workflowsByCategory).length === 0 && (
-            <div className="text-center py-12 bg-[#020617]/60 backdrop-blur-xl rounded-2xl shadow-lg border border-white/10">
-              <h3 className="text-xl font-medium text-white">No active workflows</h3>
-              <p className="text-gray-400 mt-2">Create a workflow proposal to get started.</p>
+            <div className="text-center py-12 bg-white/90 backdrop-blur-sm rounded-2xl shadow-lg border border-black/20">
+              <h3 className="text-xl font-medium text-black">Nessun workflow attivo</h3>
+              <p className="text-gray-700 mt-2">Crea una proposta di workflow per iniziare.</p>
             </div>
           )}
 
@@ -500,31 +503,31 @@ export function WorkflowList() {
                     style={{ backgroundColor: category.color }}
                   />
                 )}
-                <h4 className="text-xl font-bold text-gray-200 tracking-tight">{categoryName}</h4>
-                <span className="text-sm font-medium text-gray-500 bg-black px-2 py-0.5 rounded-full border border-white/5">{workflows.length}</span>
+                <h4 className="text-xl font-bold text-[#1a2b4b] tracking-tight">{categoryName}</h4>
+                <span className="text-sm font-medium text-gray-700 bg-white px-2 py-0.5 rounded-full border border-black/20">{workflows.length}</span>
               </div>
               <div className="grid gap-5 md:grid-cols-2">
                 {workflows.map(workflow => (
-                  <Link to={`/workflow/${workflow.id}`} key={workflow.id} className="block group bg-zinc-900/40 backdrop-blur-md p-6 rounded-2xl shadow-lg border border-white/5 hover:border-primary-500/50 hover:bg-zinc-800/80 transition-all hover:-translate-y-1">
+                  <Link to={`/workflow/${workflow.id}`} key={workflow.id} className="block group bg-white p-6 rounded-2xl shadow-sm border border-gray-100 hover:border-[#c0672a] hover:shadow-xl transition-all hover:-translate-y-1">
                     <div className="flex justify-between items-start mb-4">
                       <div className="flex gap-2">
                         <Badge status={workflow.status} type="workflow" />
                         {!isHost && workflow.category && (
-                          <span className="px-2 py-1 rounded-full text-xs font-bold border" style={{ backgroundColor: `${workflow.category.color} 15`, borderColor: `${workflow.category.color} 30`, color: workflow.category.color }}>
+                          <span className="px-2 py-1 rounded-full text-xs font-bold border" style={{ backgroundColor: `${workflow.category.color}15`, borderColor: `${workflow.category.color}30`, color: workflow.category.color }}>
                             {workflow.category.name}
                           </span>
                         )}
                       </div>
-                      <span className="text-xs font-mono text-gray-500">{new Date(workflow.created_at).toLocaleDateString()}</span>
+                      <span className="text-xs font-mono text-gray-600">{new Date(workflow.created_at).toLocaleDateString()}</span>
                     </div>
-                    <h3 className="text-xl font-bold text-white mb-2 group-hover:text-primary-400 transition-colors">{workflow.title}</h3>
-                    <p className="text-gray-400 text-sm mb-4 line-clamp-3 leading-relaxed">{workflow.description}</p>
-                    <div className="flex justify-between items-center text-xs text-gray-500 border-t border-white/5 pt-4 mt-auto">
+                    <h3 className="text-xl font-bold text-black mb-2 group-hover:text-warm-orange-brand transition-colors">{workflow.title}</h3>
+                    <p className="text-gray-700 text-sm mb-4 line-clamp-3 leading-relaxed">{workflow.description}</p>
+                    <div className="flex justify-between items-center text-xs text-gray-600 border-t border-black/10 pt-4 mt-auto">
                       <div className="flex items-center gap-2">
-                        <div className="w-6 h-6 rounded-full bg-gray-700 flex items-center justify-center text-[10px] text-white font-bold">
+                        <div className="w-6 h-6 rounded-full bg-gray-200 flex items-center justify-center text-[10px] text-black font-bold">
                           {(workflow.created_by_profile?.display_name || workflow.created_by_profile?.email || '?')[0].toUpperCase()}
                         </div>
-                        <span>{workflow.created_by_profile?.display_name || 'User'}</span>
+                        <span className="text-black">{workflow.created_by_profile?.display_name || 'User'}</span>
                       </div>
                     </div>
                   </Link>
@@ -541,34 +544,34 @@ export function WorkflowList() {
         <div className="hidden lg:block lg:col-span-3 space-y-6 sticky top-24">
 
           {/* Pending Section */}
-          <div className="bg-[#020617]/80 backdrop-blur-xl border border-white/10 rounded-2xl overflow-hidden shadow-2xl">
-            <div className="p-4 border-b border-white/10 bg-gradient-to-r from-yellow-900/20 to-orange-900/20">
-              <h2 className="text-sm font-bold text-white flex items-center gap-2">
-                <span>⏳ Pending Review</span>
-                <span className="bg-yellow-500 text-black text-[10px] font-bold px-1.5 py-0.5 rounded-full">{proposedWorkflows.length}</span>
+          <div className="bg-white border border-gray-200 rounded-2xl overflow-hidden shadow-sm">
+            <div className="p-4 border-b border-gray-100 bg-gray-50">
+              <h2 className="text-sm font-bold text-[#1a2b4b] flex items-center gap-2">
+                <span>⏳ In Attesa di Revisione</span>
+                <span className="bg-[#c0672a] text-white text-[10px] font-bold px-1.5 py-0.5 rounded-full">{proposedWorkflows.length}</span>
               </h2>
             </div>
 
             <div className="max-h-[40vh] overflow-y-auto custom-scrollbar">
               {proposedWorkflows.length === 0 ? (
                 <div className="text-center py-6 px-4">
-                  <p className="text-gray-500 text-xs">No pending proposals.</p>
+                  <p className="text-gray-600 text-xs">Nessuna proposta in attesa.</p>
                 </div>
               ) : (
                 <div className="p-3 space-y-3">
                   {proposedWorkflows.map(workflow => (
-                    <div key={workflow.id} className="bg-black/20 p-4 rounded-xl border border-white/5 hover:border-yellow-500/30 transition-colors space-y-3">
+                    <div key={workflow.id} className="bg-gray-100 p-4 rounded-xl border border-black/10 hover:border-warm-orange-brand/30 transition-colors space-y-3">
                       <div>
-                        <span className="font-bold text-white text-sm block mb-1">{workflow.title}</span>
-                        <p className="text-xs text-gray-400 line-clamp-2">{workflow.description}</p>
+                        <span className="font-bold text-black text-sm block mb-1">{workflow.title}</span>
+                        <p className="text-xs text-gray-700 line-clamp-2">{workflow.description}</p>
                       </div>
 
                       <Link
                         to={`/workflow/${workflow.id}`}
-                        className="flex items-center justify-center gap-2 w-full py-2 bg-white/5 hover:bg-white/10 text-white rounded-lg text-xs font-bold transition-colors border border-white/5"
+                        className="flex items-center justify-center gap-2 w-full py-2 bg-gray-200 hover:bg-warm-orange-brand/20 text-black rounded-lg text-xs font-bold transition-colors border border-black/10"
                       >
                         <Icons.Eye className="w-4 h-4" />
-                        Review Details
+                        Revisiona Dettagli
                       </Link>
 
                       {isHost && (
@@ -591,10 +594,10 @@ export function WorkflowList() {
           </div>
 
           {/* Rejected Section */}
-          <div className="bg-[#020617]/80 backdrop-blur-xl border border-white/10 rounded-2xl overflow-hidden shadow-2xl">
-            <div className="p-4 border-b border-white/10 bg-gradient-to-r from-red-900/20 to-pink-900/20">
-              <h2 className="text-sm font-bold text-white flex items-center gap-2">
-                <span>🔴 Rejected</span>
+          <div className="bg-white border border-gray-200 rounded-2xl overflow-hidden shadow-sm">
+            <div className="p-4 border-b border-gray-100 bg-gray-50">
+              <h2 className="text-sm font-bold text-[#1a2b4b] flex items-center gap-2">
+                <span>🔴 Rifiutati</span>
                 <span className="bg-red-500 text-white text-[10px] font-bold px-1.5 py-0.5 rounded-full">{rejectedWorkflows.length}</span>
               </h2>
             </div>

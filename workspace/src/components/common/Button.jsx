@@ -16,8 +16,10 @@ const Button = ({
 
   switch (variant) {
     case 'primary':
-      // Elegant White/Black style from Landing Page
-      variantStyles = 'bg-white text-black hover:bg-gray-100 hover:scale-105 shadow-[0_0_20px_rgba(255,255,255,0.3)] focus:ring-white/50 border border-transparent';
+      // Brand Deep Blue style
+      // Removed text-white from here to allow override via className or default to white if not provided
+      variantStyles = 'bg-[#1a2b4b] hover:bg-[#0f1a2e] hover:scale-105 shadow-lg focus:ring-[#1a2b4b]/50 border border-transparent';
+      if (!className.includes('text-')) variantStyles += ' text-white';
       break;
     case 'secondary':
       // Glassmorphism style
@@ -28,13 +30,13 @@ const Button = ({
       variantStyles = 'bg-red-600/10 border border-red-500/50 text-red-500 hover:bg-red-600/20 hover:text-red-400 shadow-[0_0_15px_rgba(239,68,68,0.2)] focus:ring-red-500';
       break;
     case 'outline':
-      variantStyles = 'border border-indigo-500/30 text-indigo-300 hover:bg-indigo-500/10 hover:border-indigo-400 hover:text-white focus:ring-indigo-500';
+      variantStyles = 'border-2 border-[#1a2b4b] text-[#1a2b4b] hover:bg-[#1a2b4b] hover:text-white transition-all focus:ring-[#1a2b4b]';
       break;
     case 'success':
       variantStyles = 'bg-emerald-600/10 border border-emerald-500/50 text-emerald-400 hover:bg-emerald-600/20 hover:text-emerald-300 shadow-[0_0_15px_rgba(16,185,129,0.2)] focus:ring-emerald-500';
       break;
     case 'link':
-      variantStyles = 'text-indigo-400 hover:text-indigo-300 hover:underline focus:ring-indigo-500 p-0 shadow-none px-0 py-0 h-auto rounded-none active:scale-100';
+      variantStyles = 'text-[#c0672a] hover:text-[#1a2b4b] hover:underline focus:ring-[#c0672a] p-0 shadow-none px-0 py-0 h-auto rounded-none active:scale-100';
       break;
     case 'ghost':
       variantStyles = 'bg-transparent text-gray-400 hover:text-white hover:bg-white/5';
@@ -43,7 +45,7 @@ const Button = ({
       variantStyles = ''; // No default styling, full control via className
       break;
     default:
-      variantStyles = 'bg-white text-black hover:bg-gray-100 hover:scale-105 shadow-[0_0_20px_rgba(255,255,255,0.3)] focus:ring-white/50';
+      variantStyles = 'bg-[#1a2b4b] text-white hover:bg-[#0f1a2e] focus:ring-[#1a2b4b]/50';
   }
 
   return (

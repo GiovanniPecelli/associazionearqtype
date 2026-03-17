@@ -4,7 +4,7 @@ import { PieChart, Pie, Cell, ResponsiveContainer, Tooltip, Legend, BarChart, Ba
 import { WorkflowProgressChart } from '../components/dashboard/WorkflowProgressChart';
 import PageTransition from '../components/common/PageTransition';
 
-const COLORS = ['#0088FE', '#00C49F', '#FFBB28', '#FF8042', '#AF19FF'];
+const COLORS = ['#c0672a', '#1a2b4b', '#f4a261', '#2a3f5f', '#e76f51']; // ARQtype palette
 
 function Dashboard() {
   const [stats, setStats] = useState({
@@ -114,35 +114,82 @@ function Dashboard() {
   }, []);
 
   if (loading) {
-    return <div className="text-center p-8">Loading Dashboard...</div>;
+    return (
+      <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-slate-900 via-deep-blue-brand to-slate-900">
+        <div className="text-white text-xl font-semibold animate-pulse">Caricamento Dashboard...</div>
+      </div>
+    );
   }
 
   if (error) {
-    return <div className="text-center p-8 text-red-500">Error: {error}</div>;
+    return (
+      <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-slate-900 via-deep-blue-brand to-slate-900">
+        <div className="bg-red-500/10 border border-red-500/20 text-red-200 p-8 rounded-xl text-center max-w-md mx-auto">
+          <div className="text-2xl mb-4">⚠️</div>
+          <p className="text-lg font-semibold mb-2">Errore nel Caricamento</p>
+          <p className="text-sm">{error}</p>
+        </div>
+      </div>
+    );
   }
 
   return (
-    <PageTransition className="space-y-8">
-      <h1 className="text-3xl font-bold text-gray-800">Dashboard</h1>
+    <PageTransition className="min-h-screen bg-gradient-to-br from-slate-900 via-deep-blue-brand to-slate-900 text-white p-6">
+      {/* Header */}
+      <div className="mb-8">
+        <h1 className="text-4xl md:text-5xl font-black text-white mb-2">Dashboard</h1>
+        <p className="text-gray-300 text-lg">Panoramica delle tue attività e progressi</p>
+      </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-        <div className="bg-white p-6 rounded-lg shadow">
-          <h3 className="text-gray-500">Total Workflows</h3>
-          <p className="text-3xl font-bold">{stats.workflowCount}</p>
+      {/* Stats Cards */}
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
+        <div className="bg-white/10 backdrop-blur-md border border-white/20 p-6 rounded-2xl shadow-xl">
+          <div className="flex items-center justify-between mb-4">
+            <h3 className="text-gray-300 font-medium">Total Workflows</h3>
+            <div className="w-12 h-12 bg-warm-orange-brand/20 rounded-xl flex items-center justify-center">
+              <svg className="w-6 h-6 text-warm-orange-brand" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2" />
+              </svg>
+            </div>
+          </div>
+          <p className="text-3xl font-black text-white">{stats.workflowCount}</p>
+          <p className="text-gray-400 text-sm mt-2">Workflow totali</p>
         </div>
-        <div className="bg-white p-6 rounded-lg shadow">
-          <h3 className="text-gray-500">Total Tasks</h3>
-          <p className="text-3xl font-bold">{stats.taskCount}</p>
+        
+        <div className="bg-white/10 backdrop-blur-md border border-white/20 p-6 rounded-2xl shadow-xl">
+          <div className="flex items-center justify-between mb-4">
+            <h3 className="text-gray-300 font-medium">Total Tasks</h3>
+            <div className="w-12 h-12 bg-deep-blue-brand/20 rounded-xl flex items-center justify-center">
+              <svg className="w-6 h-6 text-deep-blue-brand" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01" />
+              </svg>
+            </div>
+          </div>
+          <p className="text-3xl font-black text-white">{stats.taskCount}</p>
+          <p className="text-gray-400 text-sm mt-2">Task totali</p>
         </div>
-        <div className="bg-white p-6 rounded-lg shadow">
-          <h3 className="text-gray-500">Active Workflows</h3>
-          <p className="text-3xl font-bold">{stats.workflowStatusDistribution.find(s => s.name === 'Active')?.value || 0}</p>
+        
+        <div className="bg-white/10 backdrop-blur-md border border-white/20 p-6 rounded-2xl shadow-xl">
+          <div className="flex items-center justify-between mb-4">
+            <h3 className="text-gray-300 font-medium">Active Workflows</h3>
+            <div className="w-12 h-12 bg-green-500/20 rounded-xl flex items-center justify-center">
+              <svg className="w-6 h-6 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
+              </svg>
+            </div>
+          </div>
+          <p className="text-3xl font-black text-white">{stats.workflowStatusDistribution.find(s => s.name === 'Active')?.value || 0}</p>
+          <p className="text-gray-400 text-sm mt-2">Workflow attivi</p>
         </div>
       </div>
 
-      <div className="grid grid-cols-1 lg:grid-cols-5 gap-6">
-        <div className="lg:col-span-2 bg-white p-6 rounded-lg shadow">
-          <h2 className="text-xl font-semibold mb-4">Workflow Status</h2>
+      {/* Charts Section */}
+      <div className="grid grid-cols-1 lg:grid-cols-5 gap-6 mb-8">
+        <div className="lg:col-span-2 bg-white/10 backdrop-blur-md border border-white/20 p-6 rounded-2xl shadow-xl">
+          <h2 className="text-xl font-bold text-white mb-6 flex items-center gap-2">
+            <div className="w-2 h-2 bg-warm-orange-brand rounded-full"></div>
+            Workflow Status
+          </h2>
           <div className="h-80">
             <ResponsiveContainer width="100%" height="100%">
               <PieChart>
@@ -155,19 +202,30 @@ function Dashboard() {
                   fill="#8884d8"
                   dataKey="value"
                   nameKey="name"
+                  label={({name, percent}) => `${name} ${(percent * 100).toFixed(0)}%`}
                 >
                   {stats.workflowStatusDistribution.map((entry, index) => (
                     <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />
                   ))}
                 </Pie>
-                <Tooltip />
-                <Legend />
+                <Tooltip 
+                  contentStyle={{ 
+                    backgroundColor: 'rgba(26, 43, 75, 0.9)', 
+                    border: '1px solid rgba(192, 103, 42, 0.3)',
+                    borderRadius: '8px'
+                  }}
+                  labelStyle={{ color: '#fff' }}
+                />
               </PieChart>
             </ResponsiveContainer>
           </div>
         </div>
-        <div className="lg:col-span-3 bg-white p-6 rounded-lg shadow">
-          <h2 className="text-xl font-semibold mb-4">Task Status Distribution</h2>
+        
+        <div className="lg:col-span-3 bg-white/10 backdrop-blur-md border border-white/20 p-6 rounded-2xl shadow-xl">
+          <h2 className="text-xl font-bold text-white mb-6 flex items-center gap-2">
+            <div className="w-2 h-2 bg-deep-blue-brand rounded-full"></div>
+            Task Status Distribution
+          </h2>
           {stats.taskStatusDistribution.length > 0 ? (
             <div className="h-80">
               <ResponsiveContainer width="100%" height="100%">
@@ -175,18 +233,32 @@ function Dashboard() {
                   data={stats.taskStatusDistribution}
                   margin={{ top: 5, right: 20, left: 10, bottom: 5 }}
                 >
-                  <CartesianGrid strokeDasharray="3 3" />
-                  <XAxis dataKey="name" />
-                  <YAxis />
-                  <Tooltip />
-                  <Legend />
-                  <Bar dataKey="value" fill="#8884d8" name="Number of Tasks" />
+                  <CartesianGrid strokeDasharray="3 3" stroke="rgba(255,255,255,0.1)" />
+                  <XAxis dataKey="name" stroke="#9ca3af" />
+                  <YAxis stroke="#9ca3af" />
+                  <Tooltip 
+                    contentStyle={{ 
+                      backgroundColor: 'rgba(26, 43, 75, 0.9)', 
+                      border: '1px solid rgba(192, 103, 42, 0.3)',
+                      borderRadius: '8px'
+                    }}
+                    labelStyle={{ color: '#fff' }}
+                  />
+                  <Bar dataKey="value" fill="#c0672a" name="Number of Tasks" radius={[8, 8, 0, 0]} />
                 </BarChart>
               </ResponsiveContainer>
             </div>
           ) : (
-            <div className="h-80 flex items-center justify-center text-gray-500">
-              Nessuna task disponibile
+            <div className="h-80 flex items-center justify-center text-gray-400">
+              <div className="text-center">
+                <div className="w-16 h-16 bg-gray-700/20 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <svg className="w-8 h-8 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2" />
+                  </svg>
+                </div>
+                <p className="text-lg font-medium mb-2">Nessuna Task Disponibile</p>
+                <p className="text-sm">Non ci sono task da visualizzare in questo momento</p>
+              </div>
             </div>
           )}
         </div>
@@ -195,16 +267,32 @@ function Dashboard() {
       {/* Workflow Progress Visualization */}
       {stats.workflowsWithTasks.length > 0 && (
         <div className="space-y-6">
-          <h2 className="text-2xl font-semibold text-gray-800">Workflow Progress</h2>
+          <h2 className="text-2xl font-bold text-white flex items-center gap-3">
+            <div className="w-3 h-3 bg-gradient-brand rounded-full"></div>
+            Workflow Progress
+          </h2>
           {stats.workflowsWithTasks.map(workflow => (
-            <div key={workflow.id} className="bg-white p-6 rounded-lg shadow">
-              <h3 className="text-lg font-semibold mb-4 text-gray-700">{workflow.title}</h3>
+            <div key={workflow.id} className="bg-white/10 backdrop-blur-md border border-white/20 p-6 rounded-2xl shadow-xl">
+              <h3 className="text-lg font-bold text-white mb-4">{workflow.title}</h3>
               <WorkflowProgressChart
                 workflowId={workflow.id}
                 tasks={workflow.tasks}
               />
             </div>
           ))}
+        </div>
+      )}
+      
+      {/* Empty State */}
+      {stats.workflowsWithTasks.length === 0 && (
+        <div className="text-center py-12">
+          <div className="w-24 h-24 bg-gray-700/20 rounded-full flex items-center justify-center mx-auto mb-6">
+            <svg className="w-12 h-12 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
+            </svg>
+          </div>
+          <h3 className="text-xl font-bold text-white mb-2">Nessun Dato Disponibile</h3>
+          <p className="text-gray-400">Inizia creando i tuoi primi workflow e task per vedere i progressi qui</p>
         </div>
       )}
     </PageTransition>
