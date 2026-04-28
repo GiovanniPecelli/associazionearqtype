@@ -1,36 +1,14 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { ArrowLeft, Shield, Eye, Lock, Database } from 'lucide-react';
+import { Shield, Eye, Lock, Database } from 'lucide-react';
+import PublicNavbar from '../PublicNavbar';
 
 const Privacy = () => {
   return (
     <div className="min-h-screen bg-white text-gray-900 font-sans">
       
       {/* Navigation */}
-      <nav className="fixed top-0 left-0 right-0 z-50 glass-white shadow-lg border-b border-gray-100">
-        <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
-          <div className="flex justify-between items-center h-20">
-            
-            {/* Logo */}
-            <Link to="/" className="flex items-center space-x-3 group">
-              <img
-                src="/assets/logonobg.png"
-                alt="ARQtype"
-                className="h-10 w-auto object-contain group-hover:scale-105 transition-transform duration-300"
-              />
-            </Link>
-
-            {/* Back Button */}
-            <Link 
-              to="/"
-              className="flex items-center space-x-2 px-4 py-2 bg-deep-blue-50 text-deep-blue-brand rounded-lg hover:bg-deep-blue-100 transition-colors duration-300"
-            >
-              <ArrowLeft className="w-4 h-4" />
-              <span className="font-medium">Torna indietro</span>
-            </Link>
-          </div>
-        </div>
-      </nav>
+      <PublicNavbar showBackButton={true} backTo="/" />
 
       {/* Content */}
       <main className="pt-32 pb-20 px-6 sm:px-8 lg:px-12">

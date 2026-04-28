@@ -1,6 +1,7 @@
 import React, { useEffect, Fragment } from 'react';
-import { ArrowLeft, ScrollText, Users, ShieldAlert, Gavel } from 'lucide-react';
+import { ScrollText, Users, ShieldAlert, Gavel } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import PublicNavbar from '../PublicNavbar';
 
 const TermsAndConditionsPage = () => {
     useEffect(() => {
@@ -10,7 +11,8 @@ const TermsAndConditionsPage = () => {
 
     return (
         <Fragment>
-            <div className="min-h-screen bg-[#0a0a0a] pt-24 pb-20 relative overflow-hidden">
+            <PublicNavbar showBackButton={true} backTo="/" />
+            <div className="min-h-screen bg-[#0a0a0a] pt-32 pb-20 relative overflow-hidden">
             {/* Background Effects */}
             <div className="absolute inset-0 overflow-hidden pointer-events-none">
                 <div className="absolute top-[-20%] left-[-10%] w-[60%] h-[60%] bg-purple-600/10 rounded-full blur-[120px]" />
@@ -19,10 +21,7 @@ const TermsAndConditionsPage = () => {
             </div>
 
             <div className="container mx-auto px-6 max-w-4xl relative z-10">
-                <Link to="/" className="inline-flex items-center gap-2 text-indigo-400 hover:text-white transition-colors mb-8 group bg-white/5 pl-2 pr-4 py-2 rounded-full border border-white/5 hover:border-white/20">
-                    <ArrowLeft size={18} className="group-hover:-translate-x-1 transition-transform" />
-                    <span className="text-sm font-medium">Torna alla Home</span>
-                </Link>
+                {/* Back button handled by PublicNavbar */}
 
                 <div className="text-center">
                     <img 

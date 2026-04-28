@@ -1,12 +1,12 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { ArrowLeft, FileText, Search, BookOpen, Users, Award, Calendar, Menu, X } from 'lucide-react';
+import { FileText, Search, BookOpen, Users, Award, Calendar } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
+import PublicNavbar from '../PublicNavbar';
 
 const Statuto = () => {
   const [searchTerm, setSearchTerm] = useState('');
   const [currentSection, setCurrentSection] = useState('all');
-  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   // Statuto content completo
   const statutoContent = [
@@ -172,63 +172,7 @@ L'Assemblea dei Soci Fondatori procede a verifica delle cariche con cadenza trie
     <div className="min-h-screen bg-white text-gray-900 font-sans">
       
       {/* Navigation */}
-      <nav className="fixed top-0 left-0 right-0 z-50 glass-white shadow-lg border-b border-gray-100">
-        <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
-          <div className="flex justify-between items-center h-20">
-            
-            {/* Logo */}
-            <Link to="/" className="flex items-center space-x-3 group">
-              <img
-                src="/assets/logonobg.png"
-                alt="ARQtype"
-                className="h-10 w-auto object-contain group-hover:scale-105 transition-transform duration-300"
-              />
-            </Link>
-
-            {/* Desktop Actions */}
-            <div className="hidden md:flex items-center space-x-4">
-              <Link 
-                to="/"
-                className="flex items-center space-x-2 px-4 py-2 bg-deep-blue-50 text-deep-blue-brand rounded-lg hover:bg-deep-blue-100 transition-colors duration-300"
-              >
-                <ArrowLeft className="w-4 h-4" />
-                <span className="font-medium">Torna indietro</span>
-              </Link>
-            </div>
-
-            {/* Mobile Menu Toggle */}
-            <button 
-              className="md:hidden p-2 text-deep-blue-brand hover:bg-deep-blue-50 rounded-lg transition-colors"
-              onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-            >
-              {isMobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
-            </button>
-          </div>
-        </div>
-
-        {/* Mobile Menu */}
-        <AnimatePresence>
-          {isMobileMenuOpen && (
-            <motion.div
-              initial={{ opacity: 0, height: 0 }}
-              animate={{ opacity: 1, height: 'auto' }}
-              exit={{ opacity: 0, height: 0 }}
-              className="md:hidden border-t border-gray-100 bg-white overflow-hidden"
-            >
-              <div className="p-4 space-y-3">
-                <Link 
-                  to="/"
-                  className="flex items-center justify-center space-x-3 w-full px-6 py-4 bg-gray-50 text-deep-blue-brand font-bold rounded-xl"
-                  onClick={() => setIsMobileMenuOpen(false)}
-                >
-                  <ArrowLeft className="w-5 h-5" />
-                  <span>Torna alla Home</span>
-                </Link>
-              </div>
-            </motion.div>
-          )}
-        </AnimatePresence>
-      </nav>
+      <PublicNavbar showBackButton={true} backTo="/" />
 
       {/* Content */}
       <main className="pt-32 pb-20 px-6 sm:px-8 lg:px-12">
